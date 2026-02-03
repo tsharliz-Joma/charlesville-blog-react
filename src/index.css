@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Custom styles to give the blog a game‑dev vibe. We lean on dark
+  backgrounds and accent colours defined in the Tailwind configuration.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
