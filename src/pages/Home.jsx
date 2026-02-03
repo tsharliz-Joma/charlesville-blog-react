@@ -261,7 +261,7 @@ const Home = ({ theme, onToggleTheme }) => {
           {message ? (
             <p
               className={`mt-3 text-sm ${
-                status === 'error' ? 'text-pulse' : 'text-haze'
+                status === 'error' ? 'text-pulse' : 'text-haze subscribe-success'
               }`}
             >
               {message}
