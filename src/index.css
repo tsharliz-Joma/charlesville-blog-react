@@ -181,6 +181,88 @@ html.theme-light .prose-blade a {
     border-left-color: rgba(125, 227, 225, 0.35);
     color: theme('colors.steel');
   }
+
+  .ml-embedded,
+  .ml-embedded * {
+    font-family: theme('fontFamily.body');
+  }
+
+  .ml-embedded form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 20px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(26, 32, 40, 0.92), rgba(17, 21, 27, 0.78));
+    border: 1px solid rgba(125, 227, 225, 0.12);
+  }
+
+  .ml-embedded input[type="email"],
+  .ml-embedded input[type="text"],
+  .ml-embedded input[type="name"],
+  .ml-embedded input[type="tel"] {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 999px;
+    border: 1px solid rgba(42, 50, 61, 0.8);
+    background: rgba(17, 21, 27, 0.9);
+    color: theme('colors.fog');
+    padding: 11px 16px;
+    outline: none;
+  }
+
+  .ml-embedded input::placeholder {
+    color: theme('colors.steel');
+  }
+
+  .ml-embedded button,
+  .ml-embedded input[type="submit"] {
+    border-radius: 999px;
+    border: none;
+    padding: 12px 24px;
+    background: theme('colors.neon');
+    color: theme('colors.noir');
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 0 25px rgba(125, 227, 225, 0.2);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .ml-embedded button:hover,
+  .ml-embedded input[type="submit"]:hover {
+    background: theme('colors.haze');
+    transform: translateY(-1px);
+  }
+
+  .ml-embedded .ml-error,
+  .ml-embedded .ml-error * {
+    color: #f08aa7;
+  }
+
+  .ml-embedded .ml-success,
+  .ml-embedded .ml-success * {
+    color: theme('colors.haze');
+  }
+
+  html.theme-light .ml-embedded form {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(244, 245, 247, 0.85));
+    border: 1px solid rgba(43, 125, 123, 0.2);
+  }
+
+  html.theme-light .ml-embedded input[type="email"],
+  html.theme-light .ml-embedded input[type="text"],
+  html.theme-light .ml-embedded input[type="name"],
+  html.theme-light .ml-embedded input[type="tel"] {
+    background: #ffffff;
+    color: #1b232d;
+    border-color: #d0d5dd;
+  }
+
+  html.theme-light .ml-embedded input::placeholder {
+    color: #8a94a3;
+  }
 }
 
 @keyframes scanline {

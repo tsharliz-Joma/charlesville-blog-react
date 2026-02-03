@@ -16,6 +16,9 @@ import {
 // consistent look and feel.
 const Home = ({ theme, onToggleTheme }) => {
   const [posts, setPosts] = useState([])
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('idle')
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     fetch('/posts/index.json')
@@ -32,6 +35,33 @@ const Home = ({ theme, onToggleTheme }) => {
         console.error('Failed to load posts index:', err)
       })
   }, [])
+
+  const handleSubscribe = async (event) => {
+    event.preventDefault()
+    if (!email) return
+    setStatus('loading')
+    setMessage('')
+
+    try {
+      const response = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        throw new Error(data.message || 'Subscription failed. Please try again.')
+      }
+
+      setStatus('success')
+      setMessage('Thanks! You are on the list.')
+      setEmail('')
+    } catch (error) {
+      setStatus('error')
+      setMessage(error.message || 'Something went wrong.')
+    }
+  }
 
   return (
     <div className="container mx-auto px-4 py-10 flex flex-col items-center text-center">
@@ -175,9 +205,41 @@ const Home = ({ theme, onToggleTheme }) => {
           <p className="text-steel mt-3">
             Short notes. No noise. Just the latest posts as they land.
           </p>
-          <div className="mt-6">
-            <div className="ml-embedded" data-form="oeXLAJ"></div>
-          </div>
+          <form
+            className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3"
+            onSubmit={handleSubscribe}
+          >
+            <label className="sr-only" htmlFor="email">
+              Email address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="you@domain.com"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              className="w-full sm:w-64 rounded-full border border-slate bg-smoke px-4 py-3 text-fog placeholder:text-steel focus:outline-none"
+              required
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition"
+              disabled={status === 'loading'}
+            >
+              {status === 'loading' ? 'Joining...' : 'Notify me'}
+            </button>
+          </form>
+          {message ? (
+            <p
+              className={`mt-3 text-sm ${
+                status === 'error' ? 'text-pulse' : 'text-haze'
+              }`}
+            >
+              {message}
+            </p>
+          ) : null}
         </div>
       </section>
     </div>
