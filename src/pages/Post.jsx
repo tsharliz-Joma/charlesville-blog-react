@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import { FiMoon, FiSun } from 'react-icons/fi'
 
 // Post page loads a markdown file based on the slug route param and renders it.
-const Post = () => {
+const Post = ({ theme, onToggleTheme }) => {
   const { slug } = useParams()
   const [markdown, setMarkdown] = useState('')
   const [meta, setMeta] = useState({})
@@ -50,12 +51,25 @@ const Post = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <Link
-        to="/"
-        className="text-neon hover:text-haze underline mb-6 inline-block"
-      >
-        ← Back to posts
-      </Link>
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+        <Link
+          to="/"
+          className="text-neon hover:text-haze underline"
+        >
+          ← Back to posts
+        </Link>
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          className="inline-flex items-center gap-2 rounded-full border border-slate bg-smoke/80 px-4 py-2 text-xs uppercase tracking-[0.3em] text-fog backdrop-blur hover:text-haze hover:border-haze transition"
+          aria-label="Toggle color theme"
+        >
+          {theme === 'light' ? <FiMoon size={16} /> : <FiSun size={16} />}
+          <span className="hidden sm:inline">
+            {theme === 'light' ? 'Night' : 'Day'}
+          </span>
+        </button>
+      </div>
       <header className="mb-8 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-steel">
           {meta.date ? new Date(meta.date).toLocaleDateString() : 'Post'}

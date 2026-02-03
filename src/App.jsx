@@ -27,16 +27,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-noir text-fog antialiased">
-        <button
-          type="button"
-          onClick={toggleTheme}
-          className="fixed top-6 right-6 z-50 rounded-full border border-slate bg-smoke/80 px-4 py-2 text-xs uppercase tracking-[0.3em] text-fog backdrop-blur hover:text-haze hover:border-haze transition"
-        >
-          {theme === 'light' ? 'Night Mode' : 'Day Mode'}
-        </button>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/:slug" element={<Post />} />
+          <Route
+            path="/"
+            element={<Home theme={theme} onToggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/posts/:slug"
+            element={<Post theme={theme} onToggleTheme={toggleTheme} />}
+          />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { FiMoon, FiSun } from 'react-icons/fi'
 import {
   Card,
   CardHeader,
@@ -13,7 +14,7 @@ import {
 // public/posts/index.json. Each entry should include a slug,
 // title, date and description. The Card component gives a
 // consistent look and feel.
-const Home = () => {
+const Home = ({ theme, onToggleTheme }) => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -46,6 +47,17 @@ const Home = () => {
           <a href="#about" className="hover:text-haze transition-colors">About</a>
           <a href="#subscribe" className="hover:text-haze transition-colors">Subscribe</a>
         </div>
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          className="inline-flex items-center gap-2 rounded-full border border-slate bg-smoke/80 px-4 py-2 text-xs uppercase tracking-[0.3em] text-fog backdrop-blur hover:text-haze hover:border-haze transition"
+          aria-label="Toggle color theme"
+        >
+          {theme === 'light' ? <FiMoon size={16} /> : <FiSun size={16} />}
+          <span className="hidden sm:inline">
+            {theme === 'light' ? 'Night' : 'Day'}
+          </span>
+        </button>
       </nav>
 
       <section className="glass-panel w-full max-w-6xl mt-10 px-6 py-10 sm:px-10 sm:py-12 rounded-3xl">
