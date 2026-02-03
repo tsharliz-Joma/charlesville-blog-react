@@ -52,12 +52,12 @@ const Post = ({ theme, onToggleTheme }) => {
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-        <Link
-          to="/"
-          className="text-neon hover:text-haze underline"
-        >
-          ← Back to posts
-        </Link>
+      <Link
+        to="/"
+        className="text-neon hover:text-haze underline"
+      >
+        ← Back to journal
+      </Link>
         <button
           type="button"
           onClick={onToggleTheme}
@@ -72,10 +72,10 @@ const Post = ({ theme, onToggleTheme }) => {
       </div>
       <header className="mb-8 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-steel">
-          {meta.date ? new Date(meta.date).toLocaleDateString() : 'Post'}
+          {meta.date ? new Date(meta.date).toLocaleDateString() : 'Entry'}
         </p>
         <h1 className="text-3xl sm:text-4xl font-display text-haze mt-2">
-          {meta.title || 'Untitled post'}
+          {meta.title || 'Untitled entry'}
         </h1>
         {meta.description ? (
           <p className="text-steel mt-3">{meta.description}</p>

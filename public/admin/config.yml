@@ -24,3 +24,15 @@ collections:
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "site"
+    label: "Site"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "public/settings/hero.json"
+        fields:
+          - { label: "Hero Image", name: "image", widget: "image" }
+          - { label: "Hero Image Alt", name: "imageAlt", widget: "string", required: false }
+          - { label: "Hero Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Hero Title", name: "title", widget: "string" }
+          - { label: "Hero Description", name: "description", widget: "text" }
