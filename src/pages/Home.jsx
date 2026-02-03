@@ -175,24 +175,9 @@ const Home = ({ theme, onToggleTheme }) => {
           <p className="text-steel mt-3">
             Short notes. No noise. Just the latest posts as they land.
           </p>
-          <form className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <label className="sr-only" htmlFor="email">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@domain.com"
-              className="w-full sm:w-64 rounded-full border border-slate bg-smoke px-4 py-3 text-fog placeholder:text-steel focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition"
-            >
-              Notify me
-            </button>
-          </form>
+          <div className="mt-6">
+            <div className="ml-embedded" data-form="oeXLAJ"></div>
+          </div>
         </div>
       </section>
     </div>
