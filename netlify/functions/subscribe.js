@@ -9,11 +9,13 @@ export async function handler(event) {
 
   const apiKey = process.env.MAILERLITE_API_KEY
   const groupId = process.env.MAILERLITE_GROUP_ID
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY
+  const recaptchaMinScore = Number(process.env.RECAPTCHA_MIN_SCORE || '0.5')
 
-  if (!apiKey || !groupId) {
+  if (!apiKey || !groupId || !recaptchaSecret) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Missing MailerLite configuration.' })
+      body: JSON.stringify({ message: 'Missing server configuration.' })
     }
   }
 
@@ -28,6 +30,7 @@ export async function handler(event) {
   }
 
   const email = (payload.email || '').trim()
+  const recaptchaToken = (payload.recaptchaToken || '').trim()
   if (!email) {
     return {
       statusCode: 400,
@@ -35,7 +38,41 @@ export async function handler(event) {
     }
   }
 
+  if (!recaptchaToken) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Captcha verification failed.' })
+    }
+  }
+
   try {
+    const recaptchaResponse = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          secret: recaptchaSecret,
+          response: recaptchaToken
+        }).toString()
+      }
+    )
+
+    const recaptchaData = await recaptchaResponse.json()
+    if (
+      !recaptchaData.success ||
+      recaptchaData.action !== 'subscribe' ||
+      typeof recaptchaData.score !== 'number' ||
+      recaptchaData.score < recaptchaMinScore
+    ) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: 'Captcha verification failed.' })
+      }
+    }
+
     const response = await fetch(
       `https://connect.mailerlite.com/api/subscribers`,
       {

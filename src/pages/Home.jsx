@@ -19,6 +19,7 @@ const Home = ({ theme, onToggleTheme }) => {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle')
   const [message, setMessage] = useState('')
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
   useEffect(() => {
     fetch('/posts/index.json')
@@ -36,6 +37,19 @@ const Home = ({ theme, onToggleTheme }) => {
       })
   }, [])
 
+  useEffect(() => {
+    if (!recaptchaSiteKey) return
+    const existingScript = document.querySelector(
+      'script[src^="https://www.google.com/recaptcha/api.js"]'
+    )
+    if (existingScript) return
+    const script = document.createElement('script')
+    script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`
+    script.async = true
+    script.defer = true
+    document.head.appendChild(script)
+  }, [recaptchaSiteKey])
+
   const handleSubscribe = async (event) => {
     event.preventDefault()
     if (!email) return
@@ -43,10 +57,23 @@ const Home = ({ theme, onToggleTheme }) => {
     setMessage('')
 
     try {
+      if (!recaptchaSiteKey || !window.grecaptcha) {
+        throw new Error('Captcha is not ready yet. Please try again.')
+      }
+
+      const token = await new Promise((resolve, reject) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(recaptchaSiteKey, { action: 'subscribe' })
+            .then(resolve)
+            .catch(reject)
+        })
+      })
+
       const response = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email, recaptchaToken: token })
       })
 
       const data = await response.json().catch(() => ({}))
@@ -55,7 +82,7 @@ const Home = ({ theme, onToggleTheme }) => {
       }
 
       setStatus('success')
-      setMessage('Thanks! You are on the list.')
+      setMessage('You are in. New posts will land in your inbox.')
       setEmail('')
     } catch (error) {
       setStatus('error')
@@ -228,7 +255,7 @@ const Home = ({ theme, onToggleTheme }) => {
               className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition"
               disabled={status === 'loading'}
             >
-              {status === 'loading' ? 'Joining...' : 'Notify me'}
+              {status === 'loading' ? 'Signing you up...' : 'Get new posts'}
             </button>
           </form>
           {message ? (
