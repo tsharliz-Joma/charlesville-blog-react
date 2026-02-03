@@ -1,5 +1,5 @@
 backend:
-  # Use git-gateway so Netlify CMS can commit to the repo via Netlify Identity.
+  # Use git-gateway so Decap CMS can commit to the repo via Netlify Identity.
   name: git-gateway
   branch: main
 
