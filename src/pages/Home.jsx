@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import {
@@ -20,6 +20,7 @@ const Home = ({ theme, onToggleTheme }) => {
   const [status, setStatus] = useState('idle')
   const [message, setMessage] = useState('')
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY
+  const recaptchaScriptPromise = useRef(null)
 
   useEffect(() => {
     fetch('/posts/index.json')
@@ -39,16 +40,58 @@ const Home = ({ theme, onToggleTheme }) => {
 
   useEffect(() => {
     if (!recaptchaSiteKey) return
-    const existingScript = document.querySelector(
-      'script[src^="https://www.google.com/recaptcha/api.js"]'
-    )
-    if (existingScript) return
-    const script = document.createElement('script')
-    script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`
-    script.async = true
-    script.defer = true
-    document.head.appendChild(script)
+    if (!recaptchaScriptPromise.current) {
+      recaptchaScriptPromise.current = new Promise((resolve, reject) => {
+        const existingScript = document.querySelector(
+          'script[src^="https://www.google.com/recaptcha/api.js"]'
+        )
+        if (existingScript) {
+          if (window.grecaptcha) {
+            resolve()
+          } else {
+            existingScript.addEventListener('load', resolve, { once: true })
+            existingScript.addEventListener(
+              'error',
+              () => reject(new Error('Captcha failed to load.')),
+              { once: true }
+            )
+          }
+          return
+        }
+
+        const script = document.createElement('script')
+        script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`
+        script.async = true
+        script.defer = true
+        script.onload = () => resolve()
+        script.onerror = () => reject(new Error('Captcha failed to load.'))
+        document.head.appendChild(script)
+      })
+    }
   }, [recaptchaSiteKey])
+
+  const getRecaptchaToken = async () => {
+    if (!recaptchaSiteKey) {
+      throw new Error('Captcha is not configured.')
+    }
+
+    if (recaptchaScriptPromise.current) {
+      await recaptchaScriptPromise.current
+    }
+
+    if (!window.grecaptcha) {
+      throw new Error('Captcha failed to load.')
+    }
+
+    return new Promise((resolve, reject) => {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(recaptchaSiteKey, { action: 'subscribe' })
+          .then(resolve)
+          .catch(() => reject(new Error('Captcha verification failed.')))
+      })
+    })
+  }
 
   const handleSubscribe = async (event) => {
     event.preventDefault()
@@ -57,18 +100,7 @@ const Home = ({ theme, onToggleTheme }) => {
     setMessage('')
 
     try {
-      if (!recaptchaSiteKey || !window.grecaptcha) {
-        throw new Error('Captcha is not ready yet. Please try again.')
-      }
-
-      const token = await new Promise((resolve, reject) => {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(recaptchaSiteKey, { action: 'subscribe' })
-            .then(resolve)
-            .catch(reject)
-        })
-      })
+      const token = await getRecaptchaToken()
 
       const response = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
