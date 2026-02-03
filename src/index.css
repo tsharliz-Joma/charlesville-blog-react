@@ -3,14 +3,191 @@
 @tailwind utilities;
 
 /*
-  Custom styles to give the blog a game‑dev vibe. We lean on dark
-  backgrounds and accent colours defined in the Tailwind configuration.
+  Mellow, monochrome Blade Runner-inspired theme:
+  muted graphite surfaces with restrained neon accents.
 */
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: theme('fontFamily.body');
+    background-color: theme('colors.noir');
+    color: theme('colors.fog');
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(125, 227, 225, 0.08), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(240, 138, 167, 0.06), transparent 55%),
+      linear-gradient(180deg, rgba(17, 21, 27, 0.9), rgba(11, 13, 16, 0.95));
+  }
+
+  ::selection {
+    background: rgba(125, 227, 225, 0.25);
+    color: theme('colors.haze');
+  }
+
+  a {
+    color: theme('colors.neon');
+    text-decoration-color: rgba(125, 227, 225, 0.45);
+  }
+
+  a:hover {
+    color: theme('colors.haze');
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgba(125, 227, 225, 0.7);
+    outline-offset: 3px;
+  }
 }
 
-body {
-  font-family: system-ui, sans-serif;
+html.theme-light body {
+  background-color: #f4f5f7;
+  color: #1a2028;
+}
+
+html.theme-light body::before {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(125, 227, 225, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(240, 138, 167, 0.06), transparent 55%),
+    linear-gradient(180deg, rgba(244, 245, 247, 0.95), rgba(231, 234, 238, 0.95));
+}
+
+html.theme-light .text-haze {
+  color: #1b232d;
+}
+
+html.theme-light .text-fog {
+  color: #2a323d;
+}
+
+html.theme-light .text-steel {
+  color: #586270;
+}
+
+html.theme-light .text-neon {
+  color: #2b7d7b;
+}
+
+html.theme-light .bg-noir {
+  background-color: #f4f5f7;
+}
+
+html.theme-light .bg-smoke {
+  background-color: #ffffff;
+}
+
+html.theme-light .border-slate {
+  border-color: #d0d5dd;
+}
+
+html.theme-light .glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(244, 245, 247, 0.8));
+  border: 1px solid rgba(43, 125, 123, 0.18);
+}
+
+html.theme-light .divider-glow {
+  box-shadow: 0 1px 0 rgba(43, 125, 123, 0.2);
+}
+
+html.theme-light .shadow-glow {
+  box-shadow: 0 0 24px rgba(43, 125, 123, 0.18);
+}
+
+html.theme-light .shadow-ember {
+  box-shadow: 0 0 28px rgba(240, 138, 167, 0.12);
+}
+
+html.theme-light .prose-blade {
+  color: #1b232d;
+}
+
+html.theme-light .prose-blade p,
+html.theme-light .prose-blade li,
+html.theme-light .prose-blade strong,
+html.theme-light .prose-blade em,
+html.theme-light .prose-blade blockquote {
+  color: #2a323d;
+}
+
+html.theme-light .prose-blade a {
+  color: #2b7d7b;
+}
+
+@layer components {
+  .glass-panel {
+    background: linear-gradient(135deg, rgba(26, 32, 40, 0.9), rgba(17, 21, 27, 0.75));
+    border: 1px solid rgba(125, 227, 225, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+  }
+
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(125, 227, 225, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.25;
+    transform: translateY(-120%);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+  }
+
+  .divider-glow {
+    box-shadow: 0 1px 0 rgba(125, 227, 225, 0.25);
+  }
+
+  .prose-blade {
+    color: theme('colors.fog');
+  }
+
+  .prose-blade h1,
+  .prose-blade h2,
+  .prose-blade h3,
+  .prose-blade h4 {
+    color: theme('colors.haze');
+    font-family: theme('fontFamily.display');
+    letter-spacing: 0.01em;
+  }
+
+  .prose-blade a {
+    color: theme('colors.neon');
+  }
+
+  .prose-blade code {
+    color: theme('colors.pulse');
+  }
+
+  .prose-blade blockquote {
+    border-left-color: rgba(125, 227, 225, 0.35);
+    color: theme('colors.steel');
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(120%);
+  }
 }

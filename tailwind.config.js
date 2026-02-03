@@ -8,18 +8,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#e8efff',
-          100: '#c2d4ff',
-          200: '#9ab9ff',
-          300: '#739eff',
-          400: '#4c83ff',
-          500: '#336ae6',
-          600: '#2651b4',
-          700: '#193881',
-          800: '#0c1f4f',
-          900: '#02061d'
-        }
+        noir: '#0b0d10',
+        smoke: '#11151b',
+        iron: '#1a2028',
+        slate: '#2a323d',
+        steel: '#6b7280',
+        fog: '#c7cbd1',
+        haze: '#e3e6ea',
+        neon: '#7de3e1',
+        pulse: '#f08aa7'
+      },
+      boxShadow: {
+        glow: '0 0 25px rgba(125, 227, 225, 0.15)',
+        ember: '0 0 30px rgba(240, 138, 167, 0.12)'
+      },
+      fontFamily: {
+        display: ['"Space Grotesk"', '"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        body: ['"IBM Plex Sans"', 'system-ui', 'sans-serif']
       }
     },
   },

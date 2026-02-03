@@ -9,7 +9,7 @@ import React from 'react'
 export function Card({ className = '', children }) {
   return (
     <div
-      className={`rounded-lg border border-gray-700 overflow-hidden ${className}`}
+      className={`glass-panel rounded-2xl overflow-hidden text-fog ${className}`}
     >
       {children}
     </div>
@@ -18,7 +18,7 @@ export function Card({ className = '', children }) {
 
 export function CardHeader({ className = '', children }) {
   return (
-    <div className={`p-4 border-b border-gray-700 ${className}`}>{children}</div>
+    <div className={`p-4 divider-glow border-b border-slate ${className}`}>{children}</div>
   )
 }
 
@@ -35,7 +35,7 @@ export function CardContent({ className = '', children }) {
 }
 
 export function CardFooter({ className = '', children }) {
-  return <div className={`p-4 border-t border-gray-700 ${className}`}>{children}</div>
+  return <div className={`p-4 divider-glow border-t border-slate ${className}`}>{children}</div>
 }
 
 export default {
