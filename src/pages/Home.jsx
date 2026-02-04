@@ -23,6 +23,8 @@ const Home = ({theme, onToggleTheme}) => {
     title: "Charles's Game Design Journal",
     description:
       "A blog-journal of game design, builds, and lessons I pick up along the way. Short, honest updates as I keep making things.",
+    ctaPrimary: "Browse entries",
+    ctaSecondary: "Get journal updates",
   });
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
@@ -62,11 +64,25 @@ const Home = ({theme, onToggleTheme}) => {
             description:
               data.description ||
               "A blog-journal of game design, builds, and lessons I pick up along the way. Short, honest updates as I keep making things.",
+            ctaPrimary: data.ctaPrimary || "Browse entries",
+            ctaSecondary: data.ctaSecondary || "Get journal updates",
           });
         }
       })
       .catch(() => {});
   }, []);
+
+  const normalizeTags = (value) => {
+    if (!value) return [];
+    if (Array.isArray(value)) return value.filter(Boolean);
+    if (typeof value === "string") {
+      return value
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+    }
+    return [];
+  };
 
   useEffect(() => {
     if (!recaptchaSiteKey) return;
@@ -199,12 +215,12 @@ const Home = ({theme, onToggleTheme}) => {
             <a
               href="#posts"
               className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition">
-              Browse entries
+              {hero.ctaPrimary}
             </a>
             <a
               href="#subscribe"
               className="px-6 py-3 rounded-full border border-slate text-fog hover:text-haze hover:border-haze transition">
-              Get journal updates
+              {hero.ctaSecondary}
             </a>
           </div>
           <div className="w-full max-w-5xl">
@@ -249,30 +265,49 @@ const Home = ({theme, onToggleTheme}) => {
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <Card
-                key={post.slug}
-                className="shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
-                <CardHeader>
-                  <CardTitle className="text-xl mb-1 text-haze">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
-                    {new Date(post.date).toLocaleDateString()}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-fog">{post.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <Link
-                    to={`/posts/${post.slug}`}
-                    className="text-neon hover:text-haze underline">
-                    Read entry
-                  </Link>
-                </CardFooter>
-              </Card>
-            ))}
+            {posts.map((post) => {
+              const tags = normalizeTags(post.tags);
+              const badges = [
+                ...(post.category ? [post.category] : []),
+                ...tags,
+              ];
+
+              return (
+                <Card
+                  key={post.slug}
+                  className="shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
+                  <CardHeader>
+                    {badges.length ? (
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {badges.slice(0, 3).map((badge) => (
+                          <span
+                            key={badge}
+                            className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                    <CardTitle className="text-xl mb-1 text-haze">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
+                      {new Date(post.date).toLocaleDateString()}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-fog">{post.description}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Link
+                      to={`/posts/${post.slug}`}
+                      className="text-neon hover:text-haze underline">
+                      Read entry
+                    </Link>
+                  </CardFooter>
+                </Card>
+              );
+            })}
           </div>
         </div>
       )}

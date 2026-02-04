@@ -3,6 +3,8 @@
     "slug": "welcome",
     "title": "Welcome to My Game Dev Blog",
     "date": "2026-02-03",
-    "description": "An introduction to my journey into game development and learning."
+    "description": "An introduction to my journey into game development and learning.",
+    "category": "Journal entry",
+    "tags": ["game design", "dev log"]
   }
 ]

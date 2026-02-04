@@ -20,15 +20,62 @@ const Post = ({ theme, onToggleTheme }) => {
     }
 
     const data = {}
-    match[1].split('\n').forEach((line) => {
-      if (!line.trim()) return
+    const lines = match[1].split('\n')
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i]
+      if (!line.trim()) continue
+      if (line.trim().startsWith('-')) continue
+
       const [key, ...rest] = line.split(':')
-      if (!key) return
-      const value = rest.join(':').trim().replace(/^"(.+)"$/, '$1')
-      data[key.trim()] = value
-    })
+      if (!key) continue
+      const trimmedKey = key.trim()
+      let value = rest.join(':').trim()
+
+      if (!value) {
+        const list = []
+        let j = i + 1
+        while (j < lines.length && lines[j].trim().startsWith('-')) {
+          const item = lines[j]
+            .replace(/^-+\s*/, '')
+            .trim()
+            .replace(/^"(.+)"$/, '$1')
+          if (item) list.push(item)
+          j += 1
+        }
+        if (list.length) {
+          data[trimmedKey] = list
+          i = j - 1
+          continue
+        }
+        data[trimmedKey] = ''
+        continue
+      }
+
+      if (value.startsWith('[') && value.endsWith(']')) {
+        value = value.slice(1, -1)
+        data[trimmedKey] = value
+          .split(',')
+          .map((item) => item.trim())
+          .filter(Boolean)
+        continue
+      }
+
+      data[trimmedKey] = value.replace(/^"(.+)"$/, '$1')
+    }
 
     return { data, content: match[2] }
+  }
+
+  const normalizeTags = (value) => {
+    if (!value) return []
+    if (Array.isArray(value)) return value.filter(Boolean)
+    if (typeof value === 'string') {
+      return value
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+    }
+    return []
   }
 
   useEffect(() => {
@@ -74,6 +121,23 @@ const Post = ({ theme, onToggleTheme }) => {
         <p className="text-xs uppercase tracking-[0.3em] text-steel">
           {meta.date ? new Date(meta.date).toLocaleDateString() : 'Entry'}
         </p>
+        {(meta.category || normalizeTags(meta.tags).length) ? (
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            {meta.category ? (
+              <span className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
+                {meta.category}
+              </span>
+            ) : null}
+            {normalizeTags(meta.tags).slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
         <h1 className="text-3xl sm:text-4xl font-display text-haze mt-2">
           {meta.title || 'Untitled entry'}
         </h1>
