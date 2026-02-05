@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { FiMoon, FiSun } from 'react-icons/fi'
+import yaml from 'js-yaml'
 
 // Post page loads a markdown file based on the slug route param and renders it.
 const Post = ({ theme, onToggleTheme }) => {
@@ -19,48 +20,14 @@ const Post = ({ theme, onToggleTheme }) => {
       return { data: {}, content: raw }
     }
 
-    const data = {}
-    const lines = match[1].split('\n')
-    for (let i = 0; i < lines.length; i += 1) {
-      const line = lines[i]
-      if (!line.trim()) continue
-      if (line.trim().startsWith('-')) continue
-
-      const [key, ...rest] = line.split(':')
-      if (!key) continue
-      const trimmedKey = key.trim()
-      let value = rest.join(':').trim()
-
-      if (!value) {
-        const list = []
-        let j = i + 1
-        while (j < lines.length && lines[j].trim().startsWith('-')) {
-          const item = lines[j]
-            .replace(/^-+\s*/, '')
-            .trim()
-            .replace(/^"(.+)"$/, '$1')
-          if (item) list.push(item)
-          j += 1
-        }
-        if (list.length) {
-          data[trimmedKey] = list
-          i = j - 1
-          continue
-        }
-        data[trimmedKey] = ''
-        continue
+    let data = {}
+    try {
+      const parsed = yaml.load(match[1])
+      if (parsed && typeof parsed === 'object') {
+        data = parsed
       }
-
-      if (value.startsWith('[') && value.endsWith(']')) {
-        value = value.slice(1, -1)
-        data[trimmedKey] = value
-          .split(',')
-          .map((item) => item.trim())
-          .filter(Boolean)
-        continue
-      }
-
-      data[trimmedKey] = value.replace(/^"(.+)"$/, '$1')
+    } catch (error) {
+      data = {}
     }
 
     return { data, content: match[2] }
@@ -76,6 +43,43 @@ const Post = ({ theme, onToggleTheme }) => {
         .filter(Boolean)
     }
     return []
+  }
+
+  const getSpotifyEmbedUrl = (url) => {
+    if (!url) return ''
+    if (url.includes('open.spotify.com/embed/')) return url
+
+    const webMatch = url.match(
+      /open\.spotify\.com\/(playlist|album|track|artist|show|episode)\/([A-Za-z0-9]+)/,
+    )
+    if (webMatch) {
+      return `https://open.spotify.com/embed/${webMatch[1]}/${webMatch[2]}`
+    }
+
+    const uriMatch = url.match(
+      /spotify:(playlist|album|track|artist|show|episode):([A-Za-z0-9]+)/,
+    )
+    if (uriMatch) {
+      return `https://open.spotify.com/embed/${uriMatch[1]}/${uriMatch[2]}`
+    }
+
+    return ''
+  }
+
+  const spotifyEmbedUrl = getSpotifyEmbedUrl(meta.spotifyUrl)
+
+  const sections = Array.isArray(meta.sections) ? meta.sections : []
+
+  const buildImageClass = (align) => {
+    const base =
+      'rounded-2xl border border-slate/60 shadow-ember mb-4 w-full object-cover'
+    if (align === 'left') {
+      return `${base} sm:w-56 md:w-64 float-left mr-6`
+    }
+    if (align === 'right') {
+      return `${base} sm:w-56 md:w-64 float-right ml-6`
+    }
+    return `${base} max-w-2xl mx-auto`
   }
 
   useEffect(() => {
@@ -157,8 +161,55 @@ const Post = ({ theme, onToggleTheme }) => {
         </div>
       ) : null}
 
-      <article className="prose lg:prose-lg prose-invert prose-blade max-w-none">
-        <ReactMarkdown>{markdown}</ReactMarkdown>
+      {spotifyEmbedUrl ? (
+        <div className="mb-10">
+          <iframe
+            title={meta.spotifyLabel || 'Spotify playlist'}
+            src={spotifyEmbedUrl}
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="rounded-2xl border border-slate/60 shadow-ember"
+          />
+        </div>
+      ) : null}
+
+      <article
+        className={`prose lg:prose-lg prose-blade max-w-none ${
+          theme === 'light' ? '' : 'prose-invert'
+        }`}
+      >
+        {sections.length ? (
+          sections.map((section, index) => {
+            const text = section?.text || ''
+            const image = section?.image
+            const imageAlt = section?.imageAlt || meta.title || 'Entry image'
+            const imageAlign = section?.imageAlign || 'none'
+            const showImage = Boolean(image && imageAlign !== 'none')
+
+            return (
+              <section key={`${imageAlt}-${index}`} className="mb-8">
+                {showImage ? (
+                  <div className="not-prose">
+                    <img
+                      src={image}
+                      alt={imageAlt}
+                      className={buildImageClass(imageAlign)}
+                      loading="lazy"
+                    />
+                  </div>
+                ) : null}
+                {text ? <ReactMarkdown>{text}</ReactMarkdown> : null}
+                {showImage && (imageAlign === 'left' || imageAlign === 'right') ? (
+                  <div className="clear-both" />
+                ) : null}
+              </section>
+            )
+          })
+        ) : null}
+        {markdown ? <ReactMarkdown>{markdown}</ReactMarkdown> : null}
       </article>
     </div>
   )

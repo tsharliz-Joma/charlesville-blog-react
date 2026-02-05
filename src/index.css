@@ -119,6 +119,15 @@ html.theme-light .prose-blade blockquote {
   color: #2a323d;
 }
 
+html.theme-light .prose-blade h1,
+html.theme-light .prose-blade h2,
+html.theme-light .prose-blade h3,
+html.theme-light .prose-blade h4,
+html.theme-light .prose-blade h5,
+html.theme-light .prose-blade h6 {
+  color: #1b232d;
+}
+
 html.theme-light .prose-blade a {
   color: #2b7d7b;
 }
@@ -180,6 +189,33 @@ html.theme-light .prose-blade a {
   .prose-blade blockquote {
     border-left-color: rgba(125, 227, 225, 0.35);
     color: theme('colors.steel');
+  }
+
+  .footer-panel {
+    background: linear-gradient(135deg, rgba(26, 32, 40, 0.92), rgba(17, 21, 27, 0.78));
+    border: 1px solid rgba(125, 227, 225, 0.12);
+    color: theme('colors.fog');
+  }
+
+  .footer-link {
+    color: theme('colors.fog');
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: theme('colors.haze');
+  }
+
+  .footer-text {
+    color: theme('colors.fog');
+  }
+
+  .nav-link {
+    color: theme('colors.steel');
+  }
+
+  .nav-link:hover {
+    color: theme('colors.haze');
   }
 
   .ml-embedded,
@@ -262,6 +298,32 @@ html.theme-light .prose-blade a {
 
   html.theme-light .ml-embedded input::placeholder {
     color: #8a94a3;
+  }
+
+  html.theme-light .footer-panel {
+    background: #ffffff;
+    border-color: rgba(208, 213, 221, 0.8);
+    color: #1b232d;
+  }
+
+  html.theme-light .footer-link {
+    color: #1b232d;
+  }
+
+  html.theme-light .footer-link:hover {
+    color: #0f172a;
+  }
+
+  html.theme-light .footer-text {
+    color: #1b232d;
+  }
+
+  html.theme-light .nav-link {
+    color: #586270;
+  }
+
+  html.theme-light .nav-link:hover {
+    color: #1b232d;
   }
 
   .subscribe-success {

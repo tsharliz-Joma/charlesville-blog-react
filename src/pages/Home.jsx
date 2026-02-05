@@ -84,6 +84,7 @@ const Home = ({theme, onToggleTheme}) => {
     return [];
   };
 
+
   useEffect(() => {
     if (!recaptchaSiteKey) return;
     if (!recaptchaScriptPromise.current) {
@@ -180,13 +181,13 @@ const Home = ({theme, onToggleTheme}) => {
           <p className="font-display text-lg text-haze">Game Dev Journal</p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-steel">
-          <a href="#posts" className="hover:text-haze transition-colors">
+          <a href="#posts" className="nav-link transition-colors">
             Posts
           </a>
-          <a href="#about" className="hover:text-haze transition-colors">
+          <a href="#about" className="nav-link transition-colors">
             About
           </a>
-          <a href="#subscribe" className="hover:text-haze transition-colors">
+          <a href="#subscribe" className="nav-link transition-colors">
             Subscribe
           </a>
         </div>

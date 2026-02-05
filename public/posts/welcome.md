@@ -6,6 +6,8 @@ category: "Journal entry"
 tags:
   - game design
   - dev log
+spotifyUrl: ""
+spotifyLabel: "Play the playlist"
 ---
 
 Welcome to my new blog, where I'll be documenting my adventures in game development.

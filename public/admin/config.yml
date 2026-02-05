@@ -23,9 +23,22 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Journal entry", "Game design", "Meetups", "Learning", "Side quests", "Blender"], default: "Journal entry" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Spotify Playlist URL", name: "spotifyUrl", widget: "string", required: false }
+      - { label: "Spotify Embed Label", name: "spotifyLabel", widget: "string", required: false }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        required: false
+        min: 0
+        max: 3
+        fields:
+          - { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
+          - { label: "Image Alignment", name: "imageAlign", widget: "select", options: ["none", "left", "right", "center"], default: "none" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "site"
     label: "Site"
     files:
