@@ -22,19 +22,20 @@ sections:
       Why this journal exists
 
       I'm keeping this journal to document what I'm learning, what I'm building, and what changes as I improve. If you're into game design or just curious about the process, I hope these notes are useful.
+    heading: Welcome
   - imageAlign: none
     text: |
-      What's next
       Prototype a small gameplay idea.
       Study a design topic and share notes.
       Ship a short entry about what worked and what didn't.
+    heading: What's next
   - imageAlign: none
     text: |-
-      A few influences
       Some games and creators that shaped how I think about design:
       Favorite game or series
       Studio or creator I admire
       A design principle I want to learn
 
       If any of this resonates, feel free to subscribe for new entries.
+    heading: A few influences
 ---
