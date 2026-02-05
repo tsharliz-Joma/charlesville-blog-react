@@ -32,6 +32,7 @@ collections:
         min: 0
         max: 3
         fields:
+          - { label: "Heading", name: "heading", widget: "string", required: false }
           - { label: "Paragraph", name: "text", widget: "text" }
           - { label: "Image", name: "image", widget: "image", required: false }
           - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }

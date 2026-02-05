@@ -183,6 +183,7 @@ const Post = ({ theme, onToggleTheme }) => {
       >
         {sections.length ? (
           sections.map((section, index) => {
+            const heading = section?.heading || ''
             const text = section?.text || ''
             const image = section?.image
             const imageAlt = section?.imageAlt || meta.title || 'Entry image'
@@ -191,6 +192,7 @@ const Post = ({ theme, onToggleTheme }) => {
 
             return (
               <section key={`${imageAlt}-${index}`} className="mb-8">
+                {heading ? <h2>{heading}</h2> : null}
                 {showImage ? (
                   <div className="not-prose">
                     <img
