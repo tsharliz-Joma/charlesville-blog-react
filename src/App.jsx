@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Post from './pages/Post'
+import Footer from './components/footer'
 
 // Root application component. Sets up routing and a dark background.
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
             element={<Post theme={theme} onToggleTheme={toggleTheme} />}
           />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   )
