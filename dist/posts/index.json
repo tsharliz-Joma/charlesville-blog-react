@@ -2,7 +2,31 @@
   {
     "slug": "welcome",
     "title": "Welcome to My Game Dev Blog",
-    "date": "2026-02-03",
-    "description": "An introduction to my journey into game development and learning."
+    "date": "Tue Feb 03 2026 09:00:00 GMT+0900 (Japan Standard Time)",
+    "description": "An introduction to my journey into game development and learning.",
+    "category": "Journal entry",
+    "tags": [
+      "game design",
+      "dev log"
+    ],
+    "image": "",
+    "imageAlt": "",
+    "spotifyUrl": "",
+    "spotifyLabel": "Play the playlist"
+  },
+  {
+    "slug": "i-boogied-with-the-fuji-in-fujinomiya",
+    "title": "I boogied with the Fuji in Fujinomiya",
+    "date": "Thu Feb 05 2026 23:47:00 GMT+0900 (Japan Standard Time)",
+    "description": "A hop-skip-jump to Fujinomiya that turned into a calm dougie,a belly-full afternoon of reflection, dilly dallying, small discoveries and a playlist..",
+    "category": "Journal entry",
+    "tags": [
+      "SideQuest",
+      "Terrvision"
+    ],
+    "image": "",
+    "imageAlt": "",
+    "spotifyUrl": "https://open.spotify.com/playlist/0KIihkIvjsIdvLFSdoNzgg?si=2f9d42c3917b461b",
+    "spotifyLabel": "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/playlist/0KIihkIvjsIdvLFSdoNzgg?utm_source=generator\" width=\"100%\" height=\"152\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
   }
 ]

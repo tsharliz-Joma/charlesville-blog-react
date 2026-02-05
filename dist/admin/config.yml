@@ -1,10 +1,10 @@
 backend:
-  # Use git-gateway so Netlify CMS can commit to the repo via Netlify Identity.
+  # Use git-gateway so Decap CMS can commit to the repo via Netlify Identity.
   name: git-gateway
   branch: main
 
-# Enable draft entries which require publishing via a pull request.
-publish_mode: editorial_workflow
+# Publish entries directly to the main branch.
+publish_mode: simple
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -21,6 +21,36 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Journal entry", "Game design", "Meetups", "Learning", "Side quests", "Blender"], default: "Journal entry" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Spotify Playlist URL", name: "spotifyUrl", widget: "string", required: false }
+      - { label: "Spotify Embed Label", name: "spotifyLabel", widget: "string", required: false }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        required: false
+        min: 0
+        max: 3
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", required: false }
+          - { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
+          - { label: "Image Alignment", name: "imageAlign", widget: "select", options: ["none", "left", "right", "center"], default: "none" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "site"
+    label: "Site"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "public/settings/hero.json"
+        fields:
+          - { label: "Hero Image", name: "image", widget: "image" }
+          - { label: "Hero Image Alt", name: "imageAlt", widget: "string", required: false }
+          - { label: "Hero Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Hero Title", name: "title", widget: "string" }
+          - { label: "Hero Description", name: "description", widget: "text" }
+          - { label: "Primary CTA", name: "ctaPrimary", widget: "string" }
+          - { label: "Secondary CTA", name: "ctaSecondary", widget: "string" }

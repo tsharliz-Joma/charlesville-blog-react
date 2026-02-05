@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Charles's Game Design Journal</title>
+        <link>https://charlesville-blog-react.netlify.app</link>
+        <description>A blog-journal of game design, builds, and lessons learned.</description>
+        <lastBuildDate>Thu, 05 Feb 2026 14:47:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <copyright>All rights reserved 2026</copyright>
+        <item>
+            <title><![CDATA[I boogied with the Fuji in Fujinomiya]]></title>
+            <link>https://charlesville-blog-react.netlify.app/posts/i-boogied-with-the-fuji-in-fujinomiya</link>
+            <guid>https://charlesville-blog-react.netlify.app/posts/i-boogied-with-the-fuji-in-fujinomiya</guid>
+            <pubDate>Thu, 05 Feb 2026 14:47:00 GMT</pubDate>
+            <description><![CDATA[A hop-skip-jump to Fujinomiya that turned into a calm dougie,a belly-full afternoon of reflection, dilly dallying, small discoveries and a playlist..]]></description>
+            <category>SideQuest</category>
+            <category>Terrvision</category>
+            <category>Journal entry</category>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to My Game Dev Blog]]></title>
+            <link>https://charlesville-blog-react.netlify.app/posts/welcome</link>
+            <guid>https://charlesville-blog-react.netlify.app/posts/welcome</guid>
+            <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[An introduction to my journey into game development and learning.]]></description>
+            <category>game design</category>
+            <category>dev log</category>
+            <category>Journal entry</category>
+        </item>
+    </channel>
+</rss>

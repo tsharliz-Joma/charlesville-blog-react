@@ -6,11 +6,29 @@
     <title>Charlesville Blog</title>
     <!-- The favicon can be customised by replacing the link below -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <script type="module" crossorigin src="/assets/index-9b3e040c.js"></script>
-    <link rel="stylesheet" href="/assets/index-90a0d4cb.css">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Charles's Game Design Journal RSS"
+      href="/rss.xml"
+    />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script type="module" crossorigin src="/assets/index-41ea43a5.js"></script>
+    <link rel="stylesheet" href="/assets/index-feda109d.css">
   </head>
   <body class="bg-gray-900 text-gray-100">
     <div id="root"></div>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user) => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/'
+            })
+          }
+        })
+      }
+    </script>
     
   </body>
 </html>
