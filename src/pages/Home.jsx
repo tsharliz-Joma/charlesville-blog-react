@@ -25,6 +25,9 @@ const Home = ({theme, onToggleTheme}) => {
       "A blog-journal of game design, builds, and lessons I pick up along the way. Short, honest updates as I keep making things.",
     ctaPrimary: "Browse entries",
     ctaSecondary: "Get journal updates",
+    cadence: "Bi-weekly",
+    focus: "Game design journal",
+    mood: "Mellow futurism",
   });
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
@@ -66,6 +69,9 @@ const Home = ({theme, onToggleTheme}) => {
               "A blog-journal of game design, builds, and lessons I pick up along the way. Short, honest updates as I keep making things.",
             ctaPrimary: data.ctaPrimary || "Browse entries",
             ctaSecondary: data.ctaSecondary || "Get journal updates",
+            cadence: data.cadence || "Bi-weekly",
+            focus: data.focus || "Game design journal",
+            mood: data.mood || "Mellow futurism",
           });
         }
       })
@@ -234,9 +240,9 @@ const Home = ({theme, onToggleTheme}) => {
           </div>
           <div className="grid gap-4 sm:grid-cols-3 w-full max-w-3xl">
             {[
-              {label: "Cadence", value: "Bi-weekly"},
-              {label: "Focus", value: "Game design journal"},
-              {label: "Mood", value: "Mellow futurism"},
+              {label: "Cadence", value: hero.cadence},
+              {label: "Focus", value: hero.focus},
+              {label: "Mood", value: hero.mood},
             ].map((item) => (
               <div
                 key={item.label}

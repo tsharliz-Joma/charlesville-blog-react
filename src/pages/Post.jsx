@@ -67,6 +67,7 @@ const Post = ({ theme, onToggleTheme }) => {
   }
 
   const spotifyEmbedUrl = getSpotifyEmbedUrl(meta.spotifyUrl)
+  const spotifyEmbedHeight = 80
 
   const sections = Array.isArray(meta.sections) ? meta.sections : []
 
@@ -162,16 +163,16 @@ const Post = ({ theme, onToggleTheme }) => {
       ) : null}
 
       {spotifyEmbedUrl ? (
-        <div className="mb-10">
+        <div className="mb-10 w-full max-w-md mx-auto">
           <iframe
             title={meta.spotifyLabel || 'Spotify playlist'}
             src={spotifyEmbedUrl}
             width="100%"
-            height="152"
+            height={spotifyEmbedHeight}
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-            className="rounded-2xl border border-slate/60 shadow-ember"
+            className="rounded-2xl border border-slate/60 shadow-ember h-[80px]"
           />
         </div>
       ) : null}

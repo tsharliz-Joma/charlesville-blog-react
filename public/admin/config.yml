@@ -54,3 +54,6 @@ collections:
           - { label: "Hero Description", name: "description", widget: "text" }
           - { label: "Primary CTA", name: "ctaPrimary", widget: "string" }
           - { label: "Secondary CTA", name: "ctaSecondary", widget: "string" }
+          - { label: "Cadence", name: "cadence", widget: "string" }
+          - { label: "Focus", name: "focus", widget: "string" }
+          - { label: "Mood", name: "mood", widget: "string" }
