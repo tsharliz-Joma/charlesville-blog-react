@@ -190,6 +190,9 @@ const Home = ({theme, onToggleTheme}) => {
           <a href="#posts" className="nav-link transition-colors">
             Posts
           </a>
+          <Link to="/posts" className="nav-link transition-colors">
+            All posts
+          </Link>
           <a href="#about" className="nav-link transition-colors">
             About
           </a>
@@ -303,7 +306,9 @@ const Home = ({theme, onToggleTheme}) => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-fog">{post.description}</p>
+                    <p className="text-fog card-description-clamp">
+                      {post.description}
+                    </p>
                   </CardContent>
                   <CardFooter>
                     <Link

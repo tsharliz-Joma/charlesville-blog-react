@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import Posts from './pages/Posts'
 import Post from './pages/Post'
 import Footer from './components/footer'
 
@@ -32,6 +33,10 @@ const App = () => {
           <Route
             path="/"
             element={<Home theme={theme} onToggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/posts"
+            element={<Posts theme={theme} onToggleTheme={toggleTheme} />}
           />
           <Route
             path="/posts/:slug"

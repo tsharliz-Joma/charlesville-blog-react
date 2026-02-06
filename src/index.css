@@ -140,6 +140,15 @@ html.theme-light .prose-blade a {
     backdrop-filter: blur(8px);
   }
 
+  .card-description-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.6;
+    min-height: 4.8em;
+  }
+
   .scanline {
     position: relative;
     overflow: hidden;
