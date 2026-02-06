@@ -7,7 +7,7 @@ description: A hop-skip-jump to Fujinomiya that turned into a calm dougie,a
 category: Journal entry
 tags:
   - SideQuest
-  - Terrvision
+  - Terravision
 spotifyUrl: https://open.spotify.com/playlist/0KIihkIvjsIdvLFSdoNzgg?si=2f9d42c3917b461b
 spotifyLabel: <iframe style="border-radius:12px"
   src="https://open.spotify.com/embed/playlist/0KIihkIvjsIdvLFSdoNzgg?utm_source=generator"
@@ -57,4 +57,5 @@ sections:
 
 
       That amade the 20 minute mission back to Kinoya Hostel fun and just that little bit easier.
+    heading: The Bakery
 ---
