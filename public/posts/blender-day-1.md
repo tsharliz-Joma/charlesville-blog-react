@@ -47,7 +47,35 @@ sections:
     heading: "System preferences "
   - imageAlign: none
     heading: Keyboard Short-cuts
-    text: Keyboard
+    text: >
+      General Shortcuts
+
+      Change Views (Perspective | Orthogonal) - 5 or Numpad 5
+
+      Top view -
+
+      Bottom view -
+
+      Front view -
+
+      Back view -
+
+      Right side view -
+
+      Left side view -
+
+      Local view -
+
+
+      Perspective & Orthogonal
+
+      These are two camera projection modes. they change how you see or view the 3D space that is mathematically projected onto your 2D screen.
+
+      Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
+
+      Orthogonal View
+
+      This mode is a bit harder to understand as i barely used it + it was confusing, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.  
   - imageAlign: none
     heading: Navigation
     text: Navigation
