@@ -3,8 +3,8 @@ backend:
   name: git-gateway
   branch: main
 
-# Publish entries directly to the main branch.
-publish_mode: simple
+# Enable drafts/review workflow. Drafts live in the CMS until published.
+publish_mode: editorial_workflow
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
