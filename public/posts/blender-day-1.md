@@ -8,12 +8,12 @@ tags:
   - Blender
   - Tutorial
 sections:
-  - imageAlign: none
+  - imageAlign: left
     text: |-
-      Tools: 
-      - Blender 5.0.1
       - Macbook Pro M1, 2020
+      - Blender 5.0.1
       - Youtube
       - ChatGPT
       - Google
+    heading: "Tools "
 ---
