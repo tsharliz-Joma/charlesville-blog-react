@@ -81,7 +81,7 @@ sections:
       * Box Select tool - B
       * Hide or open Tool Shelf - T
       * Hide or open properties tool - N
-    image: /images/uploads/keyboard_keys_pressed_4x4_boomerang.gif
+    image: /images/uploads/Blender-mascot.png
     imageAlt: Gif of keys on a keyboard being pressed
   - imageAlign: none
     heading: Viewport Navigation and Adding simple mesh objects
