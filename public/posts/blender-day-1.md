@@ -50,21 +50,40 @@ sections:
     text: >
       General Shortcuts
 
-      Change Views (Perspective | Orthogonal) - 5 or Numpad 5
+      Change Views (Perspective | Orthogonal) - 5 || Numpad 5
 
-      Top view -
+      Top view - 7 || Numpad 7
 
-      Bottom view -
+      Bottom view - ^ + 7 || ^ + Numpad 7
 
-      Front view -
+      Front view - 1 || Numpad 1
 
-      Back view -
+      Back view - ^ + 1 || ^ + Numpad 1
 
-      Right side view -
+      Right side view - 3 || Numpad 3
 
-      Left side view -
+      Left side view - ^ + 3 || ^ + Numpad 3
 
-      Local view -
+      Local view - / 
+
+      Select All - A
+
+      Wireframe view - Z + 4
+
+      Solid view -  Z + 6
+
+      Material preview - Z + 2  
+
+      Rendered view - Z + 8
+
+      Circle select tool (Esc to exit) -  C 
+
+      Box Select tool - B
+
+      Hide or open Tool Shelf - T
+
+      Hide or open properties tool - N
+
 
 
       Perspective & Orthogonal
@@ -76,6 +95,13 @@ sections:
       Orthogonal View
 
       This mode is a bit harder to understand as i barely used it + it was confusing, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.  
+
+
+      Glossary 
+
+      ^ = ctrl or control 
+
+      || = or 
   - imageAlign: none
     heading: Navigation
     text: Navigation
