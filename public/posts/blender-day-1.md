@@ -18,10 +18,10 @@ sections:
       ### Keyboard
 
 
-      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.\
+      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.
 
 
-      ###### \| Where to find.\
+      ###### \| Where to find.
 
 
       `Menubar -> Edit -> Preferences -> Input -> Keyboard`
@@ -33,10 +33,10 @@ sections:
       ### Navigation
 
 
-      The second I struggled to figure out/find is: Orbit Around Selection.\
+      The second I struggled to figure out/find is: Orbit Around Selection.
 
 
-      ###### \| Where to find\
+      ###### \| Where to find
 
 
       `Menubar -> Edit -> Preferences -> Navigation`
@@ -48,15 +48,16 @@ sections:
       ### Gotcha
 
 
-      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.\
+      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.
 
 
-      ###### How to fix.\
+      ###### How to fix.
 
 
       `Select an object in your scene -> click view (below your menubar) -> click Frame Selected`
 
-      \ This should snap you back into a 'Free movement' mode.
+
+      This should snap you back into a 'Free movement' mode.
     heading: "System preferences "
   - imageAlign: none
     heading: Keyboard Short-cuts
@@ -81,29 +82,37 @@ sections:
       * Hide or open Tool Shelf - T
       * Hide or open properties tool - N
   - imageAlign: none
-    heading: Viewport Navigation
+    heading: Viewport Navigation and Adding simple mesh objects
     text: |-
       Navigating around the scene is quite simple and takes some practice. 
       Using a mouse. 
 
       * `Middle mouse click + dragging the mouse` = Orbit navigation
         This mode allows you to orbit around freely
-      * `Shift + Middle mouse button drag `= Pan navigation
+      * `Shift + Middle mouse button drag`= Pan navigation
         This mode allows you to pad left, right, up or down 
-      * `Scroll wheel `= zoom 
+      * `Scroll wheel`= zoom 
         This is how you zoom in or zoom out 
         ^ + Middle mouse button = Dolly zoom
+
+      To add objects into the scene is simple.
+
+      `Add -> Mesh`
+
+      From here you can select the object you would like to add into the scene. 
+
+      **Controlling spawn location**
 image: /images/uploads/Blender-day-1-blog.png
 ---
 ### Glossary
 
-**^** = ctrl or control \
+**^** = ctrl or control 
 
 **\||** = or 
 
 **Perspective & Orthogonal**
 These are two camera projection modes. they change how you see or view the 3D space that is mathematically projected onto your 2D screen.
-Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. \
+Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
 
 **Orthogonal View**
 This mode is a bit harder to understand as i barely used it + it was confusing, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
