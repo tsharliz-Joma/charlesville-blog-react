@@ -9,7 +9,7 @@ tags:
 sections:
   - imageAlign: none
     text: >-
-      ### Recommendations 
+      ### Recommendations
 
 
       If I was to recommend anything I would say a least use a use, a track pad does makes it rather difficult to manoeuvre around the scene in every way possible, clicking is annoying and using shortcuts + trackpad is hell. 
@@ -18,11 +18,13 @@ sections:
       ### Keyboard
 
 
-      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.
+      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.\
 
-      | Where to find.
 
-      `  Menubar -> Edit -> Preferences -> Input -> Keyboard `
+      | Where to find.\
+
+
+      `Menubar -> Edit -> Preferences -> Input -> Keyboard`
 
 
       By doing this it allows you to use your number on your keyboard for shortcuts that by default are only accessible with a numpad.
@@ -31,9 +33,11 @@ sections:
       ### Navigation
 
 
-      The second I struggled to figure out/find is: Orbit Around Selection.
+      The second I struggled to figure out/find is: Orbit Around Selection.\
 
-      | Where to find
+
+      | Where to find\
+
         Menubar -> Edit -> Preferences -> Navigation
 
       By default this is not selected, this setting ensures that the centre or orbit is around the selected object, before this is selected whenever you use shortcuts or the Viewport Gizmo to change locations you orbit around the camera and this becomes rather annoying and confusing.
@@ -42,9 +46,11 @@ sections:
       ### Gotcha
 
 
-      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.
+      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.\
 
-      How to fix.
+
+      How to fix.\
+
 
       `Select an object in your scene -> click view (below your menubar) -> click Frame Selected`
 
@@ -91,10 +97,11 @@ sections:
       * Hide or open properties tool - N
 
 
-      ### Glossary 
+      ### Glossary
 
 
-      **^** = ctrl or control 
+      **^** = ctrl or control \
+
 
       **\||** = or 
 
@@ -103,7 +110,8 @@ sections:
 
       These are two camera projection modes. they change how you see or view the 3D space that is mathematically projected onto your 2D screen.
 
-      Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
+      Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. \
+
 
       **Orthogonal View**
 
