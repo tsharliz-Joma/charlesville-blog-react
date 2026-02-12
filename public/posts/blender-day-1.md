@@ -51,7 +51,7 @@ sections:
       One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.
 
 
-      ###### How to fix.
+      ###### \| How to fix.
 
 
       `Select an object in your scene -> click view (below your menubar) -> click Frame Selected`
