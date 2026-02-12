@@ -149,6 +149,13 @@ html.theme-light .prose-blade a {
     min-height: 4.8em;
   }
 
+  .card-tag-row {
+    min-height: 3.75rem;
+    max-height: 3.75rem;
+    overflow: hidden;
+    align-content: flex-start;
+  }
+
   .scanline {
     position: relative;
     overflow: hidden;

@@ -281,23 +281,27 @@ const Home = ({theme, onToggleTheme}) => {
                 ...(post.category ? [post.category] : []),
                 ...tags,
               ];
+              const maxBadges = 4;
+              const extraCount = badges.length - maxBadges;
+              const displayBadges =
+                extraCount > 0
+                  ? [...badges.slice(0, maxBadges - 1), `+${extraCount} more`]
+                  : badges.slice(0, maxBadges);
 
               return (
                 <Card
                   key={post.slug}
                   className="shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
                   <CardHeader>
-                    {badges.length ? (
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {badges.slice(0, 3).map((badge) => (
-                          <span
-                            key={badge}
-                            className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
-                            {badge}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
+                    <div className="card-tag-row flex flex-wrap gap-2 mb-3">
+                      {displayBadges.map((badge) => (
+                        <span
+                          key={badge}
+                          className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
                     <CardTitle className="text-xl mb-1 text-haze">
                       {post.title}
                     </CardTitle>
