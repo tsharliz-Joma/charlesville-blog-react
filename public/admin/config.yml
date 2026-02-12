@@ -33,7 +33,7 @@ collections:
         max: 3
         fields:
           - { label: "Heading", name: "heading", widget: "string", required: false }
-          - { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Paragraph", name: "text", widget: "markdown" }
           - { label: "Image", name: "image", widget: "image", required: false }
           - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
           - { label: "Image Alignment", name: "imageAlign", widget: "select", options: ["none", "left", "right", "center"], default: "none" }
