@@ -105,6 +105,7 @@ sections:
   - imageAlign: none
     heading: Navigation
     text: Navigation
+image: /images/uploads/Blender-day-1-blog.png
 ---
 Credits
 
