@@ -47,7 +47,7 @@ sections:
     heading: "System preferences "
   - imageAlign: none
     heading: Keyboard Short-cuts
-    text: >
+    text: >-
       General Shortcuts
 
       Change Views (Perspective | Orthogonal) - 5 || Numpad 5
@@ -103,8 +103,17 @@ sections:
 
       || = or 
   - imageAlign: none
-    heading: Navigation
-    text: Navigation
+    heading: Viewport Navigation
+    text: |
+      Navigating around the scene is quite simple and takes some practice. 
+      Using a mouse. 
+      Middle mouse click + dragging the mouse = Orbit navigation
+      This mode allows you to orbit around freely
+      Shift + Middle mouse button drag = Pan navigation
+      This mode allows you to pad left, right, up or down 
+      Scroll wheel = zoom 
+      This is how you zoom in or zoom out 
+      ^ + Middle mouse button = Dolly zoom
 image: /images/uploads/Blender-day-1-blog.png
 ---
 Credits
