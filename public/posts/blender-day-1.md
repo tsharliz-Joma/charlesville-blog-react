@@ -5,7 +5,6 @@ description: Day 1 of learning blender covering navigation, system preferences,
   shortcuts and adding simple mesh objects.
 category: Blender
 tags:
-  - Blender
   - Tutorial
 sections:
   - imageAlign: none
