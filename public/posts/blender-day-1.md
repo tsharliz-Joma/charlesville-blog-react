@@ -59,7 +59,7 @@ sections:
 
       This should snap you back into a 'Free movement' mode.
     heading: "System preferences "
-  - imageAlign: center
+  - imageAlign: right
     heading: Keyboard Short-cuts
     text: |-
       ### General Shortcuts
