@@ -126,7 +126,8 @@ Credits
 Tools 
 
 * Macbook Pro M1, 2020
-* Youtube- ChatGPT
+* Youtube
 * Google
 * Blender 5.0.1
+* ChatGPT
 * ChatGPT
