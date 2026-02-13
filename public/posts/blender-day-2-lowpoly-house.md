@@ -18,7 +18,7 @@ sections:
       I learnt many shortcuts that make life easier for example scaling, with a object selected `S` will allow you to scale the object to make it larger or smaller, you can choose to scale on the x, y or z axis.
 
 
-      Using `z,x,y` while moving an object with the move gizmo will restrict the movement to that respective axis.
+      Using `Z,X,Y` while moving an object with the move gizmo will restrict the movement to that respective axis.
 
 
       `B` is the multi select tool, the never of items i forgot this is impressive but this tool allows you to select multiple objects, faces and vertices as one selection. 
@@ -28,6 +28,18 @@ sections:
 
 
       `E` key while in edit mode activates the extrude/intrude function allowing you in extrude a surface or intrude a surface.
+
+
+      `^ + J` with multiple items selected this short cut allows you to group the selected objects as one
+
+
+      `P` while in edit mode and having to faces of a mesh selected will 
+
+
+      While in edit you can choose different selection modes, `Edge Select`, `Face Select` or `Vertex Select`
+
+
+      ``
   - imageAlign: none
     text: |-
       #### The 3D Viewport | Outliner | Property Panels
