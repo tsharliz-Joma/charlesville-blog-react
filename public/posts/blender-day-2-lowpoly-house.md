@@ -113,20 +113,33 @@ sections:
       You can also group multiple objects and use them as one by `shift + select objects` and then using `^ + J || ctrl + J` this will group the objects and move, scale and rotate them as one.
     heading: The 3D Viewport | Outliner | Property Panels | Workspace | Object Mode
   - imageAlign: none
-    text: |-
+    text: >-
       #### Edit Mode
 
-      \- Deleting Objects
+
+      Edit mode is where you to directly modify an objects geometry, namely its Vertices, Edges and faces, this is very useful for customising basic shapes for a beginner like myself but very handy for complex customisations, keep in mind you are editing the Mesh data not the object container.
+
+
+      Edit mode enables the deletion of individual faces, vertices and edges although there are some nuisances but a quite intuitive, when it comes to the vertices and edges that you should be careful when deleting these. 
+
+
+      In Edit mode you can select different component edit modes `Vertex, Edge, Face` these are found up in the Editor Header, when you are in Edit mode you can either manually select the desired mode or you can use the `1, 2, 3` keys this will only work if have a keyboard with a Numpad, because enabling the Emulate keypad option disables these shortcuts.
+
 
       #### Meshes
 
+
       \- Editing Meshes
+
 
       #### Layout and Default Startup Files
 
+
       \- Editing Layout
 
+
       \- Saving your project
+
 
       \- Default Startup Files
     heading: Meshes | Edit Mode | Layout and Default Startup Files
