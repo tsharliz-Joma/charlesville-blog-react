@@ -37,9 +37,6 @@ sections:
 
 
       While in edit you can choose different selection modes, `Edge Select`, `Face Select` or `Vertex Select`
-
-
-      ``
   - imageAlign: none
     text: |-
       #### The 3D Viewport | Outliner | Property Panels
