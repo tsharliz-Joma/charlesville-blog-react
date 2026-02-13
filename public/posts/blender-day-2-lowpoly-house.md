@@ -38,12 +38,30 @@ sections:
 
       While in edit you can choose different selection modes, `Edge Select`, `Face Select` or `Vertex Select`
   - imageAlign: none
-    text: |-
+    text: >-
       #### The 3D Viewport | Outliner | Property Panels
+
+
+      The 3D viewport is what you first see when you open blender, this is where you will be building, in the viewport is where you will view your 3D objects, move/rotate/scale models, animate, navigate the scene and switch camera views, just naming a few naming everything would be necessary but these are the main things you will, do in the 3D viewport.
+
+
+      ###### Outliner
+
+
+      The outliner, is to the right of the 3D viewport, you like to look at it a hierarchy window/scene hierarchy window, here you can see all of the Objects in your scene, they are not all specifically objects but for all intensive purposes we can just call them objects as one.
+
+
+      ###### Property Panel (Property Editor) 
+
+
+      The property panels are on the right just under the Outliner or Hierarchy window, the property panel contains all the configuration settings for the active scene and selected object, it contains properties where you can control have an object behaves, looks, renders and interacts with the scene.
+
 
       #### Workspace
 
+
       #### Object Mode
+
 
       \- Grouping objects
     heading: The 3D Viewport | Outliner | Property Panels | Workspace | Object Mode
