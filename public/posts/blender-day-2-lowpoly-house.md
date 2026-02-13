@@ -18,6 +18,7 @@ sections:
       #### Object Mode
 
       \- Grouping objects
+    heading: The 3D Viewport | Outliner | Property Panels | Workspace | Object Mode
   - imageAlign: none
     text: |-
       #### Edit Mode
