@@ -107,7 +107,10 @@ sections:
       * Animate its transform
 
 
-      Grouping objects
+      **Grouping objects**
+
+
+      You can also group multiple objects and use them as one by `shift + select objects` and then using `^ + J || ctrl + J` this will group the objects and move, scale and rotate them as one.
     heading: The 3D Viewport | Outliner | Property Panels | Workspace | Object Mode
   - imageAlign: none
     text: |-
