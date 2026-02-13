@@ -63,6 +63,30 @@ sections:
       At the top of the screen you should see a Workspace tabs bar with different options, Layout, Modelling, Sculpting, UV Editing etc. these are the different workspaces you can edit and work from. They are predefined layout editors tailored for specific tasks.
 
 
+      The Different Workspaces are:
+
+
+      * Layout
+
+      * Modelling
+
+      * Sculpting
+
+      * UV Editing 
+
+      * Shading
+
+      * Animation
+
+      * Rendering
+
+      * Compositing
+
+      * Geometry Nodes
+
+      * Scripting 
+
+
       #### Object Mode
 
 
