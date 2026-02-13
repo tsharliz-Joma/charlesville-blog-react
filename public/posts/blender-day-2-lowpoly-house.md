@@ -7,5 +7,32 @@ category: Blender
 sections:
   - imageAlign: none
     heading: What did i do ?
-    text: Lowpoly house build
+    text: Day 2 of blender i built a very lowpoly house. This was honestly exciting
+      and fun and i learnt a lot from this simple build.
+  - imageAlign: none
+    text: |-
+      #### The 3D Viewport | Outliner | Property Panels
+
+      #### Workspace
+
+      #### Object Mode
+
+      \- Grouping objects
+  - imageAlign: none
+    text: |-
+      #### Edit Mode
+
+      \- Deleting Objects
+
+      #### Meshes
+
+      \- Editing Meshes
+
+      #### Layout and Default Startup Files
+
+      \- Editing Layout
+
+      \- Saving your project
+
+      \- Default Startup Files
 ---
