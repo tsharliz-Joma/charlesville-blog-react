@@ -60,10 +60,30 @@ sections:
       #### Workspace
 
 
+      At the top of the screen you should see a Workspace tabs bar with different options, Layout, Modelling, Sculpting, UV Editing etc. these are the different workspaces you can edit and work from. They are predefined layout editors tailored for specific tasks.
+
+
       #### Object Mode
 
 
-      \- Grouping objects
+      Object mode is the default mode you will start in, this mode allows you to perform a number of actions and manipulate objects as a whole, 
+
+
+      In Object Mode, you can:
+
+
+      * Move, rotate or scale entire objects
+
+      * Duplicate Objects
+
+      * Parent Objects
+
+      * Add Modifiers
+
+      * Animate its transform
+
+
+      Grouping objects
     heading: The 3D Viewport | Outliner | Property Panels | Workspace | Object Mode
   - imageAlign: none
     text: |-
