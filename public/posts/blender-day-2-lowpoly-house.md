@@ -150,15 +150,29 @@ sections:
       \- `I` will inset the selected face
 
 
+      \- `Shift + D` is the shortcut for duplicate, running this command will duplicate your selection
+
+
       #### Layout and Default Startup Files
 
 
-      \- Editing Layout
+      Blender is extremely flexible when it comes to the layout, you can customise the layout to your hearts desire. If you do not like the tool shelf it can be hidden by hovering your mouse to the right of it until a drag arrow appears. The N panel can be hidden by...... pressing the `N` key, and once you are tired of seeing the Navigation gizmo that can also be hidden by clicking the gizmo icon in the 3D viewport header.
 
 
-      \- Saving your project
+      After you have customised the blender layout to your preference, blender gives you the ability to save a Default Start up file, your file can start with anything you like in there, I start mine with a Cube, Light and Camera. Doing this will ensure every new blender project you will maintain the same layout.
 
 
-      \- Default Startup Files
+      > How to:
+
+
+      `File -> Defaults -> Save Startup file`
+
+
+      When saving your project by default blender will take the current version of your file and attach a .blend1 extension and it will save the current version with just .blend. basically it is a form of versioning, keeping the old version and saving a new one, although it only keeps 1 copy by default.
+
+
+      > How to:
+
+       `Edit -> Save & Load.`
     heading: Meshes | Edit Mode | Layout and Default Startup Files
 ---
