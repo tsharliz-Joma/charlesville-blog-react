@@ -175,4 +175,5 @@ sections:
 
        `Edit -> Save & Load.`
     heading: Meshes | Edit Mode | Layout and Default Startup Files
+image: /images/uploads/lowpoly-house.jpg
 ---
