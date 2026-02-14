@@ -129,7 +129,25 @@ sections:
       #### Meshes
 
 
-      \- Editing Meshes
+      Editing a mesh can be done in Edit mode, the shortcut for swapping between Edit and Object mode is the `tab` key. 
+
+
+      In Edit mode you edit the mesh directly and not the mesh container, this allows you to contort the mesh however you like. You can choose to edit the `Vertex, Face` or `Edge` of a Mesh. 
+
+
+      While in edit mode you can use some of the same shortcut used in Object mode:
+
+
+      \- `S` while a face is selected will allow you to scale the face, this can be done with multiple faces selected 
+
+
+      \- `E` while a face is selected will extrude the selected face/s
+
+
+      \- `R` while a face is selected will rotate the face
+
+
+      \- `I` will inset the selected face
 
 
       #### Layout and Default Startup Files
