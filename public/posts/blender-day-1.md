@@ -12,13 +12,13 @@ sections:
       ### Recommendations
 
 
-      If I was to recommend anything I would say a least use a use, a track pad does makes it rather difficult to manoeuvre around the scene in every way possible, clicking is annoying and using shortcuts + trackpad is hell. 
+      If I was to recommend anything I would say at very least use a mouse, a track pad makes it rather difficult to manoeuvre around the scene, clicking is annoying and using shortcuts + trackpad is hell. 
 
 
       ### Keyboard
 
 
-      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.
+      The first System preference I learnt about, because I am using my laptop keyboard is: Emulate Numpad.
 
 
       ###### \| Where to find.
@@ -27,13 +27,13 @@ sections:
       `Menubar -> Edit -> Preferences -> Input -> Keyboard`
 
 
-      By doing this it allows you to use your number on your keyboard for shortcuts that by default are only accessible with a numpad.
+      Doing this allows you to use the numbers at the top your keyboard for shortcuts that require a Numpad to use.
 
 
       ### Navigation
 
 
-      The second I struggled to figure out/find is: Orbit Around Selection.
+      The second item I struggled to figure out is: Orbit Around Selection.
 
 
       ###### \| Where to find
@@ -42,13 +42,13 @@ sections:
       `Menubar -> Edit -> Preferences -> Navigation`
 
 
-      By default this is not selected, this setting ensures that the centre or orbit is around the selected object, before this is selected whenever you use shortcuts or the Viewport Gizmo to change locations you orbit around the camera and this becomes rather annoying and confusing.
+      By default this is not selected, this setting ensures that the centre of orbit is around the selected object, before this is selected using shortcuts or the Viewport Gizmo to change locations you orbit around the camera and this becomes rather annoying and confusing.
 
 
       ### Gotcha
 
 
-      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.
+      One more issue i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped fixing it.
 
 
       ###### \| How to fix.
