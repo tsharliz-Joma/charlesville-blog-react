@@ -12,10 +12,15 @@ const buildImageClass = (align) => {
   return `${base} max-w-2xl mx-auto`;
 };
 
-const ParagraphSection = ({ text, imageAlign }) => {
+const ParagraphSection = ({ heading, text, imageAlign }) => {
   const showImage = imageAlign !== "none";
   return (
     <section className="mb-8">
+      {heading ? (
+        <div className="prose prose-invert prose-blade max-w-none">
+          <h2>{heading}</h2>
+        </div>
+      ) : null}
       {showImage ? (
         <div className="not-prose">
           <div
@@ -42,6 +47,21 @@ const ParagraphLayoutPreview = ({ imageAlign }) => {
         imageAlign={imageAlign}
         text="This is a sample paragraph to show how text wraps around an image when it is aligned left or right. It should feel natural and easy to read."
       />
+    </div>
+  );
+};
+
+const MultiSectionLayoutPreview = ({ sections }) => {
+  return (
+    <div className="max-w-3xl mx-auto">
+      {sections.map((section, index) => (
+        <ParagraphSection
+          key={`${section.heading}-${index}`}
+          heading={section.heading}
+          imageAlign={section.imageAlign}
+          text={section.text}
+        />
+      ))}
     </div>
   );
 };
@@ -75,4 +95,61 @@ export const Center = {
 
 export const None = {
   args: { imageAlign: "none" },
+};
+
+export const OneSectionTextOnly = {
+  render: () => (
+    <MultiSectionLayoutPreview
+      sections={[
+        {
+          heading: "Text-only section",
+          imageAlign: "none",
+          text: "This section has no image. It should feel calm, readable, and spaced like a real journal entry.",
+        },
+      ]}
+    />
+  ),
+};
+
+export const TwoSectionsMixed = {
+  render: () => (
+    <MultiSectionLayoutPreview
+      sections={[
+        {
+          heading: "Left aligned image",
+          imageAlign: "left",
+          text: "The first section uses a left-aligned image, so the text flows around it on larger screens.",
+        },
+        {
+          heading: "Right aligned image",
+          imageAlign: "right",
+          text: "The second section flips the layout to the right for variety and rhythm.",
+        },
+      ]}
+    />
+  ),
+};
+
+export const ThreeSections = {
+  render: () => (
+    <MultiSectionLayoutPreview
+      sections={[
+        {
+          heading: "Left aligned image",
+          imageAlign: "left",
+          text: "Section one introduces the idea with a left image.",
+        },
+        {
+          heading: "Center aligned image",
+          imageAlign: "center",
+          text: "Section two centers the image for emphasis and breathing room.",
+        },
+        {
+          heading: "Text-only close",
+          imageAlign: "none",
+          text: "Section three closes without an image, keeping the focus on the takeaway.",
+        },
+      ]}
+    />
+  ),
 };
