@@ -57,3 +57,12 @@ collections:
           - { label: "Cadence", name: "cadence", widget: "string" }
           - { label: "Focus", name: "focus", widget: "string" }
           - { label: "Mood", name: "mood", widget: "string" }
+      - name: "about"
+        label: "About"
+        file: "public/settings/about.json"
+        fields:
+          - { label: "About Eyebrow", name: "eyebrow", widget: "string", required: false }
+          - { label: "About Title", name: "title", widget: "string" }
+          - { label: "About Body", name: "body", widget: "markdown" }
+          - { label: "About Image", name: "image", widget: "image", required: false }
+          - { label: "About Image Alt", name: "imageAlt", widget: "string", required: false }

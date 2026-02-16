@@ -9,6 +9,7 @@ import {
   CardContent,
   CardFooter,
 } from "../components/ui/card";
+import AboutSection from "../components/about-section";
 
 // Home page displays a grid of posts. Posts are loaded from
 // public/posts/index.json. Each entry should include a slug,
@@ -28,6 +29,14 @@ const Home = ({theme, onToggleTheme}) => {
     cadence: "Bi-weekly",
     focus: "Game design journal",
     mood: "Mellow futurism",
+  });
+  const [about, setAbout] = useState({
+    eyebrow: "About",
+    title: "Hey, I'm Charles",
+    body:
+      "Welcome! I'm Charles. A 26yo finally pursuing my childhood dream of becoming a game designer. Explore my journal entries on game dev, coding, meetup learnings, and fun side quests that involve games. It's mostly for me, but I hope you enjoy reading and learn something too. If an entry helps, subscribing would make my day. P.L.S. (Peace, love, and soul).",
+    image: "",
+    imageAlt: "",
   });
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
@@ -74,6 +83,27 @@ const Home = ({theme, onToggleTheme}) => {
             mood: data.mood || "Mellow futurism",
           });
         }
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch("/settings/about.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("About settings not found");
+        return res.json();
+      })
+      .then((data) => {
+        if (!data) return;
+        setAbout({
+          eyebrow: data.eyebrow || "About",
+          title: data.title || "Hey, I'm Charles",
+          body:
+            data.body ||
+            "Welcome! I'm Charles. A 26yo finally pursuing my childhood dream of becoming a game designer. Explore my journal entries on game dev, coding, meetup learnings, and fun side quests that involve games. It's mostly for me, but I hope you enjoy reading and learn something too. If an entry helps, subscribing would make my day. P.L.S. (Peace, love, and soul).",
+          image: data.image || "",
+          imageAlt: data.imageAlt || "",
+        });
       })
       .catch(() => {});
   }, []);
@@ -212,6 +242,15 @@ const Home = ({theme, onToggleTheme}) => {
         </button>
       </nav>
 
+      <AboutSection
+        eyebrow={about.eyebrow}
+        title={about.title}
+        body={about.body}
+        image={about.image}
+        imageAlt={about.imageAlt}
+        theme={theme}
+      />
+
       <section className="glass-panel w-full max-w-6xl mt-10 px-6 py-10 sm:px-10 sm:py-12 rounded-3xl">
         <div className="flex flex-col items-center gap-4">
           <p className="text-xs uppercase tracking-[0.4em] text-steel">
@@ -327,21 +366,6 @@ const Home = ({theme, onToggleTheme}) => {
           </div>
         </div>
       )}
-
-      <section id="about" className="w-full max-w-4xl mt-16 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-steel">About</p>
-        <h2 className="text-2xl sm:text-3xl font-display text-haze mt-2">
-          Hey, I’m Charles
-        </h2>
-        <p className="text-steel mt-3">
-          Welcome! I'm Charles. A 26yo finally pursuing my childhood dream of
-          becoming a game designer. Explore my journal entries on game dev,
-          coding, meetup learnings, and fun side quests that involve games. It's
-          mostly for me, but I hope you enjoy reading and learn something too.
-          If an entry helps, subscribing would make my day. P.L.S. (Peace, love,
-          and soul).
-        </p>
-      </section>
 
       <section id="subscribe" className="w-full max-w-4xl mt-14">
         <div className="glass-panel rounded-3xl px-6 py-8 sm:px-10 text-center">
