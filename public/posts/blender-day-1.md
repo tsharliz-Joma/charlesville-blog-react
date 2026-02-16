@@ -135,7 +135,7 @@ These are two camera projection modes. they change how you see or view the 3D sp
 Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
 
 **Orthogonal View**
-This mode is a bit harder to understand as i barely used it + it was confusing, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
+This mode is a bit harder to understand because i have not used it much, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
 
 Credits
 
