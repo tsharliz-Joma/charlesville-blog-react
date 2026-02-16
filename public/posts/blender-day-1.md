@@ -92,18 +92,33 @@ sections:
       * `Middle mouse click + dragging the mouse` = Orbit navigation
         This mode allows you to orbit around freely
       * `Shift + Middle mouse button drag`= Pan navigation
-        This mode allows you to pad left, right, up or down 
+        This mode allows you to pan left, right, up or down 
       * `Scroll wheel`= zoom 
         This is how you zoom in or zoom out 
-        ^ + Middle mouse button = Dolly zoom
+      * c`md + Middle mouse button + drag mouse` = Dolly zoom
 
-      To add objects into the scene is simple.
+
+
+      Adding objects into the scene is simple.
+
+      > How to 
 
       `Add -> Mesh`
 
       From here you can select the object you would like to add into the scene. 
 
-      **Controlling spawn location**
+      3D Cursor
+
+      The 3D cursor is a positioning tool that:
+
+      * Define where no objects spawn
+      * Can act as as pivot point
+      * Can be used as a snapping target,
+      * Can define transform origin
+
+      > How to
+
+      `Shift + Right click`
 image: /images/uploads/Blender-day-1-blog.png
 ---
 ### Glossary
