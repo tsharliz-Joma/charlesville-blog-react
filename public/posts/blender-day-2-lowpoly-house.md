@@ -36,25 +36,25 @@ sections:
       **Inset**
 
 
-      `I` while in edit mode allows you to inset on the face that you have selected.
+      While in edit mode using `I` ill allow you to inset a selected face.
 
 
       **Extrude**
 
 
-      `E` key while in edit mode activates the extrude/intrude function allowing you in extrude a surface or intrude a surface.
-
-
-      **Grouping**
-
-
-      `^ + J` with multiple items selected this short cut allows you to group the selected objects as one
+      `E` key while in edit mode activates the extrude/intrude function allowing you in extrude or intrude a face.
 
 
       **Join**
 
 
-      `P` will join multiple selected objects together or seperate them.
+      `^ + J` with multiple items selected this shortcut allows you to group the selected objects as one
+
+
+      **Parent**
+
+
+      `P` stands for parent, using this command will create a hierarchal relationship between objects.  
 
 
       **Selection mode**
