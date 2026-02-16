@@ -12,13 +12,13 @@ sections:
       ### Recommendations
 
 
-      If I was to recommend anything I would say a least use a use, a track pad does makes it rather difficult to manoeuvre around the scene in every way possible, clicking is annoying and using shortcuts + trackpad is hell. 
+      If I was to recommend anything I would say at very least use a mouse, a track pad makes it rather difficult to manoeuvre around the scene, clicking is annoying and using shortcuts + trackpad is hell. 
 
 
       ### Keyboard
 
 
-      The first System preferences I learnt because I am not using a Keyboard I do not have a Numpad is: Emulate Numpad.
+      The first System preference I learnt about, because I am using my laptop keyboard is: Emulate Numpad.
 
 
       ###### \| Where to find.
@@ -27,13 +27,13 @@ sections:
       `Menubar -> Edit -> Preferences -> Input -> Keyboard`
 
 
-      By doing this it allows you to use your number on your keyboard for shortcuts that by default are only accessible with a numpad.
+      Doing this allows you to use the numbers at the top your keyboard for shortcuts that require a Numpad to use.
 
 
       ### Navigation
 
 
-      The second I struggled to figure out/find is: Orbit Around Selection.
+      The second item I struggled to figure out is: Orbit Around Selection.
 
 
       ###### \| Where to find
@@ -42,13 +42,13 @@ sections:
       `Menubar -> Edit -> Preferences -> Navigation`
 
 
-      By default this is not selected, this setting ensures that the centre or orbit is around the selected object, before this is selected whenever you use shortcuts or the Viewport Gizmo to change locations you orbit around the camera and this becomes rather annoying and confusing.
+      By default this is not selected, this setting ensures that the centre of orbit is around the selected object, before this is selected using shortcuts or the Viewport Gizmo to change locations you orbit around the camera and this becomes rather annoying and confusing.
 
 
       ### Gotcha
 
 
-      One more issue item i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped.
+      One more issue i ran into was becoming unable to zoom or pan. This was annoying and a little bit of google helped fixing it.
 
 
       ###### \| How to fix.
@@ -92,18 +92,33 @@ sections:
       * `Middle mouse click + dragging the mouse` = Orbit navigation
         This mode allows you to orbit around freely
       * `Shift + Middle mouse button drag`= Pan navigation
-        This mode allows you to pad left, right, up or down 
+        This mode allows you to pan left, right, up or down 
       * `Scroll wheel`= zoom 
         This is how you zoom in or zoom out 
-        ^ + Middle mouse button = Dolly zoom
+      * c`md + Middle mouse button + drag mouse` = Dolly zoom
 
-      To add objects into the scene is simple.
+
+
+      Adding objects into the scene is simple.
+
+      > How to 
 
       `Add -> Mesh`
 
       From here you can select the object you would like to add into the scene. 
 
-      **Controlling spawn location**
+      3D Cursor
+
+      The 3D cursor is a positioning tool that:
+
+      * Define where no objects spawn
+      * Can act as as pivot point
+      * Can be used as a snapping target,
+      * Can define transform origin
+
+      > How to
+
+      `Shift + Right click`
 image: /images/uploads/Blender-day-1-blog.png
 ---
 ### Glossary
@@ -113,11 +128,14 @@ image: /images/uploads/Blender-day-1-blog.png
 **\||** = or 
 
 **Perspective & Orthogonal**
+
 These are two camera projection modes. they change how you see or view the 3D space that is mathematically projected onto your 2D screen.
+
+**Perspective**
 Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
 
 **Orthogonal View**
-This mode is a bit harder to understand as i barely used it + it was confusing, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
+This mode is a bit harder to understand because i have not used it much, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
 
 Credits
 
