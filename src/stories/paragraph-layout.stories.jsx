@@ -98,6 +98,9 @@ export const None = {
 };
 
 export const OneSectionTextOnly = {
+  parameters: {
+    controls: { exclude: ["imageAlign"] },
+  },
   render: () => (
     <MultiSectionLayoutPreview
       sections={[
@@ -112,6 +115,9 @@ export const OneSectionTextOnly = {
 };
 
 export const TwoSectionsMixed = {
+  parameters: {
+    controls: { exclude: ["imageAlign"] },
+  },
   render: () => (
     <MultiSectionLayoutPreview
       sections={[
@@ -131,22 +137,44 @@ export const TwoSectionsMixed = {
 };
 
 export const ThreeSections = {
-  render: () => (
+  parameters: {
+    controls: { exclude: ["imageAlign"] },
+  },
+  args: {
+    sectionOneAlign: "left",
+    sectionTwoAlign: "center",
+    sectionThreeAlign: "none",
+  },
+  argTypes: {
+    sectionOneAlign: {
+      control: "select",
+      options: ["none", "left", "right", "center"],
+    },
+    sectionTwoAlign: {
+      control: "select",
+      options: ["none", "left", "right", "center"],
+    },
+    sectionThreeAlign: {
+      control: "select",
+      options: ["none", "left", "right", "center"],
+    },
+  },
+  render: (args) => (
     <MultiSectionLayoutPreview
       sections={[
         {
           heading: "Left aligned image",
-          imageAlign: "left",
+          imageAlign: args.sectionOneAlign,
           text: "Section one introduces the idea with a left image.",
         },
         {
           heading: "Center aligned image",
-          imageAlign: "center",
+          imageAlign: args.sectionTwoAlign,
           text: "Section two centers the image for emphasis and breathing room.",
         },
         {
           heading: "Text-only close",
-          imageAlign: "none",
+          imageAlign: args.sectionThreeAlign,
           text: "Section three closes without an image, keeping the focus on the takeaway.",
         },
       ]}
