@@ -95,9 +95,7 @@ sections:
         This mode allows you to pan left, right, up or down 
       * `Scroll wheel`= zoom 
         This is how you zoom in or zoom out 
-      * c`md + Middle mouse button + drag mouse` = Dolly zoom
-
-
+      * `md + Middle mouse button + drag mouse` = Dolly zoom
 
       Adding objects into the scene is simple.
 
@@ -107,7 +105,7 @@ sections:
 
       From here you can select the object you would like to add into the scene. 
 
-      3D Cursor
+      **3D Cursor**
 
       The 3D cursor is a positioning tool that:
 
@@ -131,10 +129,10 @@ image: /images/uploads/Blender-day-1-blog.png
 
 These are two camera projection modes. they change how you see or view the 3D space that is mathematically projected onto your 2D screen.
 
-**Perspective view**
-Perspective View mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
+**Perspective view -** 
+Mirrors how the human eyes see the world, objects that are further away seems smaller, parallel lines converge and there is depth distortion,, simply if you zoom out objects shrink. 
 
-**Orthogonal View**
+**Orthogonal View -** 
 This mode is a bit harder to understand because i have not used it much, i couldn't really move. In Orthogonal View objects stay the same size, no depth shrinking or expansion and parallel lines stay perfectly parallel, this is a flat, technical and precise view, which is best for adjusting details.
 
 Credits
