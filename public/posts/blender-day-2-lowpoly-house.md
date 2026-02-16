@@ -66,19 +66,19 @@ sections:
       #### The 3D Viewport | Outliner | Property Panels
 
 
-      The 3D viewport is what you first see when you open blender, this is where you will be building, in the viewport is where you will view your 3D objects, move/rotate/scale models, animate, navigate the scene and switch camera views, just naming a few naming everything would be necessary but these are the main things you will, do in the 3D viewport.
+      The 3D viewport is what you first see when you open blender, this is where you will be building, where you will view your 3D objects, move/rotate/scale models, animate, navigate the scene and switch camera views, just to name a few of the actions you will be performing in the 3D viewport.
 
 
-      ###### Outliner
+      **Outliner**
 
 
-      The outliner, is to the right of the 3D viewport, you like to look at it a hierarchy window/scene hierarchy window, here you can see all of the Objects in your scene, they are not all specifically objects but for all intensive purposes we can just call them objects as one.
+      The outliner is to the right of the 3D viewport, I like to look at it as a hierarchy window/scene hierarchy window, here you can see all of the Objects in your scene, they are not all specifically objects but for all intensive purposes we can just call them objects.
 
 
-      ###### Property Panel (Property Editor) 
+      **Property Panel (Property Editor)**
 
 
-      The property panels are on the right just under the Outliner or Hierarchy window, the property panel contains all the configuration settings for the active scene and selected object, it contains properties where you can control have an object behaves, looks, renders and interacts with the scene.
+      The property panels are on the right just under the Outliner or Hierarchy window, the property panel contains all the configuration settings for the active scene and selected object, it contains properties where you can control how an object behaves, looks, renders and interacts with the scene.
 
 
       #### Workspace
@@ -141,10 +141,10 @@ sections:
       #### Edit Mode
 
 
-      Edit mode is where you to directly modify an objects geometry, namely its Vertices, Edges and faces, this is very useful for customising basic shapes for a beginner like myself but very handy for complex customisations, keep in mind you are editing the Mesh data not the object container.
+      Edit mode is where you to directly modify an objects geometry, namely its Vertices, Edges and Faces, this is very useful for customising basic shapes for a beginner like myself but very handy for complex customisations, keep in mind you are editing the Mesh data not the object container.
 
 
-      Edit mode enables the deletion of individual faces, vertices and edges although there are some nuisances but a quite intuitive, when it comes to the vertices and edges that you should be careful when deleting these. 
+      Edit mode enables the deletion of individual faces, vertices and edges although there are some nuisances , it is easy to tell what you should not delete but if you do accidentally delete an item, there is always `command + z` 
 
 
       In Edit mode you can select different component edit modes `Vertex, Edge, Face` these are found up in the Editor Header, when you are in Edit mode you can either manually select the desired mode or you can use the `1, 2, 3` keys this will only work if have a keyboard with a Numpad, because enabling the Emulate keypad option disables these shortcuts.
@@ -192,7 +192,7 @@ sections:
       `File -> Defaults -> Save Startup file`
 
 
-      When saving your project by default blender will take the current version of your file and attach a .blend1 extension and it will save the current version with just .blend. basically it is a form of versioning, keeping the old version and saving a new one, although it only keeps 1 copy by default.
+      When saving your project by default blender will take the current version of your file and attach a .blend1 extension and it will save the current version with just .blend. basically it is a form of versioning, keeping the old version and saving a new one, but it is default limited to 1 backup which is keeps updating but this can be changed.
 
 
       > How to:
