@@ -8,32 +8,56 @@ sections:
   - imageAlign: none
     heading: What did i do ?
     text: >-
-      Day 2 of blender i built a very lowpoly house. This was honestly exciting
-      and fun and i learnt a lot from this simple build. 
+      Day 2 of blender i built a low-poly house. This was honestly exciting, fun
+      and i learnt a lot from this simple build. 
 
 
-      I will outline everything I covered and will go into detail about them later.
+      I will outline everything I covered and will go into detail later.
 
 
-      I learnt many shortcuts that make life easier for example scaling, with a object selected `S` will allow you to scale the object to make it larger or smaller, you can choose to scale on the x, y or z axis.
+      **Scaling**
 
 
-      Using `Z,X,Y` while moving an object with the move gizmo will restrict the movement to that respective axis.
+      I learnt many shortcuts that make life easier, for example scaling with a object selected , `S` will allow you to scale the object, you can choose to scale on the x, y or z axis.
+
+
+      **Axis Constraint**
+
+
+      Using `Z,X,Y` while moving an object will restrict the movement to that respective axis.
+
+
+      **Multi-select**
 
 
       `B` is the multi select tool, the never of items i forgot this is impressive but this tool allows you to select multiple objects, faces and vertices as one selection. 
 
 
+      **Inset**
+
+
       `I` while in edit mode allows you to inset on the face that you have selected.
+
+
+      **Extrude**
 
 
       `E` key while in edit mode activates the extrude/intrude function allowing you in extrude a surface or intrude a surface.
 
 
+      **Grouping**
+
+
       `^ + J` with multiple items selected this short cut allows you to group the selected objects as one
 
 
-      `P` while in edit mode and having to faces of a mesh selected will 
+      **Join**
+
+
+      `P` will join multiple selected objects together or seperate them.
+
+
+      **Selection mode**
 
 
       While in edit you can choose different selection modes, `Edge Select`, `Face Select` or `Vertex Select`
