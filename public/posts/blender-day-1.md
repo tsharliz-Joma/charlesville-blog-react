@@ -109,7 +109,7 @@ sections:
 
       The 3D cursor is a positioning tool that:
 
-      * Define where no objects spawn
+      * Defines where objects spawn
       * Can act as as pivot point
       * Can be used as a snapping target,
       * Can define transform origin
