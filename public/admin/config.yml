@@ -21,10 +21,23 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Journal entry", "Game design", "Meetups", "Learning", "Side quests", "Blender"], default: "Journal entry" }
+      - { label: "Category", name: "category", widget: "select", options: ["Journal entry", "Game design", "Meetups", "Learning", "Side quests", "Blender", "Unity"], default: "Journal entry" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Spotify Playlist URL", name: "spotifyUrl", widget: "string", required: false }
       - { label: "Spotify Embed Label", name: "spotifyLabel", widget: "string", required: false }
+      - label: "Quiz"
+        name: "quiz"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Allow multiple answers", name: "multiple", widget: "boolean", default: false }
+          - label: "Options"
+            name: "options"
+            widget: "list"
+            fields:
+              - { label: "Option", name: "text", widget: "string" }
+              - { label: "Correct", name: "correct", widget: "boolean", default: false }
       - label: "Sections"
         name: "sections"
         widget: "list"

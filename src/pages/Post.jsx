@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
-import { FiMoon, FiSun } from 'react-icons/fi'
+import { FiCheck, FiMoon, FiPlay, FiSun, FiX } from 'react-icons/fi'
 import yaml from 'js-yaml'
 
 // Post page loads a markdown file based on the slug route param and renders it.
@@ -9,6 +9,11 @@ const Post = ({ theme, onToggleTheme }) => {
   const { slug } = useParams()
   const [markdown, setMarkdown] = useState('')
   const [meta, setMeta] = useState({})
+  const [isQuizOpen, setIsQuizOpen] = useState(false)
+  const [quizAnswers, setQuizAnswers] = useState({})
+  const [quizScore, setQuizScore] = useState(null)
+  const [quizCompleted, setQuizCompleted] = useState(false)
+  const [quizError, setQuizError] = useState('')
 
   const parseFrontmatter = (raw) => {
     if (!raw.startsWith('---')) {
@@ -70,6 +75,7 @@ const Post = ({ theme, onToggleTheme }) => {
   const spotifyEmbedHeight = 80
 
   const sections = Array.isArray(meta.sections) ? meta.sections : []
+  const quizQuestions = Array.isArray(meta.quiz) ? meta.quiz : []
 
   const buildImageClass = (align) => {
     const base =
@@ -93,6 +99,10 @@ const Post = ({ theme, onToggleTheme }) => {
         const parsed = parseFrontmatter(text)
         setMeta(parsed.data)
         setMarkdown(parsed.content)
+        setQuizAnswers({})
+        setQuizScore(null)
+        setQuizCompleted(false)
+        setQuizError('')
       })
       .catch((err) => {
         console.error(err)
@@ -100,6 +110,76 @@ const Post = ({ theme, onToggleTheme }) => {
         setMarkdown('# 404\n\nPost not found.')
       })
   }, [slug])
+
+  const handleOptionChange = (questionIndex, optionIndex, multiple) => {
+    setQuizAnswers((prev) => {
+      const next = { ...prev }
+      if (multiple) {
+        const current = new Set(Array.isArray(prev[questionIndex]) ? prev[questionIndex] : [])
+        if (current.has(optionIndex)) {
+          current.delete(optionIndex)
+        } else {
+          current.add(optionIndex)
+        }
+        next[questionIndex] = Array.from(current).sort()
+      } else {
+        next[questionIndex] = optionIndex
+      }
+      return next
+    })
+    setQuizError('')
+  }
+
+  const handleQuizSubmit = (event) => {
+    event.preventDefault()
+    if (!quizQuestions.length) return
+
+    const hasMissing = quizQuestions.some((question, index) => {
+      const multiple = Boolean(question?.multiple)
+      const answer = quizAnswers[index]
+      if (multiple) {
+        return !Array.isArray(answer) || answer.length === 0
+      }
+      return answer === undefined || answer === null
+    })
+
+    if (hasMissing) {
+      setQuizError('Please answer all questions before submitting.')
+      return
+    }
+
+    let correctCount = 0
+    quizQuestions.forEach((question, index) => {
+      const options = Array.isArray(question?.options) ? question.options : []
+      const normalizedOptions = options.map((option) =>
+        typeof option === 'string' ? { text: option, correct: false } : option,
+      )
+      const correctIndexes = normalizedOptions
+        .map((option, optionIndex) => (option?.correct ? optionIndex : null))
+        .filter((value) => value !== null)
+      const multiple = Boolean(question?.multiple)
+      const answer = quizAnswers[index]
+
+      if (multiple) {
+        const selected = Array.isArray(answer) ? answer : []
+        const sortedSelected = [...selected].sort()
+        const sortedCorrect = [...correctIndexes].sort()
+        const isCorrect =
+          sortedSelected.length === sortedCorrect.length &&
+          sortedSelected.every((value, idx) => value === sortedCorrect[idx])
+        if (isCorrect) correctCount += 1
+      } else {
+        if (correctIndexes.length === 1 && answer === correctIndexes[0]) {
+          correctCount += 1
+        }
+      }
+    })
+
+    const score = Math.round((correctCount / quizQuestions.length) * 100)
+    setQuizScore(score)
+    setQuizCompleted(true)
+    setQuizError('')
+  }
 
   return (
     <div className="container mx-auto px-4 py-10">
@@ -174,6 +254,149 @@ const Post = ({ theme, onToggleTheme }) => {
             loading="lazy"
             className="rounded-2xl border border-slate/60 shadow-ember h-[80px]"
           />
+        </div>
+      ) : null}
+
+      {quizQuestions.length ? (
+        <div className="mb-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setIsQuizOpen(true)}
+            className={`inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs uppercase tracking-[0.3em] transition ${
+              quizCompleted
+                ? 'bg-emerald-400 text-noir shadow-glow'
+                : 'border border-slate bg-smoke/80 text-fog hover:text-haze hover:border-haze'
+            }`}
+          >
+            {quizCompleted ? <FiCheck size={16} /> : <FiPlay size={16} />}
+            {quizCompleted ? 'Quiz completed' : 'Take the quiz'}
+          </button>
+        </div>
+      ) : null}
+
+      {isQuizOpen ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={() => setIsQuizOpen(false)}
+          />
+          <div className="relative w-full max-w-3xl rounded-3xl border border-slate bg-smoke/95 p-6 shadow-ember">
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-steel">
+                  Quiz
+                </p>
+                <h3 className="text-2xl font-display text-haze mt-2">
+                  Quick check-in
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsQuizOpen(false)}
+                className="inline-flex items-center justify-center rounded-full border border-slate bg-smoke px-3 py-3 text-fog hover:text-haze hover:border-haze transition"
+                aria-label="Close quiz"
+              >
+                <FiX size={16} />
+              </button>
+            </div>
+
+            {quizScore !== null ? (
+              <div className="text-center">
+                <p className="text-xs uppercase tracking-[0.3em] text-steel">
+                  Your result
+                </p>
+                <p className="text-4xl font-display text-haze mt-2">
+                  {quizScore}%
+                </p>
+                <p className="text-steel mt-2">
+                  Thanks for taking the quiz.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsQuizOpen(false)}
+                  className="mt-6 inline-flex items-center justify-center rounded-full border border-slate px-5 py-2 text-xs uppercase tracking-[0.3em] text-fog hover:text-haze hover:border-haze transition"
+                >
+                  Close
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleQuizSubmit} className="space-y-6">
+                {quizQuestions.map((question, index) => {
+                  const multiple = Boolean(question?.multiple)
+                  const options = Array.isArray(question?.options)
+                    ? question.options
+                    : []
+                  const normalizedOptions = options.map((option) =>
+                    typeof option === 'string'
+                      ? { text: option, correct: false }
+                      : option,
+                  )
+                  const answer = quizAnswers[index]
+                  return (
+                    <div
+                      key={`${question?.question || 'question'}-${index}`}
+                      className="rounded-2xl border border-slate/60 px-5 py-4"
+                    >
+                      <p className="text-haze font-semibold">
+                        {question?.question || `Question ${index + 1}`}
+                      </p>
+                      <div className="mt-4 grid gap-3">
+                        {normalizedOptions.map((option, optionIndex) => {
+                          const isChecked = multiple
+                            ? Array.isArray(answer) &&
+                              answer.includes(optionIndex)
+                            : answer === optionIndex
+                          return (
+                            <label
+                              key={`${option?.text || 'option'}-${optionIndex}`}
+                              className="flex items-start gap-3 rounded-xl border border-slate/60 px-3 py-2 text-sm text-fog hover:border-haze transition"
+                            >
+                              <input
+                                type={multiple ? 'checkbox' : 'radio'}
+                                name={`question-${index}`}
+                                checked={isChecked}
+                                onChange={() =>
+                                  handleOptionChange(
+                                    index,
+                                    optionIndex,
+                                    multiple,
+                                  )
+                                }
+                                className="mt-1"
+                              />
+                              <span>
+                                {option?.text || `Option ${optionIndex + 1}`}
+                              </span>
+                            </label>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+
+                {quizError ? (
+                  <p className="text-pulse text-sm">{quizError}</p>
+                ) : null}
+
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setIsQuizOpen(false)}
+                    className="inline-flex items-center justify-center rounded-full border border-slate px-5 py-2 text-xs uppercase tracking-[0.3em] text-fog hover:text-haze hover:border-haze transition"
+                  >
+                    Exit quiz
+                  </button>
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center rounded-full bg-neon px-6 py-2 text-xs uppercase tracking-[0.3em] text-noir font-semibold shadow-glow hover:bg-haze transition"
+                  >
+                    Submit quiz
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       ) : null}
 
