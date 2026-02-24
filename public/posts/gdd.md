@@ -128,7 +128,64 @@ sections:
       All mechanics must be described in implementable terms
 
 
-      3.1 Player systems 
+      3.1 Player Systems 
+
+
+      * Movement 
+
+      * Combat
+
+      * Abilities 
+
+      * Inventory
+
+      * Stats
+
+      * Progression
+
+
+      Each system should define 
+
+
+      * Inputs
+
+      * Rules
+
+      * Stats
+
+      * Outputs 
+
+      * Feedback 
+
+      * Edge Cases
+
+
+      3.2 World Systems
+
+
+      * AI Behaviour
+
+      * Spawning Rules
+
+      * Physics Rules
+
+      * Environmental Reactions 
+
+      * Encounter Logic 
+
+
+      3.3 Economy and Mega Systems 
+
+
+      * Currency Types
+
+      * Resource Generation
+
+      * Upgrade Costs 
+
+      * Balancing Formulas
+
+      * Long-term Progression 
 
        All mechanics must be described in implementable terms.
 
