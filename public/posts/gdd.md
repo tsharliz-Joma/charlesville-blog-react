@@ -65,19 +65,19 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: |-
-      1. High-Level Overview
+      1. Vision and Design Pillars
 
       2. Core Gameplay Loop
 
-      3. Game Mechanics  Systems
+      3. Systems Design
 
-      4. Level Design
+      4. World, Narrarative & Level Structure
 
-      5. Narrative & World
+      5. Presentation Layer
 
-      6. Art & Visual Direction
+      6. Technical Considerations
 
-      7. UX/UI Design
+      7. Production & Scope Control
 
       8. Audio Design 
 
