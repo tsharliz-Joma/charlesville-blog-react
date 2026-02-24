@@ -71,6 +71,18 @@ sections:
 
       * Game Title
 
+      * Genre
+
+      * Platform(s)
+
+      * Target Audience
+
+      * Unique Selling Point (USP)
+
+      * Elevator Pitch (1-3 Sentences)
+
+      * Design Pillars(3-5 guiding principles)
+
 
       1. Core Gameplay Loop (This defines the repeatable player experiences) 
 
