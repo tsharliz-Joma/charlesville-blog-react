@@ -63,6 +63,27 @@ sections:
         * Pillars
         * Design constraints
   - imageAlign: none
-    heading: Parts of a GDD
-    text: Different Parts of a GDD
+    heading: Core parts of a GDD
+    text: |-
+      1. 
+
+      2.
+
+      3.
+
+      4. 
+
+      5.
+
+      6. 
+
+      7.
+
+      8.
+
+      9.
+
+      10.
+
+      11.
 ---
