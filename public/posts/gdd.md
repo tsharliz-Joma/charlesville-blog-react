@@ -22,7 +22,46 @@ sections:
     text: >-
       \
 
-      A Game Design Document or GDD is a clear, structured blueprint that defines how a game plays, how its systems function and how the development team will build and refine it.
+      A Game Design Document or GDD is a clear, structured blueprint that defines how a game plays, how its systems function and how the development team will build and refine it. It is a guiding vision which is used throughout the game development process.
+
+
+      #### Purpose
+
+
+      The real purpose of a GDD is to eliminate ambiguity and align the team so the game can be built correctly and efficiently.
+
+
+      A GDD should:
+
+
+      * Align Vision
+
+        * Designers, Programmers and Artist must all build the same game, not 3 different interpretations of it
+      * Reduce Ambiguity (The purpose of a GDD is to turn vague ideas into actionable systems)
+
+        * > Good 
+          >
+          > Enemies attack every 2–4 seconds. Player has 0.3 sec dodge window. Camera FOV increases 5° during combat.
+        * > Bad 
+          > The combat should feel intense.
+      *
+
+      * Define Scope (Scope Creep destroys indie teams)
+
+        * * Defines what IS in the game
+        * Defines what IS NOT in the game
+      * Guide Implementation (A programmer should be able to read a system section and know these things)
+
+        * What input exist 
+        * What states exist
+        * What outputs occur
+        * What edge cases exist
+      * Preserve Design Intent (Games change during development, a GDD preserves these)
+
+        * Core loops
+        * Player Fantasy
+        * Pillars
+        * Design constraints
   - imageAlign: none
     heading: Parts of a GDD
     text: Different Parts of a GDD
