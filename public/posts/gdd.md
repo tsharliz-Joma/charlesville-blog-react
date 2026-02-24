@@ -77,7 +77,7 @@ sections:
       All downstream decisions must support these pillars
 
 
-      Includes:
+      **Includes:**
 
 
       * Game Title
@@ -110,7 +110,7 @@ sections:
       What does the player do repeatedly.
 
 
-      **Include**
+      **Includes:**
 
 
       * Core loop diagram 
