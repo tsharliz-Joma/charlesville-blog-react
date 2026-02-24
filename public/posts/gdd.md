@@ -1,8 +1,10 @@
 ---
 title: GDD
 date: 2026-02-24T13:22:00.000+09:00
-description: What is a GDD ?
+description: GDD, Who, What, Where and Why ?
 category: Game design
+tags:
+  - GDD
 quiz:
   - multiple: false
     options:
@@ -17,7 +19,10 @@ quiz:
 sections:
   - imageAlign: none
     heading: Game Design Document
-    text: Game Design Document
+    text: >-
+      \
+
+      A Game Design Document or GDD is a clear, structured blueprint that defines how a game plays, how its systems function and how the development team will build and refine it.
   - imageAlign: none
     heading: Parts of a GDD
     text: Different Parts of a GDD
