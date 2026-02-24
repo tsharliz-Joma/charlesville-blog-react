@@ -64,26 +64,34 @@ sections:
         * Design constraints
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
-    text: |-
-      1. Vision and Design Pillars
+    text: >-
+      1. Vision and Design Pillars (This section defines the identity, direction
+      and strategic intent of the game)
 
-      2. Core Gameplay Loop
 
-      3. Systems Design
+      2. Core Gameplay Loop (This defines the repeatable player experiences) 
+
+
+      3. Systems Design (This is the operational core of the document)
+
+
+      All mechanics must be described in implementable terms
+
+
+      3.1 Player systems 
+
+
+
+       All mechanics must be described in implementable terms.
 
       4. World, Narrarative & Level Structure
 
+
       5. Presentation Layer
+
 
       6. Technical Considerations
 
+
       7. Production & Scope Control
-
-      8. Audio Design 
-
-      9. Technical Specifications
-
-      10. Monetisation
-
-      11. Production & Scope
 ---
