@@ -65,25 +65,25 @@ sections:
   - imageAlign: none
     heading: Core parts of a GDD
     text: |-
-      1. 
+      1. High-Level Overview
 
-      2.
+      2. Core Gameplay Loop
 
-      3.
+      3. Game Mechanics  Systems
 
-      4. 
+      4. Level Design
 
-      5.
+      5. Narrative & World
 
-      6. 
+      6. Art & Visual Direction
 
-      7.
+      7. UX/UI Design
 
-      8.
+      8. Audio Design 
 
-      9.
+      9. Technical Specifications
 
-      10.
+      10. Monetisation
 
-      11.
+      11. Production & Scope
 ---
