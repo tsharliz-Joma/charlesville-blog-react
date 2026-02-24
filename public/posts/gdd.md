@@ -187,13 +187,18 @@ sections:
 
       * Long-term Progression 
 
-       All mechanics must be described in implementable terms.
 
       4. World, Narrative & Level Structure
 
+
+      This section defines spatial and narrative experience
+
+
       5. Presentation Layer
 
-      6. Technical Considerations
 
-      7. Production & Scope Control
+      Technical Considerations
+
+
+      Production & Scope Control
 ---
