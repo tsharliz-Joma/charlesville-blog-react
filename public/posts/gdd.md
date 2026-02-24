@@ -189,7 +189,7 @@ sections:
 
        All mechanics must be described in implementable terms.
 
-      4. World, Narrarative & Level Structure
+      4. World, Narrative & Level Structure
 
       5. Presentation Layer
 
