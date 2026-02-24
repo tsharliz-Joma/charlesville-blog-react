@@ -69,10 +69,12 @@ sections:
       and strategic intent of the game)
 
 
-      2. Core Gameplay Loop (This defines the repeatable player experiences) 
+      * Game Title
 
 
-      3. Systems Design (This is the operational core of the document)
+      1. Core Gameplay Loop (This defines the repeatable player experiences) 
+
+      2. Systems Design (This is the operational core of the document)
 
 
       All mechanics must be described in implementable terms
@@ -80,18 +82,13 @@ sections:
 
       3.1 Player systems 
 
-
-
        All mechanics must be described in implementable terms.
 
       4. World, Narrarative & Level Structure
 
-
       5. Presentation Layer
 
-
       6. Technical Considerations
-
 
       7. Production & Scope Control
 ---
