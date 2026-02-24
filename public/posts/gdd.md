@@ -65,8 +65,19 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
-      1. Vision and Design Pillars (This section defines the identity, direction
-      and strategic intent of the game)
+      1. **Vision and Design Pillars** (This section defines the identity,
+      direction and strategic intent of the game)
+
+
+      **Purpose**
+
+
+      Align the team around a clear creative and market identity.\
+
+      All downstream decisions must support these pillars
+
+
+      Includes:
 
 
       * Game Title
@@ -84,9 +95,34 @@ sections:
       * Design Pillars(3-5 guiding principles)
 
 
-      1. Core Gameplay Loop (This defines the repeatable player experiences) 
+      2. Core Gameplay Loop (This defines the repeatable player experiences, This defines the repeatable player experience.) 
 
-      2. Systems Design (This is the operational core of the document)
+
+      **Purpose**
+
+
+      If the core loop lacks clarity or engagement, no amount of polish will fix the game.
+
+
+      **Core question** 
+
+
+      What does the player do repeatedly.
+
+
+      **Include**
+
+
+      * Core loop diagram 
+
+      * Player Actions 
+
+      * Reward System 
+
+      * Progression Hooks
+
+
+      3. Systems Design (This is the operational core of the document)
 
 
       All mechanics must be described in implementable terms
