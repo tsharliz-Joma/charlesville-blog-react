@@ -28,7 +28,7 @@ sections:
       #### Purpose
 
 
-      The real purpose of a GDD is to eliminate ambiguity and align the team so the game can be built correctly and efficiently.
+      The purpose of a Game design document is to clearly define a games, systems, vision and scope so that the development team can build it consistently, efficiently with no ambiguity.
 
 
       A GDD should:
