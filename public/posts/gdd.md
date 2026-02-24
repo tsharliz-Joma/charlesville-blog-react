@@ -63,7 +63,7 @@ sections:
         * Pillars
         * Design constraints
   - imageAlign: none
-    heading: Core parts of a GDD
+    heading: The Structural Architecture of a Professional Game Design Document
     text: |-
       1. High-Level Overview
 
