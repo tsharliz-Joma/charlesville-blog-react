@@ -194,6 +194,20 @@ sections:
       This section defines spatial and narrative experience
 
 
+      4.1 Level Structure
+
+
+      * Level Layout 
+
+      * Progression Path 
+
+      * Difficulty Curve
+
+      * Encounter Design
+
+      * Puzzle Structure
+
+
       5. Presentation Layer
 
 
