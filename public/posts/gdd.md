@@ -341,19 +341,27 @@ sections:
       > **7. Production Framework & Scope Management** 
 
 
-      This protect feasibility. This is where you distinguish ambition from production reality
+      **Purpose**
 
 
-      **Include:**
+      Ensure feasibility and controlled execution.
 
 
-      * Feature prioritisation (Must/ Should/ Could) 
+      **Key Components**
 
-      * Roadmap
 
-      * Milestones
+      * * Feature prioritisation (Must/ Should/ Could) 
 
-      * Vertical slice definition
+        * Roadmap
 
-      * Risk analysis
+        * Milestones
+
+        * Vertical slice definition
+
+        * Risk analysis
+
+      **Production Considerations**
+
+
+      *
 ---
