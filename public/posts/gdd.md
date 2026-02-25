@@ -1,7 +1,8 @@
 ---
-title: A Game Design Document
+title: Game Design Document
 date: 2026-02-24T13:22:00.000+09:00
-description: GDD, Who, What, Where and Why ?
+description: A structured exploration of the Game Design Document and its role
+  in transforming creative intent into clear, implementable design systems.
 category: Game design
 tags:
   - GDD
