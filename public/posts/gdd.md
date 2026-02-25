@@ -37,13 +37,13 @@ sections:
       A Game Design Document (GDD) is a structured blueprint that defines how a game plays, how its systems function and how the development team will implement and iterate on those systems throughout production. 
 
 
-      #### Purpose
+      ### Purpose
 
 
       The purpose of a Game design document is to clearly define a game's systems, vision and scope so that the development team can build it consistently, efficiently without ambiguity.
 
 
-      #### A Professional GDD Must:
+      ### A Professional GDD Must:
 
 
       **Align Vision**
