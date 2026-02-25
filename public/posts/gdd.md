@@ -65,7 +65,7 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
-      1. **Vision and Design Pillars** (This section defines the identity,
+      **1. Vision and Design Pillars** (This section defines the identity,
       direction and strategic intent of the game)
 
 
@@ -122,13 +122,13 @@ sections:
       * Progression Hooks
 
 
-      3. Systems Design (This is the operational core of the document)
+      **3. Systems Design (This is the operational core of the document)**
 
 
       All mechanics must be described in implementable terms
 
 
-      3.1 Player Systems 
+      **3.1 Player Systems** 
 
 
       * Movement 
@@ -160,7 +160,7 @@ sections:
       * Edge Cases
 
 
-      3.2 World Systems
+      **3.2 World Systems**
 
 
       * AI Behaviour
@@ -174,7 +174,7 @@ sections:
       * Encounter Logic 
 
 
-      3.3 Economy and Mega Systems 
+      **3.3 Economy and Mega Systems** 
 
 
       * Currency Types
@@ -188,7 +188,7 @@ sections:
       * Long-term Progression 
 
 
-      4. World, Narrative & Level Structure
+      **4. World, Narrative & Level Structure**
 
 
       This section defines spatial and narrative experience
@@ -208,7 +208,12 @@ sections:
       * Puzzle Structure
 
 
-      5. Presentation Layer
+      For larger projects 
+
+
+      * Level flow diagrams
+
+      * Spatial Metrics (Jump height, Corridor width, traversal distance)
 
 
       Technical Considerations
