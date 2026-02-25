@@ -266,28 +266,21 @@ sections:
 
         * Camera philosophy
 
-      * **5.2 UX/UI Design** 
-
-        * HUD layout
-        * Input mapping
-        * Menu flow
-        * Accessibility considerations
-        * Feedback systems (visual/audio cues)
+      **5.2 UX/UI Design** 
 
 
+      * HUD layout
 
-      **Production Considerations**
+      * Input mapping
+
+      * Menu flow
+
+      * Accessibility considerations
+
+      * Feedback systems (visual/audio cues)
 
 
-      *
-
-
-
-
-      > **5.3 Audio Design**
-
-
-      Audio reinforces feedback and player clarity.
+      **5.3 Audio Design**
 
 
       * Music direction
@@ -297,6 +290,14 @@ sections:
       * Adaptive audio rules
 
       * Voice acting notes
+
+
+      **Production Considerations**
+
+
+      * Presentation must reinforce gameplay clarity.
+
+      * UI must reduce cognitive load.
 
 
       > **6. Technical considerations**
