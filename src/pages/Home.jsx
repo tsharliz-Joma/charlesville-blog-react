@@ -41,6 +41,7 @@ const Home = ({theme, onToggleTheme}) => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [isNavScrolled, setIsNavScrolled] = useState(false);
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaScriptPromise = useRef(null);
 
@@ -58,6 +59,17 @@ const Home = ({theme, onToggleTheme}) => {
       .catch((err) => {
         console.error("Failed to load posts index:", err);
       });
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsNavScrolled(window.scrollY > 12);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, {passive: true});
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -208,8 +220,12 @@ const Home = ({theme, onToggleTheme}) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-10 flex flex-col items-center text-center">
-      <nav className="w-full max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div className="container mx-auto px-4 pt-3 pb-10 flex flex-col items-center text-center">
+      <nav
+        className={`nav-sticky w-full max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 ${
+          isNavScrolled ? "nav-sticky--active" : ""
+        }`}
+      >
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-steel">
             Charlesville
@@ -242,60 +258,58 @@ const Home = ({theme, onToggleTheme}) => {
         </button>
       </nav>
 
-      <AboutSection
-        eyebrow={about.eyebrow}
-        title={about.title}
-        body={about.body}
-        image={about.image}
-        imageAlt={about.imageAlt}
-        theme={theme}
-      />
-
-      <section className="glass-panel w-full max-w-6xl mt-10 px-6 py-10 sm:px-10 sm:py-12 rounded-3xl">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-xs uppercase tracking-[0.4em] text-steel">
-            {hero.eyebrow}
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-display font-semibold text-haze">
-            {hero.title}
-          </h1>
-          <p className="text-steel max-w-2xl">{hero.description}</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <section
+        className="hero-bleed mt-4"
+        style={{
+          "--hero-image": hero.image ? `url(${hero.image})` : "none",
+        }}>
+        <div className="hero-bleed__content mx-auto w-full max-w-6xl px-6 pt-8 pb-14 sm:px-10 sm:pt-12 sm:pb-20">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-steel">
+              {hero.eyebrow}
+            </p>
+            <h1 className="hero-title text-4xl sm:text-5xl font-display font-semibold text-haze">
+              {hero.title}
+            </h1>
+            <p className="hero-copy text-fog max-w-2xl">{hero.description}</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#posts"
-              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition">
+              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze hover:text-noir transition">
               {hero.ctaPrimary}
             </a>
-            <a
-              href="#subscribe"
-              className="px-6 py-3 rounded-full border border-slate text-fog hover:text-haze hover:border-haze transition">
-              {hero.ctaSecondary}
-            </a>
+              <a
+                href="#subscribe"
+                className="px-6 py-3 rounded-full border border-slate text-fog hover:text-haze hover:border-haze transition">
+                {hero.ctaSecondary}
+              </a>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3 w-full max-w-3xl mt-6">
+              {[
+                {label: "Cadence", value: hero.cadence},
+                {label: "Focus", value: hero.focus},
+                {label: "Mood", value: hero.mood},
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-slate/60 bg-smoke/70 px-5 py-4 text-center backdrop-blur-sm">
+                  <p className="text-xs uppercase tracking-[0.3em] text-steel">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-haze font-semibold">{item.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="w-full max-w-5xl">
-            <img
-              src={hero.image}
-              alt={hero.imageAlt}
-              className="w-full rounded-2xl border border-slate/60 shadow-ember"
-              loading="lazy"
-            />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3 w-full max-w-3xl">
-            {[
-              {label: "Cadence", value: hero.cadence},
-              {label: "Focus", value: hero.focus},
-              {label: "Mood", value: hero.mood},
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl border border-slate/70 px-5 py-4 text-center">
-                <p className="text-xs uppercase tracking-[0.3em] text-steel">
-                  {item.label}
-                </p>
-                <p className="mt-2 text-haze font-semibold">{item.value}</p>
-              </div>
-            ))}
-          </div>
+
+          <AboutSection
+            eyebrow={about.eyebrow}
+            title={about.title}
+            body={about.body}
+            image={about.image}
+            imageAlt={about.imageAlt}
+            theme={theme}
+          />
         </div>
       </section>
 

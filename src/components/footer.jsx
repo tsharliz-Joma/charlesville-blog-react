@@ -4,7 +4,7 @@ import { FiMail, FiLinkedin } from "react-icons/fi";
 const Footer = () => {
   return (
     <footer className="w-full mt-16">
-      <div className="footer-panel mx-auto w-full max-w-6xl -translate-y-6 px-4 py-4 transition-all duration-300 ease-in-out hover:shadow-2xl hover:translate-y-1 shadow-xl rounded-2xl backdrop-blur-md">
+      <div className="footer-panel w-full px-3 py-3">
         <div className="container mx-auto">
           <div className="flex flex-col sm:flex-row justify-between sm:justify-around gap-10">
             <div className="flex flex-col sm:flex-row sm:items-center">
