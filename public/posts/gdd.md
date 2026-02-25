@@ -28,6 +28,17 @@ quiz:
         text: Technical Considerations
       - correct: true
         text: Visual Polish
+  - multiple: false
+    question: What is the primary purpose of a Game Design Document?
+    options:
+      - correct: false
+        text: To Market the game to publishers
+      - correct: false
+        text: To document the entire story in detail
+      - correct: true
+        text: To align the development team and reduce ambiguity
+      - correct: false
+        text: To store concept art references
 sections:
   - imageAlign: none
     heading: Game Design Document
