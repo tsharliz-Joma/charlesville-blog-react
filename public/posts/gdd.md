@@ -76,9 +76,9 @@ sections:
       A GDD explicitly defines
 
 
-      * Defines what IS in the game
+      * What IS included in the game.
 
-      * Defines what IS NOT in the game
+      * What IS NOT included in the game.
 
 
       **Guide Implementation** 
