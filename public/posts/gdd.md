@@ -65,19 +65,16 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
-      > **1. Vision and Design Pillars** (This section defines the identity,
-      direction and strategic intent of the game)
+      > **1. Vision and Design Pillars** 
 
 
       **Purpose**
 
 
-      Align the team around a clear creative and market identity.\
-
-      All downstream decisions must support these pillars
+      This section defines the identity, strategic direction and creative constraints of the game aligning the team around a clear creative and market identity.
 
 
-      **Includes:**
+      **Key Components**
 
 
       * Game Title
@@ -95,54 +92,76 @@ sections:
       * Design Pillars(3-5 guiding principles)
 
 
+      **Production Considerations**
+
+
+      * Design pillars must be actionable 
+
+      * All systems must support these pillars
+
+      * Avoid using vague language such as 'immersive' or 'fun' without operational meaning
+
+
       > **2. Core Gameplay Loop** (This defines the repeatable player experiences, This defines the repeatable player experience.) 
 
 
       **Purpose**
 
 
-      If the core loop lacks clarity or engagement, no amount of polish will fix the game.
+      Define the repeatable player experience that drives engagement.
 
 
-      **Core question** 
+      **Key Components**
 
 
-      What does the player do repeatedly.
+      * Primary gameplay loop
+
+      * Secondary loops (if applicable)
+
+      * Player actions
+
+      * Reward structures
+
+      * Progression hooks
+
+      * Loop diagram (Visual)
 
 
-      **Includes:**
+      **Production Considerations** 
 
 
-      * Core loop diagram 
+      * If the loop lacks clarity no amount of polish will fix the game.
 
-      * Player Actions 
+      * Ensure reward cadence matches target audience expectations.
 
-      * Reward System 
-
-      * Progression Hooks
+      * Identify where friction or grind may occur.
 
 
-      > **3. Systems Design (This is the operational core of the document)**
+      > **3. Systems Design** 
 
 
-      All mechanics must be described in implementable terms
+      * 3.1 Player Systems 
 
+        * Movement 
+        * Combat
+        * Abilities 
+        * Inventory
+        * Stats
+        * Progression
+      * **3.2 World Systems**
 
-      > **3.1 Player Systems** 
+        * AI Behaviour
+        * Spawning Rules
+        * Physics Rules
+        * Environmental Reactions 
+        * Encounter Logic 
+      * **3.3 Economy and Mega Systems** 
 
-
-      * Movement 
-
-      * Combat
-
-      * Abilities 
-
-      * Inventory
-
-      * Stats
-
-      * Progression
-
+        * Currency Types
+        * Resource Generation
+        * Upgrade Costs 
+        * Balancing Formulas
+        * Long-term Progression 
 
       Each system should define 
 
@@ -160,38 +179,26 @@ sections:
       * Edge Cases
 
 
-      > **3.2 World Systems**
+      **Production Considerations**
 
 
-      * AI Behaviour
+      * Avoid conceptual descriptions ("fast combat") without numeric or rule-based definitions
 
-      * Spawning Rules
+      * Distinguish prototype mechanics from scalable production systems 
 
-      * Physics Rules
-
-      * Environmental Reactions 
-
-      * Encounter Logic 
-
-
-      > **3.3 Economy and Mega Systems** 
-
-
-      * Currency Types
-
-      * Resource Generation
-
-      * Upgrade Costs 
-
-      * Balancing Formulas
-
-      * Long-term Progression 
+      * Consider technical feasibility and performance impact
 
 
       > **4. World, Narrative & Level Structure**
 
 
-      This section defines spatial and narrative experience
+      **Purpose** 
+
+
+      **Key Components**
+
+
+      **Production Considerations**
 
 
       > **4.1 Level Structure**
@@ -296,6 +303,9 @@ sections:
       This bridges design and engineering. A strong technical section prevents unrealistic design decisions.
 
 
+      **Include:**
+
+
       * Target performance (FPS)
 
       * Support resolutions
@@ -317,7 +327,10 @@ sections:
       This protect feasibility. This is where you distinguish ambition from production reality
 
 
-      * Feature prioritisation (Must/ Should/ Could) \
+      **Include:**
+
+
+      * Feature prioritisation (Must/ Should/ Could) 
 
       * Roadmap
 
