@@ -192,16 +192,13 @@ sections:
       > **4. World, Narrative & Level Structure**
 
 
-      **Purpose** 
+      Define spatial progression and narrative integration.
 
 
       **Key Components**
 
 
-      **Production Considerations**
-
-
-      > **4.1 Level Structure**
+      **4.1 Level Structure**
 
 
       * Level Layout 
@@ -214,38 +211,55 @@ sections:
 
       * Puzzle Structure
 
-
-      For larger projects 
-
+      * Spatial Metrics (Jump height, Corridor width, traversal distance)
 
       * Level flow diagrams
 
-      * Spatial Metrics (Jump height, Corridor width, traversal distance)
+
+      **4.2 Narrative & World Building** (if applicable)
 
 
-      > **4.2 Narrative & World Building** (if applicable)
+      * * Settings 
+
+        * Timelines
+
+        * Factions
+
+        * Character bios
+
+        * Story Progression
+
+        * Dialogue Tone
+
+      **Production Considerations**
 
 
-      Keep this functional, Narrative should support gameplay systems
+      * Narrative should support gameplay systems, not conflict with them.
 
+      * Level metrics must align with player movement systems
 
-      * Settings 
-
-      * Timelines
-
-      * Factions
-
-      * Character bios
-
-      * Story Progression
-
-      * Dialogue Tone
+      * Difficulty scaling should be intentional and documented 
 
 
       > **5. Aesthetic & Experience Design**
 
 
-      This defines how the game is perceived and felt.
+      **Purpose**
+
+
+      *
+
+
+      **Key Components**
+
+
+      *
+
+
+      **Production Considerations**
+
+
+      *
 
 
       > **5.1 Art Direction**
