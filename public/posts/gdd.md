@@ -396,4 +396,7 @@ sections:
       * The vertical slice should validate core systems early.
 
       * Risk should be identified before implementation begins.
+image: /images/uploads/GDD.png
+imageAlt: An image of a game developers desk, a GDD controller and monitor
+  sitting on top, along with some miscellaneous items
 ---
