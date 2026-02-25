@@ -112,7 +112,7 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
-      > **1. Vision and Design Pillars** 
+      > 1. Vision and Design Pillars 
 
 
       **Purpose**
@@ -149,7 +149,7 @@ sections:
       * Avoid using vague language such as 'immersive' or 'fun' without operational meaning
 
 
-      > **2. Core Gameplay Loop** (This defines the repeatable player experiences, This defines the repeatable player experience.) 
+      > 2. Core Gameplay Loop (This defines the repeatable player experiences, This defines the repeatable player experience.) 
 
 
       **Purpose**
@@ -184,7 +184,7 @@ sections:
       * Identify where friction or grind may occur.
 
 
-      > **3. Systems Design** 
+      > 3. Systems Design 
 
 
       * 3.1 Player Systems 
@@ -236,7 +236,7 @@ sections:
       * Consider technical feasibility and performance impact
 
 
-      > **4. World, Narrative & Level Structure**
+      > 4. World, Narrative & Level Structure
 
 
       Define spatial progression and narrative integration.
@@ -267,15 +267,10 @@ sections:
 
 
       * * Settings 
-
         * Timelines
-
         * Factions
-
         * Character bios
-
         * Story Progression
-
         * Dialogue Tone
 
       **Production Considerations**
@@ -288,7 +283,7 @@ sections:
       * Difficulty scaling should be intentional and documented 
 
 
-      > **5. Aesthetic & Experience Design**
+      > 5. Aesthetic & Experience Design
 
 
       **Purpose**
@@ -304,13 +299,9 @@ sections:
 
 
       * * Visual style
-
         * Mood references
-
         * Color palette
-
         * Animation principles
-
         * Camera philosophy
 
       **5.2 UX/UI Design** 
@@ -349,7 +340,7 @@ sections:
       * Audio should communicate state changes clearly.
 
 
-      > **6. Technical considerations**
+      > 6. Technical considerations
 
 
       **Purpose**
@@ -362,17 +353,11 @@ sections:
 
 
       * * Target performance (FPS)
-
         * Support resolutions
-
         * Platform constraints
-
         * Engine version
-
         * Third-party tools
-
         * Save/load system logic
-
         * Networking constraints (If applicable)
 
       **Production Considerations**
@@ -385,7 +370,7 @@ sections:
       * Technical documentation should prevent costly redesigns. 
 
 
-      > **7. Production Framework & Scope Management** 
+      > 7. Production Framework & Scope Management 
 
 
       **Purpose**
@@ -398,13 +383,9 @@ sections:
 
 
       * * Feature prioritisation (Must/ Should/ Could) 
-
         * Roadmap
-
         * Milestones
-
         * Vertical slice definition
-
         * Risk analysis
 
       **Production Considerations**
