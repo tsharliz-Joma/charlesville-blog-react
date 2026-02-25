@@ -16,6 +16,17 @@ quiz:
           and is primarily used in the video game industry to organize efforts
           within a development team.
     question: "What is a GDD ? "
+  - multiple: true
+    question: In a Prototype what sections of a GDD should you compress?
+    options:
+      - correct: true
+        text: World Depth
+      - correct: true
+        text: Narrative Detail
+      - correct: true
+        text: Technical Considerations
+      - correct: true
+        text: Visual Polish
 sections:
   - imageAlign: none
     heading: Game Design Document
