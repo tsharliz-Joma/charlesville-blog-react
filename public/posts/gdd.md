@@ -261,8 +261,69 @@ sections:
       > **5.2 UX/UI Design** 
 
 
-      HU
+      If UI is unclear, player friction increases regardless of system quality.
+
+
+      * HUD layout
+
+      * Input mapping
+
+      * Menu flow
+
+      * Accessibility considerations
+
+      * Feedback systems (visual/audio cues)
 
 
       > **5.3 Audio Design**
+
+
+      Audio reinforces feedback and player clarity.
+
+
+      * Music direction
+
+      * Sound categories
+
+      * Adaptive audio rules
+
+      * Voice acting notes
+
+
+      > **6. Technical considerations**
+
+
+      This bridges design and engineering. A strong technical section prevents unrealistic design decisions.
+
+
+      * Target performance (FPS)
+
+      * Support resolutions
+
+      * Platform constraints
+
+      * Engine version
+
+      * Third-party tools
+
+      * Save/load system logic
+
+      * Networking constraints (If applicable)
+
+
+      > **7. Production Framework & Scope Management** 
+
+
+      This protect feasibility. This is where you distinguish ambition from production reality
+
+
+      * Feature prioritisation (Must/ Should/ Could) \
+
+      * Roadmap
+
+      * Milestones
+
+      * Vertical slice definition
+
+      * Risk analysis
 ---
