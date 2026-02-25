@@ -247,13 +247,33 @@ sections:
       **Purpose**
 
 
-      *
+      Define how the game is perceived and how player feedback is delivered.
 
 
       **Key Components**
 
 
-      *
+      **5.1 Art Direction**
+
+
+      * * Visual style
+
+        * Mood references
+
+        * Color palette
+
+        * Animation principles
+
+        * Camera philosophy
+
+      * **5.2 UX/UI Design** 
+
+        * HUD layout
+        * Input mapping
+        * Menu flow
+        * Accessibility considerations
+        * Feedback systems (visual/audio cues)
+
 
 
       **Production Considerations**
@@ -262,38 +282,6 @@ sections:
       *
 
 
-      > **5.1 Art Direction**
-
-
-      This section prevents visual inconsistency across teams
-
-
-      * Visual style
-
-      * Mood references
-
-      * Color palette
-
-      * Animation principles
-
-      * Camera philosophy
-
-
-      > **5.2 UX/UI Design** 
-
-
-      If UI is unclear, player friction increases regardless of system quality.
-
-
-      * HUD layout
-
-      * Input mapping
-
-      * Menu flow
-
-      * Accessibility considerations
-
-      * Feedback systems (visual/audio cues)
 
 
       > **5.3 Audio Design**
