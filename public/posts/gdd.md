@@ -1,5 +1,5 @@
 ---
-title: GDD
+title: A Game Design Document
 date: 2026-02-24T13:22:00.000+09:00
 description: GDD, Who, What, Where and Why ?
 category: Game design
@@ -65,7 +65,7 @@ sections:
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
-      **1. Vision and Design Pillars** (This section defines the identity,
+      > **1. Vision and Design Pillars** (This section defines the identity,
       direction and strategic intent of the game)
 
 
@@ -95,7 +95,7 @@ sections:
       * Design Pillars(3-5 guiding principles)
 
 
-      2. Core Gameplay Loop (This defines the repeatable player experiences, This defines the repeatable player experience.) 
+      > **2. Core Gameplay Loop** (This defines the repeatable player experiences, This defines the repeatable player experience.) 
 
 
       **Purpose**
@@ -122,13 +122,13 @@ sections:
       * Progression Hooks
 
 
-      **3. Systems Design (This is the operational core of the document)**
+      > **3. Systems Design (This is the operational core of the document)**
 
 
       All mechanics must be described in implementable terms
 
 
-      **3.1 Player Systems** 
+      > **3.1 Player Systems** 
 
 
       * Movement 
@@ -160,7 +160,7 @@ sections:
       * Edge Cases
 
 
-      **3.2 World Systems**
+      > **3.2 World Systems**
 
 
       * AI Behaviour
@@ -174,7 +174,7 @@ sections:
       * Encounter Logic 
 
 
-      **3.3 Economy and Mega Systems** 
+      > **3.3 Economy and Mega Systems** 
 
 
       * Currency Types
@@ -188,13 +188,13 @@ sections:
       * Long-term Progression 
 
 
-      **4. World, Narrative & Level Structure**
+      > **4. World, Narrative & Level Structure**
 
 
       This section defines spatial and narrative experience
 
 
-      4.1 Level Structure
+      > **4.1 Level Structure**
 
 
       * Level Layout 
@@ -216,8 +216,50 @@ sections:
       * Spatial Metrics (Jump height, Corridor width, traversal distance)
 
 
-      Technical Considerations
+      > **4.2 Narrative & World Building** (if applicable)
 
 
-      Production & Scope Control
+      Keep this functional, Narrative should support gameplay systems
+
+
+      * Settings 
+
+      * Timelines
+
+      * Factions
+
+      * Character bios
+
+      * Story Progression
+
+      * Dialogue Tone
+
+
+      > **5. Aesthetic & Experience Design**
+
+
+      This defines how the game is perceived and felt.
+
+
+      5.1 Art Direction
+
+
+      This section prevents visual inconsistency across teams
+
+
+      * Visual style
+
+      * Mood references
+
+      * Color palette
+
+      * Animation principles
+
+      * Camera philosophy
+
+
+      5.2 UX/UI Design 
+
+
+      5.3 Audio Design
 ---
