@@ -39,6 +39,29 @@ quiz:
         text: To align the development team and reduce ambiguity
       - correct: false
         text: To store concept art references
+  - multiple: false
+    question: Which of the following is an example of strong GDD documentation?
+    options:
+      - correct: false
+        text: “The combat should feel intense.”
+      - correct: false
+        text: “Players will have cool abilities.”
+      - correct: true
+        text: “Enemies attack every 2–4 seconds. The player has a 0.3-second dodge
+          window.”
+      - correct: false
+        text: “The UI should look modern.”
+  - multiple: false
+    question: Why is defining scope important in a GDD?
+    options:
+      - correct: false
+        text: To make the document longer
+      - correct: true
+        text: To prevent uncontrolled feature expansion during development
+      - correct: false
+        text: To impress stakeholders
+      - correct: false
+        text: To remove creative freedom
 sections:
   - imageAlign: none
     heading: Game Design Document
