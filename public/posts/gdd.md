@@ -58,13 +58,13 @@ sections:
       A GDD transforms vague intentions into implementable systems
 
 
-      Weak
+      *Weak*
 
 
       `The combat should feel intense.`
 
 
-      Strong
+      *Strong*
 
 
       `Enemies attack every 2–4 seconds. Player has 0.3 sec dodge window. Camera FOV increases 5° during combat`
