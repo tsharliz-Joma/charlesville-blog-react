@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import {Link} from "react-router-dom";
 import {FiMoon, FiSun} from "react-icons/fi";
 import {
@@ -131,6 +131,14 @@ const Home = ({theme, onToggleTheme}) => {
     }
     return [];
   };
+
+  const sortedPosts = useMemo(() => {
+    return [...posts].sort((a, b) => {
+      const dateA = new Date(a?.date || 0).getTime();
+      const dateB = new Date(b?.date || 0).getTime();
+      return dateB - dateA;
+    });
+  }, [posts]);
 
 
   useEffect(() => {
@@ -313,7 +321,7 @@ const Home = ({theme, onToggleTheme}) => {
         </div>
       </section>
 
-      {posts.length === 0 ? (
+      {sortedPosts.length === 0 ? (
         <p className="text-steel mt-10">
           No entries yet. Add one via the CMS!
         </p>
@@ -328,7 +336,7 @@ const Home = ({theme, onToggleTheme}) => {
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => {
+            {sortedPosts.map((post) => {
               const tags = normalizeTags(post.tags);
               const badges = [
                 ...(post.category ? [post.category] : []),
