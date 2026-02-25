@@ -24,7 +24,7 @@ quiz:
         text: World Depth
       - correct: true
         text: Narrative Detail
-      - correct: true
+      - correct: false
         text: Technical Considerations
       - correct: true
         text: Visual Polish
