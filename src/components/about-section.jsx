@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 const AboutSection = ({eyebrow, title, body, image, imageAlt, theme}) => {
   return (
-    <section id="about" className="w-full max-w-4xl mt-10 text-center">
+    <section id="about" className="w-full max-w-4xl mx-auto mt-16 text-center">
       {eyebrow ? (
         <p className="text-xs uppercase tracking-[0.3em] text-steel">
           {eyebrow}
