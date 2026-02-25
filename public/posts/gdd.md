@@ -33,46 +33,81 @@ sections:
     text: >-
       \
 
-      A Game Design Document or GDD is a clear, structured blueprint that defines how a game plays, how its systems function and how the development team will build and refine it. It is a guiding vision which is used throughout the game development process.
+      A Game Design Document (GDD) is a structured blueprint that defines how a game plays, how its systems function and how the development team will implement and iterate on those systems throughout production. 
 
 
-      #### Purpose
+      ##### **Purpose**
 
 
-      The purpose of a Game design document is to clearly define a games, systems, vision and scope so that the development team can build it consistently, efficiently with no ambiguity.
+      The purpose of a Game design document is to clearly define a game's systems, vision and scope so that the development team can build it consistently, efficiently without ambiguity.
 
 
-      A GDD should:
+      ##### **A Professional GDD Must:**
 
 
-      * Align Vision
+      **Align Vision**
 
-        * Designers, Programmers and Artist must all build the same game, not 3 different interpretations of it
-      * Reduce Ambiguity (The purpose of a GDD is to turn vague ideas into actionable systems)
 
-        * > Good 
-          >
-          > Enemies attack every 2–4 seconds. Player has 0.3 sec dodge window. Camera FOV increases 5° during combat.
-        * > Bad 
-          > The combat should feel intense.
-      *
+      Designers, programmers and artists must build the same game, not three different interpretations of it.
 
-      * Define Scope (Scope Creep destroys indie teams)
 
-        * * Defines what IS in the game
-        * Defines what IS NOT in the game
-      * Guide Implementation (A programmer should be able to read a system section and know these things)
+      **Reduce Ambiguity** 
 
-        * What input exist 
-        * What states exist
-        * What outputs occur
-        * What edge cases exist
-      * Preserve Design Intent (Games change during development, a GDD preserves these)
 
-        * Core loops
-        * Player Fantasy
-        * Pillars
-        * Design constraints
+      A GDD transforms vague intentions into implementable systems
+
+
+      Weak
+
+
+      `The combat should feel intense.`
+
+
+      Strong
+
+
+      `Enemies attack every 2–4 seconds. Player has 0.3 sec dodge window. Camera FOV increases 5° during combat`
+
+
+      **Define Scope (Scope Creep destroys indie teams)**
+
+
+      A GDD explicitly defines
+
+
+      * Defines what IS in the game
+
+      * Defines what IS NOT in the game
+
+
+      **Guide Implementation** 
+
+
+      A programmer should be able to read a system section and understand:
+
+
+      * What inputs exist.
+
+      * What system states exist.
+
+      * What outputs are produced.
+
+      * What edge cases must be handled.
+
+
+      **Preserve Design Intent**
+
+
+      Games change during development, a GDD preserves:
+
+
+      * Core loops
+
+      * Player Fantasy
+
+      * Pillars
+
+      * Design constraints
   - imageAlign: none
     heading: The Structural Architecture of a Professional Game Design Document
     text: >-
