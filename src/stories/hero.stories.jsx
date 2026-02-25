@@ -40,7 +40,7 @@ const HeroPreview = ({
           ].map((item) => (
             <div
               key={item.label}
-              className="rounded-2xl border border-slate/60 bg-smoke/70 px-5 py-4 text-center backdrop-blur-sm">
+              className="hero-stat rounded-2xl border border-slate/60 bg-smoke/70 px-5 py-4 text-center backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-steel">
                 {item.label}
               </p>

@@ -125,6 +125,12 @@ html.theme-light .hero-copy {
   text-shadow: 0 16px 30px rgba(244, 245, 247, 0.45);
 }
 
+html.theme-light .hero-stat {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.18);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
 html.theme-light .divider-glow {
   box-shadow: 0 1px 0 rgba(43, 125, 123, 0.2);
 }
@@ -228,6 +234,11 @@ html.theme-light .prose-blade a {
     text-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   }
 
+  .hero-stat {
+    background: rgba(17, 21, 27, 0.65);
+    border-color: rgba(125, 227, 225, 0.2);
+  }
+
   .about-reveal {
     --reveal-progress: 0;
     opacity: calc(0.15 + (var(--reveal-progress) * 0.85));
@@ -328,6 +339,23 @@ html.theme-light .prose-blade a {
 
   .nav-link:hover {
     color: theme('colors.haze');
+  }
+
+  .quiz-trigger--idle {
+    border: 1px solid rgba(125, 227, 225, 0.16);
+    background: rgba(17, 21, 27, 0.85);
+    color: theme('colors.fog');
+  }
+
+  .quiz-trigger--idle:hover {
+    color: theme('colors.haze');
+    border-color: rgba(125, 227, 225, 0.35);
+  }
+
+  .quiz-trigger--done {
+    background: #34d399;
+    color: theme('colors.noir');
+    box-shadow: 0 0 25px rgba(52, 211, 153, 0.25);
   }
 
   .nav-sticky {
@@ -453,6 +481,18 @@ html.theme-light .prose-blade a {
 
   html.theme-light .nav-link:hover {
     color: #1b232d;
+  }
+
+  html.theme-light .quiz-trigger--idle {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(15, 23, 42, 0.16);
+    color: #1b232d;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  html.theme-light .quiz-trigger--idle:hover {
+    border-color: rgba(15, 23, 42, 0.3);
+    color: #0f172a;
   }
 
   html.theme-light .nav-sticky--active {

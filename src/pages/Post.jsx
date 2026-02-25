@@ -251,6 +251,7 @@ const Post = ({ theme, onToggleTheme }) => {
             height={spotifyEmbedHeight}
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            scrolling="no"
             loading="lazy"
             className="rounded-2xl border border-slate/60 shadow-ember h-[80px]"
           />
@@ -262,10 +263,8 @@ const Post = ({ theme, onToggleTheme }) => {
           <button
             type="button"
             onClick={() => setIsQuizOpen(true)}
-            className={`inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs uppercase tracking-[0.3em] transition ${
-              quizCompleted
-                ? 'bg-emerald-400 text-noir shadow-glow'
-                : 'border border-slate bg-smoke/80 text-fog hover:text-haze hover:border-haze'
+            className={`quiz-trigger inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs uppercase tracking-[0.3em] transition ${
+              quizCompleted ? 'quiz-trigger--done' : 'quiz-trigger--idle'
             }`}
           >
             {quizCompleted ? <FiCheck size={16} /> : <FiPlay size={16} />}
