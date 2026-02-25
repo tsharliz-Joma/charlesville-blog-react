@@ -299,29 +299,43 @@ sections:
 
       * UI must reduce cognitive load.
 
+      * Audio should communicate state changes clearly.
+
 
       > **6. Technical considerations**
 
 
-      This bridges design and engineering. A strong technical section prevents unrealistic design decisions.
+      **Purpose**
 
 
-      **Include:**
+      Bridge design and engineering. A strong technical section prevents unrealistic design decisions.
 
 
-      * Target performance (FPS)
+      **Key Components**
 
-      * Support resolutions
 
-      * Platform constraints
+      * * Target performance (FPS)
 
-      * Engine version
+        * Support resolutions
 
-      * Third-party tools
+        * Platform constraints
 
-      * Save/load system logic
+        * Engine version
 
-      * Networking constraints (If applicable)
+        * Third-party tools
+
+        * Save/load system logic
+
+        * Networking constraints (If applicable)
+
+      **Production Considerations**
+
+
+      * Unrealistic performance targets create production risk.
+
+      * System design must account for engine limitations.
+
+      * Technical documentation should prevent costly redesigns. 
 
 
       > **7. Production Framework & Scope Management** 
