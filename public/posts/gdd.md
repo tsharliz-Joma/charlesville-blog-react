@@ -363,5 +363,9 @@ sections:
       **Production Considerations**
 
 
-      *
+      * Scope creep is the primary threat to completion.
+
+      * The vertical slice should validate core systems early.
+
+      * Risk should be identified before implementation begins.
 ---
