@@ -58,13 +58,13 @@ sections:
       A GDD transforms vague intentions into implementable systems
 
 
-      Weak
+      *Weak*
 
 
       `The combat should feel intense.`
 
 
-      Strong
+      *Strong*
 
 
       `Enemies attack every 2–4 seconds. Player has 0.3 sec dodge window. Camera FOV increases 5° during combat`
@@ -76,9 +76,9 @@ sections:
       A GDD explicitly defines
 
 
-      * Defines what IS in the game
+      * What IS included in the game.
 
-      * Defines what IS NOT in the game
+      * What IS NOT included in the game.
 
 
       **Guide Implementation** 
