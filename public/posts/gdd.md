@@ -241,7 +241,7 @@ sections:
       This defines how the game is perceived and felt.
 
 
-      5.1 Art Direction
+      > **5.1 Art Direction**
 
 
       This section prevents visual inconsistency across teams
@@ -258,8 +258,11 @@ sections:
       * Camera philosophy
 
 
-      5.2 UX/UI Design 
+      > **5.2 UX/UI Design** 
 
 
-      5.3 Audio Design
+      HU
+
+
+      > **5.3 Audio Design**
 ---
