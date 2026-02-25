@@ -7,12 +7,13 @@ export async function handler(event) {
     }
   }
 
-  const apiKey = process.env.MAILERLITE_API_KEY
-  const groupId = process.env.MAILERLITE_GROUP_ID
+  const apiKey = process.env.BREVO_API_KEY
+  const listId = process.env.BREVO_LIST_ID
   const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY
   const recaptchaMinScore = Number(process.env.RECAPTCHA_MIN_SCORE || '0.5')
 
-  if (!apiKey || !groupId || !recaptchaSecret) {
+  const listIdNumber = Number(listId)
+  if (!apiKey || !listId || !recaptchaSecret || !Number.isFinite(listIdNumber)) {
     return {
       statusCode: 500,
       body: JSON.stringify({ message: 'Missing server configuration.' })
@@ -73,27 +74,25 @@ export async function handler(event) {
       }
     }
 
-    const response = await fetch(
-      `https://connect.mailerlite.com/api/subscribers`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          email,
-          groups: [groupId]
-        })
-      }
-    )
+    const response = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': apiKey
+      },
+      body: JSON.stringify({
+        email,
+        listIds: [listIdNumber],
+        updateEnabled: true
+      })
+    })
 
     if (!response.ok) {
       const errorBody = await response.text()
       return {
         statusCode: response.status,
         body: JSON.stringify({
-          message: 'MailerLite rejected the request.',
+          message: 'Brevo rejected the request.',
           details: errorBody
         })
       }
