@@ -228,6 +228,14 @@ html.theme-light .prose-blade a {
     text-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   }
 
+  .about-reveal {
+    --reveal-progress: 0;
+    opacity: calc(0.15 + (var(--reveal-progress) * 0.85));
+    transform: translateY(calc((1 - var(--reveal-progress)) * 32px));
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    will-change: opacity, transform;
+  }
+
   .card-description-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -455,6 +463,14 @@ html.theme-light .prose-blade a {
 
   .subscribe-success {
     animation: success-pop 0.5s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
 
