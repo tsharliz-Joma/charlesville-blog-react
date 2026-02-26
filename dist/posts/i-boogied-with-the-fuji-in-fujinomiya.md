@@ -7,7 +7,7 @@ description: A hop-skip-jump to Fujinomiya that turned into a calm dougie,a
 category: Journal entry
 tags:
   - SideQuest
-  - Terrvision
+  - Terravision
 spotifyUrl: https://open.spotify.com/playlist/0KIihkIvjsIdvLFSdoNzgg?si=2f9d42c3917b461b
 spotifyLabel: <iframe style="border-radius:12px"
   src="https://open.spotify.com/embed/playlist/0KIihkIvjsIdvLFSdoNzgg?utm_source=generator"
@@ -15,16 +15,17 @@ spotifyLabel: <iframe style="border-radius:12px"
   clipboard-write; encrypted-media; fullscreen; picture-in-picture"
   loading="lazy"></iframe>
 sections:
-  - imageAlign: none
+  - imageAlign: right
     text: >-
-      Before I even stepped inside, Mt. Fuji was already there,  reflected back
-      at me in a pool of water I hadn’t expected to stop for.
-
-
-      This is part of my larger side quest to Japan. I’ve been in Fuji, more specifically Shin-Fuji, for four days now, and a friend from the hostel convinced me to come to Fujinomiya after hesitating, I’m glad I went.
+      This is part of my larger side quest to Japan. I’ve been in Fuji, more
+      specifically Shin-Fuji, for four days now, and a friend from the hostel
+      convinced me to come to Fujinomiya after hesitating, I’m glad I went.
 
 
       We left the hostel at roughly 2:00pm and walked about 20 minutes to Fuji Station, where we boarded the Minobu Line. 6 stops later, we arrived in Fujinomiya. The station itself was similar to standard Japanese stations and they did have this 10/10 bakery, which we’ll come back to.
+    heading: Before I even stepped inside, Mt. Fuji was already there,  reflected
+      back at me in a pool of water I hadn’t expected to stop for.
+    image: /images/uploads/fuji-reflection.JPG
   - imageAlign: none
     text: >-
       The exterior of the Mount Fuji World Heritage Centre was clean and modern,
@@ -57,4 +58,5 @@ sections:
 
 
       That amade the 20 minute mission back to Kinoya Hostel fun and just that little bit easier.
+    heading: The Bakery
 ---

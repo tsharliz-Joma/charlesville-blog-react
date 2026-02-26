@@ -14,6 +14,7 @@ const Post = ({ theme, onToggleTheme }) => {
   const [quizScore, setQuizScore] = useState(null)
   const [quizCompleted, setQuizCompleted] = useState(false)
   const [quizError, setQuizError] = useState('')
+  const [readingProgress, setReadingProgress] = useState(0)
 
   const parseFrontmatter = (raw) => {
     if (!raw.startsWith('---')) {
@@ -111,6 +112,24 @@ const Post = ({ theme, onToggleTheme }) => {
       })
   }, [slug])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight
+      const progress = docHeight > 0 ? window.scrollY / docHeight : 0
+      setReadingProgress(Math.max(0, Math.min(1, progress)))
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
+
   const handleOptionChange = (questionIndex, optionIndex, multiple) => {
     setQuizAnswers((prev) => {
       const next = { ...prev }
@@ -182,7 +201,13 @@ const Post = ({ theme, onToggleTheme }) => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <>
+      <div
+        className="reading-progress"
+        style={{ transform: `scaleX(${readingProgress})` }}
+        aria-hidden="true"
+      />
+      <div className="container mx-auto px-4 py-10">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
       <Link
         to="/"
@@ -437,6 +462,7 @@ const Post = ({ theme, onToggleTheme }) => {
         {markdown ? <ReactMarkdown>{markdown}</ReactMarkdown> : null}
       </article>
     </div>
+    </>
   )
 }
 

@@ -48,6 +48,21 @@ const Posts = ({ theme, onToggleTheme }) => {
     return []
   }
 
+  const isRecentPost = (dateValue) => {
+    const time = new Date(dateValue || 0).getTime()
+    if (!Number.isFinite(time)) return false
+    const diff = Date.now() - time
+    const twoWeeks = 14 * 24 * 60 * 60 * 1000
+    return diff >= 0 && diff <= twoWeeks
+  }
+
+  const getReadingTime = (post) => {
+    const minutes = Number(post?.readingTime)
+    if (Number.isFinite(minutes) && minutes > 0) return minutes
+    const words = (post?.description || '').split(/\s+/).filter(Boolean).length
+    return words ? Math.max(1, Math.round(words / 200)) : null
+  }
+
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
@@ -87,6 +102,8 @@ const Posts = ({ theme, onToggleTheme }) => {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {normalizedPosts.map((post) => {
             const tags = normalizeTags(post.tags)
+            const isNew = isRecentPost(post.date)
+            const readingTime = getReadingTime(post)
             const badges = [
               ...(post.category ? [post.category] : []),
               ...tags,
@@ -101,14 +118,19 @@ const Posts = ({ theme, onToggleTheme }) => {
             return (
               <Card
                 key={post.slug}
-                className="shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline"
+                className="card-interactive shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline"
               >
                 <CardHeader>
                   <div className="card-tag-row flex flex-wrap gap-2 mb-3">
+                    {isNew ? (
+                      <span className="card-badge card-badge--new text-[10px] uppercase tracking-[0.25em] rounded-full px-3 py-1">
+                        New
+                      </span>
+                    ) : null}
                     {displayBadges.map((badge) => (
                       <span
                         key={badge}
-                        className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1"
+                        className="card-badge text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1"
                       >
                         {badge}
                       </span>
@@ -117,9 +139,14 @@ const Posts = ({ theme, onToggleTheme }) => {
                   <CardTitle className="text-xl mb-1 text-haze">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
-                    {post.date ? new Date(post.date).toLocaleDateString() : 'Entry'}
-                  </CardDescription>
+                  <div className="card-meta">
+                    <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
+                      {post.date ? new Date(post.date).toLocaleDateString() : 'Entry'}
+                    </CardDescription>
+                    {readingTime ? (
+                      <span className="card-readtime">~{readingTime} min read</span>
+                    ) : null}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-fog card-description-clamp">

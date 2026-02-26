@@ -42,8 +42,12 @@ const Home = ({theme, onToggleTheme}) => {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [isNavScrolled, setIsNavScrolled] = useState(false);
+  const [carouselPages, setCarouselPages] = useState(1);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaScriptPromise = useRef(null);
+  const heroRef = useRef(null);
+  const recentScrollRef = useRef(null);
 
   useEffect(() => {
     fetch("/posts/index.json")
@@ -132,6 +136,21 @@ const Home = ({theme, onToggleTheme}) => {
     return [];
   };
 
+  const isRecentPost = (dateValue) => {
+    const time = new Date(dateValue || 0).getTime();
+    if (!Number.isFinite(time)) return false;
+    const diff = Date.now() - time;
+    const twoWeeks = 14 * 24 * 60 * 60 * 1000;
+    return diff >= 0 && diff <= twoWeeks;
+  };
+
+  const getReadingTime = (post) => {
+    const minutes = Number(post?.readingTime);
+    if (Number.isFinite(minutes) && minutes > 0) return minutes;
+    const words = (post?.description || "").split(/\s+/).filter(Boolean).length;
+    return words ? Math.max(1, Math.round(words / 200)) : null;
+  };
+
   const sortedPosts = useMemo(() => {
     return [...posts].sort((a, b) => {
       const dateA = new Date(a?.date || 0).getTime();
@@ -172,6 +191,86 @@ const Home = ({theme, onToggleTheme}) => {
       });
     }
   }, [recaptchaSiteKey]);
+
+  useEffect(() => {
+    const container = recentScrollRef.current;
+    if (!container) return;
+
+    let rafId = null;
+
+    const updateMetrics = () => {
+      rafId = null;
+      const width = container.clientWidth || 1;
+      const scrollWidth = container.scrollWidth || 1;
+      const pages = Math.max(1, Math.ceil(scrollWidth / width));
+      const index = Math.round(container.scrollLeft / width);
+      setCarouselPages(pages);
+      setCarouselIndex(Math.max(0, Math.min(pages - 1, index)));
+    };
+
+    const handleScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(updateMetrics);
+    };
+
+    updateMetrics();
+    container.addEventListener("scroll", handleScroll, {passive: true});
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [sortedPosts.length]);
+
+  const scrollToCarouselPage = (pageIndex) => {
+    const container = recentScrollRef.current;
+    if (!container) return;
+    const width = container.clientWidth || 1;
+    container.scrollTo({
+      left: pageIndex * width,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+
+    const prefersReducedMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      hero.style.setProperty("--hero-parallax", "0px");
+      return;
+    }
+
+    let rafId = null;
+
+    const updateParallax = () => {
+      rafId = null;
+      const rect = hero.getBoundingClientRect();
+      const offset = Math.max(-80, Math.min(80, rect.top * -0.2));
+      hero.style.setProperty("--hero-parallax", `${offset.toFixed(1)}px`);
+    };
+
+    const handleScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(updateParallax);
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", handleScroll, {passive: true});
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   const getRecaptchaToken = async () => {
     if (!recaptchaSiteKey) {
@@ -268,9 +367,11 @@ const Home = ({theme, onToggleTheme}) => {
 
       <section
         className="hero-bleed mt-4"
+        ref={heroRef}
         style={{
           "--hero-image": hero.image ? `url(${hero.image})` : "none",
         }}>
+        <div className="hero-bleed__noise" aria-hidden="true" />
         <div className="hero-bleed__content mx-auto w-full max-w-6xl px-6 pt-8 pb-14 sm:px-10 sm:pt-12 sm:pb-20">
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-steel">
@@ -283,7 +384,7 @@ const Home = ({theme, onToggleTheme}) => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#posts"
-              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze hover:text-noir transition">
+              className="cta-button px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze hover:text-noir transition">
               {hero.ctaPrimary}
             </a>
               <a
@@ -327,7 +428,7 @@ const Home = ({theme, onToggleTheme}) => {
         </p>
       ) : (
         <div id="posts" className="w-full max-w-6xl mt-12">
-          <div className="mb-6">
+          <div className="mb-6 text-center sm:text-left">
             <p className="text-xs uppercase tracking-[0.3em] text-steel">
               Latest entries
             </p>
@@ -335,9 +436,14 @@ const Home = ({theme, onToggleTheme}) => {
               Recent journal notes
             </h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="recent-scroll" ref={recentScrollRef}>
             {sortedPosts.map((post) => {
               const tags = normalizeTags(post.tags);
+              const isNew = isRecentPost(post.date);
+              const readingTime = getReadingTime(post);
+              const dateLabel = post.date
+                ? new Date(post.date).toLocaleDateString()
+                : "Entry";
               const badges = [
                 ...(post.category ? [post.category] : []),
                 ...tags,
@@ -352,13 +458,18 @@ const Home = ({theme, onToggleTheme}) => {
               return (
                 <Card
                   key={post.slug}
-                  className="shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
+                  className="card-interactive carousel-card min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
                   <CardHeader>
                     <div className="card-tag-row flex flex-wrap gap-2 mb-3">
+                      {isNew ? (
+                        <span className="card-badge card-badge--new text-[10px] uppercase tracking-[0.25em] rounded-full px-3 py-1">
+                          New
+                        </span>
+                      ) : null}
                       {displayBadges.map((badge) => (
                         <span
                           key={badge}
-                          className="text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
+                          className="card-badge text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
                           {badge}
                         </span>
                       ))}
@@ -366,9 +477,14 @@ const Home = ({theme, onToggleTheme}) => {
                     <CardTitle className="text-xl mb-1 text-haze">
                       {post.title}
                     </CardTitle>
-                    <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
-                      {new Date(post.date).toLocaleDateString()}
-                    </CardDescription>
+                    <div className="card-meta">
+                      <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
+                        {dateLabel}
+                      </CardDescription>
+                      {readingTime ? (
+                        <span className="card-readtime">~{readingTime} min read</span>
+                      ) : null}
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-fog card-description-clamp">
@@ -386,6 +502,22 @@ const Home = ({theme, onToggleTheme}) => {
               );
             })}
           </div>
+          {carouselPages > 1 ? (
+            <div className="carousel-dots" aria-label="Recent posts pagination">
+              {Array.from({length: carouselPages}).map((_, index) => (
+                <button
+                  key={`carousel-dot-${index}`}
+                  type="button"
+                  className={`carousel-dot ${
+                    index === carouselIndex ? "is-active" : ""
+                  }`}
+                  onClick={() => scrollToCarouselPage(index)}
+                  aria-label={`Go to posts page ${index + 1}`}
+                  aria-current={index === carouselIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
       )}
 
@@ -419,7 +551,7 @@ const Home = ({theme, onToggleTheme}) => {
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition"
+              className="cta-button px-6 py-3 rounded-full bg-neon text-noir font-semibold tracking-wide shadow-glow hover:bg-haze transition"
               disabled={status === "loading"}>
               {status === "loading" ? "Signing you up..." : "Get new entries"}
             </button>

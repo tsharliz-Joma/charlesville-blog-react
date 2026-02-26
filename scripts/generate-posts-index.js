@@ -17,6 +17,12 @@ const readFrontmatter = (content) => {
   }
 };
 
+const extractBody = (content) => {
+  if (!content.startsWith("---")) return content;
+  const match = content.match(/^---\n[\s\S]*?\n---\n?([\s\S]*)$/);
+  return match ? match[1] : "";
+};
+
 const normalizeTags = (value) => {
   if (!value) return [];
   if (Array.isArray(value)) return value.filter(Boolean);
@@ -32,6 +38,14 @@ const normalizeTags = (value) => {
 const toStringOrEmpty = (value) =>
   typeof value === "string" ? value : value?.toString?.() || "";
 
+const estimateReadMinutes = (content) => {
+  const words = content
+    .replace(/[`*_>#-]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+};
+
 const buildIndex = () => {
   if (!fs.existsSync(postsDir)) {
     console.error("Posts directory not found:", postsDir);
@@ -46,6 +60,7 @@ const buildIndex = () => {
     const slug = file.replace(/\.md$/, "");
     const content = fs.readFileSync(path.join(postsDir, file), "utf8");
     const data = readFrontmatter(content);
+    const body = extractBody(content);
 
     return {
       slug,
@@ -58,6 +73,7 @@ const buildIndex = () => {
       imageAlt: toStringOrEmpty(data.imageAlt) || "",
       spotifyUrl: toStringOrEmpty(data.spotifyUrl) || "",
       spotifyLabel: toStringOrEmpty(data.spotifyLabel) || "",
+      readingTime: estimateReadMinutes(body),
     };
   });
 
