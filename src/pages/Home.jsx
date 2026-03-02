@@ -42,12 +42,10 @@ const Home = ({theme, onToggleTheme}) => {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [isNavScrolled, setIsNavScrolled] = useState(false);
-  const [carouselPages, setCarouselPages] = useState(1);
-  const [carouselIndex, setCarouselIndex] = useState(0);
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaScriptPromise = useRef(null);
   const heroRef = useRef(null);
-  const recentScrollRef = useRef(null);
+  const marqueeRowRefA = useRef(null);
 
   useEffect(() => {
     fetch("/posts/index.json")
@@ -159,6 +157,11 @@ const Home = ({theme, onToggleTheme}) => {
     });
   }, [posts]);
 
+  const marqueePosts = useMemo(() => {
+    if (sortedPosts.length === 0) return [];
+    return [...sortedPosts, ...sortedPosts];
+  }, [sortedPosts]);
+
 
   useEffect(() => {
     if (!recaptchaSiteKey) return;
@@ -193,46 +196,132 @@ const Home = ({theme, onToggleTheme}) => {
   }, [recaptchaSiteKey]);
 
   useEffect(() => {
-    const container = recentScrollRef.current;
-    if (!container) return;
+    const rowA = marqueeRowRefA.current;
+    if (!rowA || marqueePosts.length === 0) return;
 
-    let rafId = null;
+    const prefersReducedMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const updateMetrics = () => {
-      rafId = null;
-      const width = container.clientWidth || 1;
-      const scrollWidth = container.scrollWidth || 1;
-      const pages = Math.max(1, Math.ceil(scrollWidth / width));
-      const index = Math.round(container.scrollLeft / width);
-      setCarouselPages(pages);
-      setCarouselIndex(Math.max(0, Math.min(pages - 1, index)));
+    const setupMarquee = (container, direction) => {
+      const state = {
+        isDragging: false,
+        isHovering: false,
+        startX: 0,
+        startScrollLeft: 0,
+        pauseUntil: 0,
+      };
+
+      let rafId = null;
+      let lastTime = performance.now();
+      const speed = 0.02;
+
+      const normalizeScroll = () => {
+        const half = container.scrollWidth / 2;
+        if (half <= 0) return;
+        if (direction < 0 && container.scrollLeft < 0) {
+          container.scrollLeft += half;
+        } else if (direction > 0 && container.scrollLeft >= half) {
+          container.scrollLeft -= half;
+        }
+      };
+
+      const step = (time) => {
+        const delta = time - lastTime;
+        lastTime = time;
+
+        if (
+          !prefersReducedMotion &&
+          !state.isDragging &&
+          !state.isHovering &&
+          Date.now() >= state.pauseUntil
+        ) {
+          container.scrollLeft += delta * speed * direction;
+          normalizeScroll();
+        }
+
+        rafId = requestAnimationFrame(step);
+      };
+
+      const pause = (duration = 1200) => {
+        state.pauseUntil = Date.now() + duration;
+      };
+
+      const handlePointerDown = (event) => {
+        if (event.pointerType !== "mouse") return;
+        state.isDragging = true;
+        state.startX = event.clientX;
+        state.startScrollLeft = container.scrollLeft;
+        container.classList.add("is-dragging");
+        pause(2000);
+        try {
+          container.setPointerCapture(event.pointerId);
+        } catch {}
+      };
+
+      const handlePointerMove = (event) => {
+        if (!state.isDragging) return;
+        const delta = event.clientX - state.startX;
+        container.scrollLeft = state.startScrollLeft - delta;
+      };
+
+      const handlePointerUp = (event) => {
+        if (event.pointerType !== "mouse") return;
+        state.isDragging = false;
+        container.classList.remove("is-dragging");
+        pause(1200);
+        try {
+          container.releasePointerCapture(event.pointerId);
+        } catch {}
+      };
+
+      const handleMouseEnter = () => {
+        state.isHovering = true;
+      };
+
+      const handleMouseLeave = () => {
+        state.isHovering = false;
+        pause(800);
+      };
+
+      const handleWheel = () => pause(1200);
+
+      const half = container.scrollWidth / 2;
+      if (direction < 0 && half > 0) {
+        container.scrollLeft = half;
+      }
+
+      rafId = requestAnimationFrame(step);
+      container.addEventListener("pointerdown", handlePointerDown);
+      container.addEventListener("pointermove", handlePointerMove);
+      container.addEventListener("pointerup", handlePointerUp);
+      container.addEventListener("pointerleave", handlePointerUp);
+      container.addEventListener("mouseenter", handleMouseEnter);
+      container.addEventListener("mouseleave", handleMouseLeave);
+      container.addEventListener("wheel", handleWheel, {passive: true});
+      container.addEventListener("touchstart", handleWheel, {passive: true});
+      container.addEventListener("scroll", handleWheel, {passive: true});
+
+      return () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        container.removeEventListener("pointerdown", handlePointerDown);
+        container.removeEventListener("pointermove", handlePointerMove);
+        container.removeEventListener("pointerup", handlePointerUp);
+        container.removeEventListener("pointerleave", handlePointerUp);
+        container.removeEventListener("mouseenter", handleMouseEnter);
+        container.removeEventListener("mouseleave", handleMouseLeave);
+        container.removeEventListener("wheel", handleWheel);
+        container.removeEventListener("touchstart", handleWheel);
+        container.removeEventListener("scroll", handleWheel);
+      };
     };
 
-    const handleScroll = () => {
-      if (rafId) return;
-      rafId = requestAnimationFrame(updateMetrics);
-    };
-
-    updateMetrics();
-    container.addEventListener("scroll", handleScroll, {passive: true});
-    window.addEventListener("resize", handleScroll);
+    const cleanupA = setupMarquee(rowA, 1);
 
     return () => {
-      if (rafId) cancelAnimationFrame(rafId);
-      container.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      cleanupA();
     };
-  }, [sortedPosts.length]);
-
-  const scrollToCarouselPage = (pageIndex) => {
-    const container = recentScrollRef.current;
-    if (!container) return;
-    const width = container.clientWidth || 1;
-    container.scrollTo({
-      left: pageIndex * width,
-      behavior: "smooth",
-    });
-  };
+  }, [marqueePosts.length]);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -436,14 +525,15 @@ const Home = ({theme, onToggleTheme}) => {
               Recent journal notes
             </h2>
           </div>
-          <div className="recent-scroll" ref={recentScrollRef}>
-            {sortedPosts.map((post) => {
-              const tags = normalizeTags(post.tags);
-              const isNew = isRecentPost(post.date);
-              const readingTime = getReadingTime(post);
-              const dateLabel = post.date
-                ? new Date(post.date).toLocaleDateString()
-                : "Entry";
+          <div className="marquee-shell marquee-shell--single">
+            <div className="marquee-row" ref={marqueeRowRefA}>
+              {marqueePosts.map((post, index) => {
+                const tags = normalizeTags(post.tags);
+                const isNew = isRecentPost(post.date);
+                const readingTime = getReadingTime(post);
+                const dateLabel = post.date
+                  ? new Date(post.date).toLocaleDateString()
+                  : "Entry";
               const badges = [
                 ...(post.category ? [post.category] : []),
                 ...tags,
@@ -455,69 +545,54 @@ const Home = ({theme, onToggleTheme}) => {
                   ? [...badges.slice(0, maxBadges - 1), `+${extraCount} more`]
                   : badges.slice(0, maxBadges);
 
-              return (
-                <Card
-                  key={post.slug}
-                  className="card-interactive carousel-card min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
-                  <CardHeader>
-                    <div className="card-tag-row flex flex-wrap gap-2 mb-3">
-                      {isNew ? (
-                        <span className="card-badge card-badge--new text-[10px] uppercase tracking-[0.25em] rounded-full px-3 py-1">
-                          New
-                        </span>
-                      ) : null}
-                      {displayBadges.map((badge) => (
-                        <span
-                          key={badge}
-                          className="card-badge text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                    <CardTitle className="text-xl mb-1 text-haze">
-                      {post.title}
-                    </CardTitle>
-                    <div className="card-meta">
-                      <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
-                        {dateLabel}
-                      </CardDescription>
-                      {readingTime ? (
-                        <span className="card-readtime">~{readingTime} min read</span>
-                      ) : null}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-fog card-description-clamp">
-                      {post.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Link
-                      to={`/posts/${post.slug}`}
-                      className="text-neon hover:text-haze underline">
-                      Read entry
-                    </Link>
-                  </CardFooter>
-                </Card>
-              );
-            })}
-          </div>
-          {carouselPages > 1 ? (
-            <div className="carousel-dots" aria-label="Recent posts pagination">
-              {Array.from({length: carouselPages}).map((_, index) => (
-                <button
-                  key={`carousel-dot-${index}`}
-                  type="button"
-                  className={`carousel-dot ${
-                    index === carouselIndex ? "is-active" : ""
-                  }`}
-                  onClick={() => scrollToCarouselPage(index)}
-                  aria-label={`Go to posts page ${index + 1}`}
-                  aria-current={index === carouselIndex ? "true" : undefined}
-                />
-              ))}
+                return (
+                  <Card
+                    key={`${post.slug}-${index}`}
+                    className="card-interactive marquee-card min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] shadow-glow hover:shadow-ember transition duration-300 hover:-translate-y-1 scanline">
+                    <CardHeader>
+                      <div className="card-tag-row flex flex-wrap gap-2 mb-3">
+                        {isNew ? (
+                          <span className="card-badge card-badge--new text-[10px] uppercase tracking-[0.25em] rounded-full px-3 py-1">
+                            New
+                          </span>
+                        ) : null}
+                        {displayBadges.map((badge) => (
+                          <span
+                            key={badge}
+                            className="card-badge text-[10px] uppercase tracking-[0.25em] text-steel border border-slate/70 rounded-full px-3 py-1">
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                      <CardTitle className="text-xl mb-1 text-haze">
+                        {post.title}
+                      </CardTitle>
+                      <div className="card-meta">
+                        <CardDescription className="text-xs uppercase tracking-[0.2em] text-steel">
+                          {dateLabel}
+                        </CardDescription>
+                        {readingTime ? (
+                          <span className="card-readtime">~{readingTime} min read</span>
+                        ) : null}
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-fog card-description-clamp">
+                        {post.description}
+                      </p>
+                    </CardContent>
+                    <CardFooter>
+                      <Link
+                        to={`/posts/${post.slug}`}
+                        className="text-neon hover:text-haze underline">
+                        Read entry
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                );
+              })}
             </div>
-          ) : null}
+          </div>
         </div>
       )}
 

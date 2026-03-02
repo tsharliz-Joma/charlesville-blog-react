@@ -99,6 +99,7 @@ html.theme-light .glass-panel {
 
 html.theme-light .hero-bleed {
   background-color: #f4f5f7;
+  box-shadow: inset 0 -120px 140px rgba(244, 245, 247, 0.95);
 }
 
 html.theme-light .hero-bleed::before {
@@ -183,12 +184,13 @@ html.theme-light .prose-blade a {
   .hero-bleed {
     position: relative;
     width: 100vw;
-    min-height: 110vh;
+    min-height: 140vh;
     --hero-parallax: 0px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     overflow: hidden;
     background-color: theme('colors.noir');
+    box-shadow: inset 0 -120px 140px rgba(11, 13, 16, 0.95);
   }
 
   .hero-bleed::before {
@@ -444,65 +446,47 @@ html.theme-light .prose-blade a {
     z-index: 60;
   }
 
-  .recent-scroll {
-    --carousel-card: 260px;
+  .marquee-shell {
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.9) 3%,
+      rgba(0, 0, 0, 0.9) 97%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.9) 3%,
+      rgba(0, 0, 0, 0.9) 97%,
+      transparent 100%
+    );
+  }
+
+  .marquee-shell--single {
+    gap: 0;
+  }
+
+  .marquee-row {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
-    padding: 0.5rem max(0px, calc((100% - var(--carousel-card)) / 2)) 1.5rem;
-    scroll-padding-inline: max(0px, calc((100% - var(--carousel-card)) / 2));
-    scroll-snap-type: x mandatory;
+    padding: 0.5rem 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    cursor: grab;
   }
 
-  @media (min-width: 640px) {
-    .recent-scroll {
-      --carousel-card: 320px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .recent-scroll {
-      --carousel-card: 360px;
-    }
-  }
-
-  .recent-scroll::-webkit-scrollbar {
+  .marquee-row::-webkit-scrollbar {
     display: none;
   }
 
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-top: 0.5rem;
-  }
-
-  .carousel-dot {
-    width: 26px;
-    height: 4px;
-    border-radius: 999px;
-    background: rgba(125, 227, 225, 0.18);
-    border: 1px solid rgba(125, 227, 225, 0.25);
-    box-shadow: inset 0 0 6px rgba(125, 227, 225, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-  .carousel-dot.is-active {
-    background: linear-gradient(
-      90deg,
-      rgba(125, 227, 225, 0.95),
-      rgba(240, 138, 167, 0.85)
-    );
-    border-color: rgba(125, 227, 225, 0.6);
-    box-shadow: 0 0 12px rgba(125, 227, 225, 0.35);
-    transform: scaleX(1.1);
-  }
-
-  .carousel-card {
-    scroll-snap-align: center;
+  .marquee-row.is-dragging {
+    cursor: grabbing;
+    user-select: none;
   }
 
   .quiz-trigger--idle {
@@ -669,22 +653,6 @@ html.theme-light .prose-blade a {
 
   html.theme-light .reading-progress {
     background: linear-gradient(90deg, rgba(15, 23, 42, 0.85), rgba(43, 125, 123, 0.8));
-  }
-
-  html.theme-light .carousel-dot {
-    background: rgba(15, 23, 42, 0.15);
-    border-color: rgba(15, 23, 42, 0.2);
-    box-shadow: inset 0 0 6px rgba(15, 23, 42, 0.12);
-  }
-
-  html.theme-light .carousel-dot.is-active {
-    background: linear-gradient(
-      90deg,
-      rgba(15, 23, 42, 0.8),
-      rgba(43, 125, 123, 0.8)
-    );
-    border-color: rgba(15, 23, 42, 0.45);
-    box-shadow: 0 0 10px rgba(15, 23, 42, 0.25);
   }
 
   html.theme-light .quiz-trigger--idle {
