@@ -105,11 +105,27 @@ sections:
       Objects will only tag in on collisions if they have a Collider attached.
 
 
-      **Camera and Sunlight**
+      **Camera & Directional Light**
 
 
       The Camera GameObject can be looked at as a Physical Camera on a movie set, the camera plays a critical role in how your scene is viewed, it determines what part of the scene is rendered and displayed to the player during gameplay. 
 
 
       The Camera position and rotation determine what the player sees when the game enters play mode. Different camera placements can dramatically alter how a scene feels and how the player experiences the world.
+
+
+      The Directional light GameObject simulates a distant light source that illuminates the entire scene. It is for all intensive purposes a Sun and also plays a key role on the mood and feel of games.
+
+
+      Because the light is treated as coming from an infinite distance, all objects in the scene receive light rays that travel in the same direction.
+  - imageAlign: none
+    heading: "Audio & Programming Essentials "
+    text: |-
+      Audio Listener 
+
+      Audio Resource & Audio Source
+
+      Spacial Audio Effect
+
+      Scripts
 ---
