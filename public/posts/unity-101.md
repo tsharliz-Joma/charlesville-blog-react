@@ -120,12 +120,29 @@ sections:
       Because the light is treated as coming from an infinite distance, all objects in the scene receive light rays that travel in the same direction.
   - imageAlign: none
     heading: "Audio & Programming Essentials "
-    text: |-
-      Audio Listener 
+    text: >-
+      **Audio Listener** 
 
-      Audio Resource & Audio Source
 
-      Spacial Audio Effect
+      An Audio Listener is a Component attached to the Main Camera by default, it acts as the players ears. The closer the Audio listener is to a sound, the louder the sound becomes, the further away, the quieter the sound is. So with this component attached the camera acts as the eyes and ears in the scene. 
+
+
+      Unity will only allow you to have 1 active Audio Component per scene. If you had multiple sets of ears in a scene, at what volume would you play different sounds ?
+
+
+      **Audio Clip & Audio Source**
+
+
+      An Audio Source component is a component that plays sound in the Unity scene, it acts as an origin point of sound, this means that audio will appear to come from the GameObject that an Audio Source is attached to. 
+
+
+      The volume of the sound can be affected by several factors, such as the distance between the Audi Listener and the Audio source, in some cases the direction the camera is facing can also influence the sound is perceived. This behaviour is controlled through Unity's 2D and 3D settings which determines how sound behaves within the scene.
+
+
+      2D & 3D Audio
+
+
+
 
       Scripts
 ---
