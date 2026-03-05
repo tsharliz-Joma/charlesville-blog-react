@@ -105,5 +105,11 @@ sections:
       Objects will only tag in on collisions if they have a Collider attached.
 
 
-      **Camera & Environment**
+      **Camera and Sunlight**
+
+
+      The Camera GameObject can be looked at as a Physical Camera on a movie set, the camera plays a critical role in how your scene is viewed, it determines what part of the scene is rendered and displayed to the player during gameplay. 
+
+
+      The Camera position and rotation determine what the player sees when the game enters play mode. Different camera placements can dramatically alter how a scene feels and how the player experiences the world.
 ---
