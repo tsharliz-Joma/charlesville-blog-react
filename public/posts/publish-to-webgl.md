@@ -1,8 +1,8 @@
 ---
 title: Publish to WebGL
 date: 2026-02-27T00:03:00.000+09:00
-description: A Quick Tutorial on publishing to webGL, what you might run into
-  and how to fix it.
+description: A quick 'how to' publish to webGL, how to set the correct platform
+  and prep your project for publishing.
 category: Unity
 quiz:
   - multiple: false
