@@ -5,6 +5,8 @@ description: The Start of my Unity Journey, covering the Editor, 3D Essentials,
   2D Essentials, Audio Essentials, Programming Essentials and Publishing
   Essentials
 category: Unity
+tags:
+  - Unity
 sections:
   - imageAlign: none
     heading: Editor & 3D Essentials
