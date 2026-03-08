@@ -247,8 +247,15 @@ const Home = ({theme, onToggleTheme}) => {
         state.pauseUntil = Date.now() + duration;
       };
 
+      const isInteractiveTarget = (target) =>
+        target?.closest?.(
+          "a, button, input, textarea, select, label, [data-marquee-interactive]",
+        );
+
       const handlePointerDown = (event) => {
         if (event.pointerType !== "mouse") return;
+        if (event.button !== 0) return;
+        if (isInteractiveTarget(event.target)) return;
         state.isDragging = true;
         state.startX = event.clientX;
         state.startScrollLeft = container.scrollLeft;
