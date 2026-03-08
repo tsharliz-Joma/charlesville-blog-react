@@ -141,10 +141,14 @@ sections:
       The volume of the sound can be affected by several factors, such as the distance between the Audi Listener and the Audio source, in some cases the direction the camera is facing can also influence the sound is perceived. This behaviour is controlled through Unity's 2D and 3D settings which determines how sound behaves within the scene.
 
 
-      2D & 3D Audio
+      **2D & 3D Audio**
 
 
+      Unity also sound to be played as either 2D or 3D audio which determines how sound behaves in relation to the player and the game world. This biggest difference between 2D & 3D Audio is whether the sound is affected by distance & position in the scene.
 
 
-      Scripts
+      **2D Audio** plays at a consistent volume regardless of where the sound is located in the scene. The sound is not affected by distance, direction or the position of the audio listener. Background music is a great example of 2D audio.
+
+
+      **3D Audio** behaves like sound in the real world, affected by distance, direction and position of the audio listener. As a player moves closer to the sound source, the sound becomes louder and as the player moves further away the sound becomes quieter. Good examples of 3D audio would be footsteps, vehicle engines or environmental sounds.
 ---
