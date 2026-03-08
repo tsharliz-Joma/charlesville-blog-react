@@ -154,4 +154,34 @@ sections:
 
 
       The **Spacial Blend** property in the Audio Source component controls switching between 2D & 3D audio, dragging the dial to 0 (2D) -> The sound is unaffected by position, dragging the dial to 1 (3D) -> The sound behaves spatially in the scene.
+  - imageAlign: none
+    heading: Publishing Essentials
+    text: >-
+      **Publish to WebGL**
+
+
+      Publishing to webGL is surprisingly easy. You do have to run through some steps to prep your game for publishing but it is not very complicated. 
+
+
+      First you will have to pick/switch profiles:\
+
+      `File -> Build Profiles`
+
+
+      A list of different profiles should appear such as MacOs, windows, Linux and more. Here you must select a Build profile. 
+
+
+      A Build profile defines how Unity compiles and exports your game for a specific platform. Selecting a Build profile tells Unity what platform to target, what settings should be used for that platform and which scenes should be included in the Build. 
+
+
+      > NOTE: If the web platform appears grayed out, it means your must select 'Install with Unity Hub' and the 'WebGL Build Support' module before you can switch to the Web platform
+
+
+      After you have set your build profile you can select 'Build' , Unity will prompt you asking where you would like to save your build. Entering a name and selecting save will build your game (The first time you Build it may take several minutes, subsequent builds will be faster).
+
+
+      After the build is complete it is time to select the 'Publish to Play' button at the bottom right of the Build profiles window. This will open a new Publish to Unity Play window, select **Publish** to select your most recent build followed by click **Publish** in order to publish it as a **New game**.
+
+
+      Once the upload is complete a Project details page will be opened on **Unity Play** the page will allow you to Edit title, description and more, after which, CONGRATULATIONS your project is published to Unity Play.
 ---
