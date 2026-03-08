@@ -47,25 +47,25 @@ sections:
       ### Controls
 
 
-      | Key                | Action                |
+      | Key | Action |
 
-      | ------------------ | --------------------- |
+      | --- | --- |
 
-      | **W**              | Move forward          |
+      | **W** | Move forward |
 
-      | **S**              | Move backward         |
+      | **S** | Move backward |
 
-      | **A**              | Move left             |
+      | **A** | Move left |
 
-      | **D**              | Move right            |
+      | **D** | Move right |
 
-      | **Q**              | Move down             |
+      | **Q** | Move down |
 
-      | **E**              | Move up               |
+      | **E** | Move up |
 
-      | **Mouse movement** | Look around           |
+      | **Mouse movement** | Look around |
 
-      | **Scroll wheel**   | Change movement speed |
+      | **Scroll wheel** | Change movement speed |
 
 
 
