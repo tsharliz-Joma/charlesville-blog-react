@@ -184,4 +184,5 @@ sections:
 
 
       Once the upload is complete a Project details page will be opened on **Unity Play** the page will allow you to Edit title, description and more, after which, CONGRATULATIONS your project is published to Unity Play.
+image: /images/uploads/UnityEssentials.png
 ---
