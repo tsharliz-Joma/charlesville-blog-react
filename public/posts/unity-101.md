@@ -44,51 +44,24 @@ sections:
       Flythrough mode is activated by: `Hold Right Mouse + A, W, S, D`
 
 
-      <h3>Controls</h3>
+      ### Controls
 
 
-      <table>
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>W</strong></td>
-            <td>Move forward</td>
-          </tr>
-          <tr>
-            <td><strong>S</strong></td>
-            <td>Move backward</td>
-          </tr>
-          <tr>
-            <td><strong>A</strong></td>
-            <td>Move left</td>
-          </tr>
-          <tr>
-            <td><strong>D</strong></td>
-            <td>Move right</td>
-          </tr>
-          <tr>
-            <td><strong>Q</strong></td>
-            <td>Move down</td>
-          </tr>
-          <tr>
-            <td><strong>E</strong></td>
-            <td>Move up</td>
-          </tr>
-          <tr>
-            <td><strong>Mouse movement</strong></td>
-            <td>Look around</td>
-          </tr>
-          <tr>
-            <td><strong>Scroll wheel</strong></td>
-            <td>Change movement speed</td>
-          </tr>
-        </tbody>
-      </table>
+      **W** — Move forward  
+
+      **S** — Move backward  
+
+      **A** — Move left  
+
+      **D** — Move right  
+
+      **Q** — Move down  
+
+      **E** — Move up  
+
+      **Mouse movement** — Look around  
+
+      **Scroll wheel** — Change movement speed
 
 
       **Inspector Window**\
