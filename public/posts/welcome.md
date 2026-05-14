@@ -14,9 +14,9 @@ sections:
       Welcome to my new blog, where I'll be documenting my adventures in game
       development.
 
-      Over the next few years, I'll be studying game design, building prototypes, and sharing what I learn about engines, tooling, art, and design theory.
+      Over the next few years, I'll be studying game design, building prototypes (whatever this means) and sharing what I learn about engines, tooling, art, and design theory.
 
-      I also completed a software engineering bootcamp, landed a creative technologist role about three months after finishing, and did that work for two years. I loved video games as a kid and decided around age 10–12 that it was what I wanted to do. Now I'm here, finally making it real.
+      Along the journey I completed a software engineering bootcamp GA (General Assembly) in Sydney, which was a life changing experience, I landed a creative technologist role about three months after and did that work for two and a bit years. I loved video games as a kid and decided around age 10–12 that it was what I wanted to do, but life happens and things changed but now I'm here, and I’m making it real.
 
 
       Why this journal exists
