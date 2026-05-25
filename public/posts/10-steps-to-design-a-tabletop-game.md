@@ -31,6 +31,8 @@ Begin making your prototype earlier rather than later, apparently the game nearl
 What constraints are there for yours game ? Eg. cost, difficulty of setup, accessibility. Find companies that can quote you on components. What are constraints for the audience you are targeting ?
 
 6. Internal Playtesting
+Gather peers, co-workers, friends, family, keep this isolated to people you have time with, time to sit down and play a bad game with, people who will give you critique, positive or negative. You do not need the game complete by this stay, yet pay attention to parts of the game such as the flow, is the game running smoothly ?
+
 7. Local Playtesting
 8. Write Rules
 9. Blind Playtesting
