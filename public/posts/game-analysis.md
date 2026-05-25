@@ -3,6 +3,8 @@ title: Game Analysis
 date: 2026-05-25T15:54:00.000+10:00
 description: What is a Game Analysis ? Thoughts on it, brainstorming
 category: Game design
+tags:
+  - GIM110
 quiz:
   - multiple: false
     options:
