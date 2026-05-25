@@ -34,11 +34,12 @@ What constraints are there for yours game ? Eg. cost, difficulty of setup, acces
 Gather peers, co-workers, friends, family, keep this isolated to people you have time with, time to sit down and play a bad game with, people who will give you critique, positive or negative. You do not need the game complete by this stay, yet pay attention to parts of the game such as the flow, is the game running smoothly ?
 
 7. Local Playtesting
-After you are content with the Internal play testing, the friends and fam are somewhat enjoying the game, Local playtesting the next step up. This may look like sharing the game at a meetup, sharing it with your network. What is fun or frustrating to people ? Do you have to consistently remind people to 'remember' to do things that you UI should be doing. 
+After you are content with the Internal play testing, the friends and fam are somewhat enjoying the game, Local Playtesting the next step up. This may look like sharing the game at a meetup, sharing it with your network. What is fun or frustrating to people ? Do you have to consistently remind people to 'remember' to do things that you UI should be doing. 
 
 8. Write Rules
 Write the game rules! What are the game rules. Get some references cards to help players remember what icons mean or colors mean etc. maybe 1 for the whole game or 1 for each player. At this stage maybe you consider outside development because you do not entirely feel the game is ready for blind testing. 
 
 9. Blind Playtesting
-This phase is when your game is sent out to Pla
+This phase is when your game is sent out to Play testers around the world, VET these people, make sure they give you real constructive feedback, example driven, reason driven feedback is important. At the beginning this is a difficult step but reaching out on social media, Eg. Facebook or even linkedIn
+
 10. Decide It's Finished
