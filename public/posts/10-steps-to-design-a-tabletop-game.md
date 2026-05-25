@@ -28,6 +28,8 @@ What do people like or dislike about the genre of game that you are designing, t
 Begin making your prototype earlier rather than later, apparently the game nearly never plays out the same way you play it out in your head. This can be a physical prototype if it is not too complicated a game, test rules, does the play actually work ?, is it fun ?. Platforms like Adobe InDesign are good for more complicated game prototypes.
 
 5. Consider Constraints
+What constraints are there for yours game ? Eg. cost, difficulty of setup, accessibility. Find companies that can quote you on components. What are constraints for the audience you are targeting ?
+
 6. Internal Playtesting
 7. Local Playtesting
 8. Write Rules
