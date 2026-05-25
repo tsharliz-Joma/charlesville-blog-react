@@ -16,5 +16,5 @@ sections:
       How would I describe a Game Analysis ? 
 
 
-      I would say a Game Analysis is a look in the many aspects of a game, in a way that looks to understand the mechanics that make a game function, the way it invites/how it invites players to keep playing or wonder about life. The unmentioned rules that are simply accepted by the players.
+      I would say a Game Analysis is a look in the many aspects of a game, in a way that looks to understand the mechanics that make a game function, from the the way it invites/how it invites players to keep playing or wonder about life and unmentioned rules that are simply accepted by the players to the cultural impact on society.
 ---
