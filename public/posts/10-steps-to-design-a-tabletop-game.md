@@ -43,3 +43,4 @@ Write the game rules! What are the game rules. Get some references cards to help
 This phase is when your game is sent out to Play testers around the world, VET these people, make sure they give you real constructive feedback, example driven, reason driven feedback is important. At the beginning this is a difficult step but reaching out on social media, Eg. Facebook or even linkedIn
 
 10. Decide It's Finished
+How do you know when the game is finished ? You decide personally, maybe setting some baselines, Eg. 3 - 4 rounds of blind playtesting, Feature freeze 2 weeks before release date. but this is ultimately up to you and when you feel it is finished.
