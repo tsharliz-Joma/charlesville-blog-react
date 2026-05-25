@@ -34,8 +34,9 @@ What constraints are there for yours game ? Eg. cost, difficulty of setup, acces
 Gather peers, co-workers, friends, family, keep this isolated to people you have time with, time to sit down and play a bad game with, people who will give you critique, positive or negative. You do not need the game complete by this stay, yet pay attention to parts of the game such as the flow, is the game running smoothly ?
 
 7. Local Playtesting
-After you are content with the Internal play testing, the friends and fam are somewhat enjoying the game, Local playtesting the next step up. This may look like sharing the game at a meetup, sharing it with your network. 
+After you are content with the Internal play testing, the friends and fam are somewhat enjoying the game, Local playtesting the next step up. This may look like sharing the game at a meetup, sharing it with your network. What is fun or frustrating to people ? Do you have to consistently remind people to 'remember' to do things that you UI should be doing. 
 
 8. Write Rules
+
 9. Blind Playtesting
 10. Decide It's Finished
