@@ -16,9 +16,17 @@ sections:
 Steps 
 
 1. Inspiration
+The Initial idea, ideas from the games that you play, play a wide variety of games, watch reviews and fiction track your ideas
+
 2. Brainstorming
+Write down ideas, mind map ideas, what ever works best for you, I like mind  maps and drawing connectors to each idea. Take down themes and mechanisms that go with each theme. Share your game ideas.
+
 3. Market Research
+What do people like or dislike about the genre of game that you are designing, take in multiple resources to learn from, find platforms to discuss games, things that work and do not work. What has been done, what has not been done ?, what are people asking for?
+
 4. First Prototype
+Begin making your prototype earlier rather than later, apparently the game nearly never plays out the same way you play it out in your head. This can be a physical prototype if it is not too complicated a game, test rules, does the play actually work ?, is it fun ?. Platforms like Adobe InDesign are good for more complicated game prototypes.
+
 5. Consider Constraints
 6. Internal Playtesting
 7. Local Playtesting
