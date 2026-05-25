@@ -37,6 +37,8 @@ Gather peers, co-workers, friends, family, keep this isolated to people you have
 After you are content with the Internal play testing, the friends and fam are somewhat enjoying the game, Local playtesting the next step up. This may look like sharing the game at a meetup, sharing it with your network. What is fun or frustrating to people ? Do you have to consistently remind people to 'remember' to do things that you UI should be doing. 
 
 8. Write Rules
+Write the game rules! What are the game rules. Get some references cards to help players remember what icons mean or colors mean etc. maybe 1 for the whole game or 1 for each player. At this stage maybe you consider outside development because you do not entirely feel the game is ready for blind testing. 
 
 9. Blind Playtesting
+This phase is when your game is sent out to Pla
 10. Decide It's Finished
