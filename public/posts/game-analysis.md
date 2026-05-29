@@ -5,10 +5,7 @@ description: What is a Game Analysis ? Thoughts on it, brainstorming
 category: Game design
 tags:
   - GIM110
-quiz:
-  - multiple: false
-    options: []
-    question: ""
+quiz: []
 sections:
   - imageAlign: none
     heading: "What is a Game Analysis ? "
