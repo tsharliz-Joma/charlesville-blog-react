@@ -10,7 +10,7 @@ quiz:
     options:
       - correct: false
         text: N/A
-    question: N/A
+    question: ""
 sections:
   - imageAlign: none
     heading: "What is a Game Analysis ? "
