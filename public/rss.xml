@@ -4,11 +4,28 @@
         <title>Charles's Game Design Journal</title>
         <link>https://charlesville-blog-react.netlify.app</link>
         <description>A blog-journal of game design, builds, and lessons learned.</description>
-        <lastBuildDate>Tue, 24 Feb 2026 04:22:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 May 2026 05:54:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2026</copyright>
+        <item>
+            <title><![CDATA[Game Analysis]]></title>
+            <link>https://charlesville-blog-react.netlify.app/posts/game-analysis</link>
+            <guid>https://charlesville-blog-react.netlify.app/posts/game-analysis</guid>
+            <pubDate>Mon, 25 May 2026 05:54:00 GMT</pubDate>
+            <description><![CDATA[What is a Game Analysis ? Thoughts on it, brainstorming]]></description>
+            <category>GIM110</category>
+            <category>Game design</category>
+        </item>
+        <item>
+            <title><![CDATA[Unity Essentials]]></title>
+            <link>https://charlesville-blog-react.netlify.app/posts/unity-101</link>
+            <guid>https://charlesville-blog-react.netlify.app/posts/unity-101</guid>
+            <pubDate>Thu, 05 Mar 2026 03:41:00 GMT</pubDate>
+            <description><![CDATA[The Start of my Unity Journey, covering the Editor, 3D Essentials, 2D Essentials, Audio Essentials, Programming Essentials and Publishing Essentials]]></description>
+            <category>Unity</category>
+        </item>
         <item>
             <title><![CDATA[Game Design Document]]></title>
             <link>https://charlesville-blog-react.netlify.app/posts/gdd</link>
@@ -17,24 +34,6 @@
             <description><![CDATA[A structured exploration of the Game Design Document and its role in transforming creative intent into clear, implementable design systems.]]></description>
             <category>GDD</category>
             <category>Game design</category>
-        </item>
-        <item>
-            <title><![CDATA[Unity 101]]></title>
-            <link>https://charlesville-blog-react.netlify.app/posts/unity-101</link>
-            <guid>https://charlesville-blog-react.netlify.app/posts/unity-101</guid>
-            <pubDate>Wed, 18 Feb 2026 08:38:00 GMT</pubDate>
-            <description><![CDATA[Beginning of learning Unity, running through the Unity Essentials]]></description>
-            <category>Journal entry</category>
-        </item>
-        <item>
-            <title><![CDATA[Snap to Target]]></title>
-            <link>https://charlesville-blog-react.netlify.app/posts/snap-to-target</link>
-            <guid>https://charlesville-blog-react.netlify.app/posts/snap-to-target</guid>
-            <pubDate>Sat, 14 Feb 2026 06:05:00 GMT</pubDate>
-            <description><![CDATA[How to snap an object to a target]]></description>
-            <category>Tip</category>
-            <category>Blender</category>
-            <category>Blender</category>
         </item>
         <item>
             <title><![CDATA[Blender Day 2 - Lowpoly house]]></title>

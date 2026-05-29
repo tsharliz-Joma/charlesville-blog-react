@@ -1,20 +1,8 @@
 [
   {
-    "slug": "unity-101",
-    "title": "Unity 101",
-    "date": "Wed Feb 18 2026 17:38:00 GMT+0900 (Japan Standard Time)",
-    "description": "Beginning of learning Unity, running through the Unity Essentials",
-    "category": "Journal entry",
-    "tags": [],
-    "image": "",
-    "imageAlt": "",
-    "spotifyUrl": "",
-    "spotifyLabel": ""
-  },
-  {
     "slug": "blender-day-1",
     "title": "Blender Day 1",
-    "date": "Wed Feb 11 2026 15:34:00 GMT+0900 (Japan Standard Time)",
+    "date": "Wed Feb 11 2026 17:34:00 GMT+1100 (Australian Eastern Daylight Time)",
     "description": "Day 1 of learning blender covering navigation, system preferences, shortcuts and adding simple mesh objects.",
     "category": "Blender",
     "tags": [
@@ -23,12 +11,13 @@
     "image": "/images/uploads/Blender-day-1-blog.png",
     "imageAlt": "",
     "spotifyUrl": "",
-    "spotifyLabel": ""
+    "spotifyLabel": "",
+    "readingTime": 1
   },
   {
     "slug": "gdd",
     "title": "Game Design Document",
-    "date": "Tue Feb 24 2026 13:22:00 GMT+0900 (Japan Standard Time)",
+    "date": "Tue Feb 24 2026 15:22:00 GMT+1100 (Australian Eastern Daylight Time)",
     "description": "A structured exploration of the Game Design Document and its role in transforming creative intent into clear, implementable design systems.",
     "category": "Game design",
     "tags": [
@@ -37,12 +26,13 @@
     "image": "/images/uploads/GDD.png",
     "imageAlt": "An image of a game developers desk, a GDD controller and monitor sitting on top, along with some miscellaneous items",
     "spotifyUrl": "",
-    "spotifyLabel": ""
+    "spotifyLabel": "",
+    "readingTime": 1
   },
   {
     "slug": "welcome",
     "title": "Welcome to My Game Dev Blog",
-    "date": "Tue Feb 03 2026 09:00:00 GMT+0900 (Japan Standard Time)",
+    "date": "Tue Feb 03 2026 11:00:00 GMT+1100 (Australian Eastern Daylight Time)",
     "description": "An introduction to my journey into game development and learning.",
     "category": "Journal entry",
     "tags": [
@@ -52,24 +42,54 @@
     "image": "",
     "imageAlt": "",
     "spotifyUrl": "",
-    "spotifyLabel": "Play the playlist"
+    "spotifyLabel": "Play the playlist",
+    "readingTime": 1
+  },
+  {
+    "slug": "unity-101",
+    "title": "Unity Essentials",
+    "date": "Thu Mar 05 2026 14:41:00 GMT+1100 (Australian Eastern Daylight Time)",
+    "description": "The Start of my Unity Journey, covering the Editor, 3D Essentials, 2D Essentials, Audio Essentials, Programming Essentials and Publishing Essentials",
+    "category": "Unity",
+    "tags": [],
+    "image": "/images/uploads/UnityEssentials.png",
+    "imageAlt": "",
+    "spotifyUrl": "",
+    "spotifyLabel": "",
+    "readingTime": 1
   },
   {
     "slug": "blender-day-2-lowpoly-house",
     "title": "Blender Day 2 - Lowpoly house",
-    "date": "Thu Feb 12 2026 20:21:00 GMT+0900 (Japan Standard Time)",
+    "date": "Thu Feb 12 2026 22:21:00 GMT+1100 (Australian Eastern Daylight Time)",
     "description": "Day 2 of learning blender, building a lowpoly house, more shortcuts, Object mode & Edit mode and default start up files",
     "category": "Blender",
     "tags": [],
     "image": "/images/uploads/lowpoly-house.jpg",
     "imageAlt": "",
     "spotifyUrl": "",
-    "spotifyLabel": ""
+    "spotifyLabel": "",
+    "readingTime": 1
+  },
+  {
+    "slug": "game-analysis",
+    "title": "Game Analysis",
+    "date": "Mon May 25 2026 15:54:00 GMT+1000 (Australian Eastern Standard Time)",
+    "description": "What is a Game Analysis ? Thoughts on it, brainstorming",
+    "category": "Game design",
+    "tags": [
+      "GIM110"
+    ],
+    "image": "",
+    "imageAlt": "",
+    "spotifyUrl": "",
+    "spotifyLabel": "",
+    "readingTime": 1
   },
   {
     "slug": "i-boogied-with-the-fuji-in-fujinomiya",
     "title": "I boogied with the Fuji in Fujinomiya",
-    "date": "Thu Feb 05 2026 23:47:00 GMT+0900 (Japan Standard Time)",
+    "date": "Fri Feb 06 2026 01:47:00 GMT+1100 (Australian Eastern Daylight Time)",
     "description": "A hop-skip-jump to Fujinomiya that turned into a calm dougie,a belly-full afternoon of reflection, dilly dallying, small discoveries and a playlist..",
     "category": "Journal entry",
     "tags": [
@@ -79,21 +99,7 @@
     "image": "",
     "imageAlt": "",
     "spotifyUrl": "https://open.spotify.com/playlist/0KIihkIvjsIdvLFSdoNzgg?si=2f9d42c3917b461b",
-    "spotifyLabel": "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/playlist/0KIihkIvjsIdvLFSdoNzgg?utm_source=generator\" width=\"100%\" height=\"152\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
-  },
-  {
-    "slug": "snap-to-target",
-    "title": "Snap to Target",
-    "date": "Sat Feb 14 2026 15:05:00 GMT+0900 (Japan Standard Time)",
-    "description": "How to snap an object to a target",
-    "category": "Blender",
-    "tags": [
-      "Tip",
-      "Blender"
-    ],
-    "image": "",
-    "imageAlt": "",
-    "spotifyUrl": "",
-    "spotifyLabel": ""
+    "spotifyLabel": "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/playlist/0KIihkIvjsIdvLFSdoNzgg?utm_source=generator\" width=\"100%\" height=\"152\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>",
+    "readingTime": 1
   }
 ]

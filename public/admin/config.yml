@@ -18,26 +18,66 @@ collections:
     extension: "md"
     format: "frontmatter"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Journal entry", "Game design", "Meetups", "Learning", "Side quests", "Blender", "Unity"], default: "Journal entry" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Spotify Playlist URL", name: "spotifyUrl", widget: "string", required: false }
-      - { label: "Spotify Embed Label", name: "spotifyLabel", widget: "string", required: false }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options:
+            [
+              "Journal entry",
+              "Game design",
+              "Meetups",
+              "Learning",
+              "Side quests",
+              "Blender",
+              "Unity",
+            ],
+          default: "Journal entry",
+        }
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {
+          label: "Spotify Playlist URL",
+          name: "spotifyUrl",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Spotify Embed Label",
+          name: "spotifyLabel",
+          widget: "string",
+          required: false,
+        }
       - label: "Quiz"
         name: "quiz"
         widget: "list"
         required: false
         fields:
-          - { label: "Question", name: "question", widget: "string" }
-          - { label: "Allow multiple answers", name: "multiple", widget: "boolean", default: false }
+          - {
+              label: "Question",
+              name: "question",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Allow multiple answers",
+              name: "multiple",
+              widget: "boolean",
+              default: false,
+            }
           - label: "Options"
             name: "options"
             widget: "list"
             fields:
-              - { label: "Option", name: "text", widget: "string" }
-              - { label: "Correct", name: "correct", widget: "boolean", default: false }
+              - {label: "Option", name: "text", widget: "string"}
+              - {
+                  label: "Correct",
+                  name: "correct",
+                  widget: "boolean",
+                  default: false,
+                }
       - label: "Sections"
         name: "sections"
         widget: "list"
@@ -45,14 +85,35 @@ collections:
         min: 0
         max: 3
         fields:
-          - { label: "Heading", name: "heading", widget: "string", required: false }
-          - { label: "Paragraph", name: "text", widget: "markdown" }
-          - { label: "Image", name: "image", widget: "image", required: false }
-          - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
-          - { label: "Image Alignment", name: "imageAlign", widget: "select", options: ["none", "left", "right", "center"], default: "none" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown", required: false }
+          - {
+              label: "Heading",
+              name: "heading",
+              widget: "string",
+              required: false,
+            }
+          - {label: "Paragraph", name: "text", widget: "markdown"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {
+              label: "Image Alt",
+              name: "imageAlt",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Image Alignment",
+              name: "imageAlign",
+              widget: "select",
+              options: ["none", "left", "right", "center"],
+              default: "none",
+            }
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {
+          label: "Image Alt",
+          name: "imageAlt",
+          widget: "string",
+          required: false,
+        }
+      - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "site"
     label: "Site"
     files:
@@ -60,22 +121,42 @@ collections:
         label: "Hero"
         file: "public/settings/hero.json"
         fields:
-          - { label: "Hero Image", name: "image", widget: "image" }
-          - { label: "Hero Image Alt", name: "imageAlt", widget: "string", required: false }
-          - { label: "Hero Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Hero Title", name: "title", widget: "string" }
-          - { label: "Hero Description", name: "description", widget: "text" }
-          - { label: "Primary CTA", name: "ctaPrimary", widget: "string" }
-          - { label: "Secondary CTA", name: "ctaSecondary", widget: "string" }
-          - { label: "Cadence", name: "cadence", widget: "string" }
-          - { label: "Focus", name: "focus", widget: "string" }
-          - { label: "Mood", name: "mood", widget: "string" }
+          - {label: "Hero Image", name: "image", widget: "image"}
+          - {
+              label: "Hero Image Alt",
+              name: "imageAlt",
+              widget: "string",
+              required: false,
+            }
+          - {label: "Hero Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Hero Title", name: "title", widget: "string"}
+          - {label: "Hero Description", name: "description", widget: "text"}
+          - {label: "Primary CTA", name: "ctaPrimary", widget: "string"}
+          - {label: "Secondary CTA", name: "ctaSecondary", widget: "string"}
+          - {label: "Cadence", name: "cadence", widget: "string"}
+          - {label: "Focus", name: "focus", widget: "string"}
+          - {label: "Mood", name: "mood", widget: "string"}
       - name: "about"
         label: "About"
         file: "public/settings/about.json"
         fields:
-          - { label: "About Eyebrow", name: "eyebrow", widget: "string", required: false }
-          - { label: "About Title", name: "title", widget: "string" }
-          - { label: "About Body", name: "body", widget: "markdown" }
-          - { label: "About Image", name: "image", widget: "image", required: false }
-          - { label: "About Image Alt", name: "imageAlt", widget: "string", required: false }
+          - {
+              label: "About Eyebrow",
+              name: "eyebrow",
+              widget: "string",
+              required: false,
+            }
+          - {label: "About Title", name: "title", widget: "string"}
+          - {label: "About Body", name: "body", widget: "markdown"}
+          - {
+              label: "About Image",
+              name: "image",
+              widget: "image",
+              required: false,
+            }
+          - {
+              label: "About Image Alt",
+              name: "imageAlt",
+              widget: "string",
+              required: false,
+            }
