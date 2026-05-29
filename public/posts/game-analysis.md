@@ -7,9 +7,7 @@ tags:
   - GIM110
 quiz:
   - multiple: false
-    options:
-      - correct: false
-        text: N/A
+    options: []
     question: ""
 sections:
   - imageAlign: none
