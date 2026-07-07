@@ -33,4 +33,8 @@ sections:
 
       **Players**
     heading: "Bartle's Taxonamony "
+  - imageAlign: none
+    heading: References
+    text: Andrew, F. (2024). *Bartles-taxonomy.* Andrew Fischer | Discover and
+      Engage Now. https://andrewfischergames.com/blog/bartles-taxonomy
 ---
