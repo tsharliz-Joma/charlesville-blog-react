@@ -83,11 +83,9 @@ sections:
     heading: "Bartle's Taxonamony "
     image: /images/uploads/Bartle's Tax Chart.png
   - imageAlign: none
+    heading: "Negative Feedback! why bother ? "
+    text: N/Aa
+  - imageAlign: none
     heading: References
-    text: >-
-      Andrew, F. (2024). *Bartles-taxonomy.* Andrew Fischer | Discover and
-      Engage Now. https://andrewfischergames.com/blog/bartles-taxonomy
-
-
-      Janaki Kumar, Mario Herger and Rikke Friis Dam (2026). *Bartle’s Player Types for Gamification.*   IxDF. https://ixdf.org/literature/article/bartle-s-player-types-for-gamification#:~:text=These%20categories%20are%20the%20Achiever,which%20determines%20their%20overall%20preference.
+    text: N/A
 ---
