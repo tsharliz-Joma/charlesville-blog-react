@@ -12,5 +12,25 @@ quiz:
         text: N/A
 sections:
   - imageAlign: none
-    text: N/A
+    text: |-
+      ## Types of Players
+
+      **The Killer**
+
+      **The Explorer**
+
+      **The Achiever**
+
+      **The Socialiser** 
+
+      ## Bartle's Chart
+
+      **Acting**
+
+      **Interacting**
+
+      **World**
+
+      **Players**
+    heading: "Bartle's Taxonamony "
 ---
