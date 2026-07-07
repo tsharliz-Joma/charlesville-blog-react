@@ -81,6 +81,7 @@ sections:
 
       > #### 27% Socialiser
     heading: "Bartle's Taxonamony "
+    image: /images/uploads/Bartle's Tax Chart.png
   - imageAlign: none
     heading: References
     text: >-
