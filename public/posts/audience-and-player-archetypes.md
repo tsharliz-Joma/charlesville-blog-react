@@ -83,9 +83,6 @@ sections:
     heading: "Bartle's Taxonamony "
     image: /images/uploads/Bartle's Tax Chart.png
   - imageAlign: none
-    heading: "Negative Feedback! why bother ? "
-    text: N/Aa
-  - imageAlign: none
     heading: References
     text: N/A
 ---
