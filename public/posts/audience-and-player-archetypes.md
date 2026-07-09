@@ -84,6 +84,8 @@ sections:
     image: /images/uploads/Bartle's Tax Chart.png
   - imageAlign: none
     heading: References
-    text: N/A
+    text: Janaki K., Mario H. & Rikke F. D. (2026) *Bartle’s Player Types for
+      Gamification*. IXDF.
+      https://ixdf.org/literature/article/bartle-s-player-types-for-gamification#:~:text=These%20categories%20are%20the%20Achiever,which%20determines%20their%20overall%20preference.
 image: /images/uploads/Bartle's Tax Chart.png
 ---
