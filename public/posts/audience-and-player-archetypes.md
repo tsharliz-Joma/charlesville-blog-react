@@ -84,8 +84,12 @@ sections:
     image: /images/uploads/Bartle's Tax Chart.png
   - imageAlign: none
     heading: References
-    text: Janaki K., Mario H. & Rikke F. D. (2026) *Bartle’s Player Types for
+    text: >-
+      Janaki K., Mario H. & Rikke F. D. (2026) *Bartle’s Player Types for
       Gamification*. IXDF.
       https://ixdf.org/literature/article/bartle-s-player-types-for-gamification#:~:text=These%20categories%20are%20the%20Achiever,which%20determines%20their%20overall%20preference.
+
+
+      Extra Credits. (Oct 15, 2015). *Bartle's Taxonomy - What Type of Player are You?*\[Video]*.* Youtube. https://www.youtube.com/watch?v=yxpW2ltDNow
 image: /images/uploads/Bartle's Tax Chart.png
 ---
