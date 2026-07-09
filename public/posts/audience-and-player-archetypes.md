@@ -85,4 +85,5 @@ sections:
   - imageAlign: none
     heading: References
     text: N/A
+image: /images/uploads/Bartle's Tax Chart.png
 ---
