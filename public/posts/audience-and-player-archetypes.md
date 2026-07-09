@@ -80,8 +80,16 @@ sections:
       >
 
       > #### 27% Socialiser
+
+
+
+
+      ![](/images/uploads/Bartle's Tax Chart.png "Bartle's Taxonomy")
+
+
+      >
     heading: "Bartle's Taxonamony "
-    image: /images/uploads/Bartle's Tax Chart.png
+    image: ""
   - imageAlign: none
     heading: References
     text: >-
