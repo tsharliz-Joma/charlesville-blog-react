@@ -80,8 +80,11 @@ sections:
       >
 
       > #### 27% Socialiser
+
+
+      ![](/images/uploads/Bartle's Tax Chart.png "Bartle's Taxonomy")
     heading: "Bartle's Taxonamony "
-    image: /images/uploads/Bartle's Tax Chart.png
+    image: ""
   - imageAlign: none
     heading: References
     text: >-
@@ -91,5 +94,5 @@ sections:
 
 
       Extra Credits. (Oct 15, 2015). *Bartle's Taxonomy - What Type of Player are You?*\[Video]*.* Youtube. https://www.youtube.com/watch?v=yxpW2ltDNow
-image: /images/uploads/Bartle's Tax Chart.png
+image: ""
 ---
