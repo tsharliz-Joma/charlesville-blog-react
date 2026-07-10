@@ -43,10 +43,10 @@ sections:
       ## Bartle's Chart
 
 
-      **Acting "**Acting in this case, simply means to act upon"  **↔ Interacting "**To act with"
+      **Acting** "Acting in this case, simply means to act upon" ↔ **Interacting** "To act with"
 
 
-      **Players "**The actual people in the world" ↕ **World "**The game itself"
+      **Players** "The actual people in the world" ↕ **World** "The game itself"
 
 
       Bartle created a graph from which he viewed game design. Each of the player types belongs in one of the quadrants and by doing this it allows designers to focus on the mechanics and features rather than the individual player types. If I were to try to give an example it would be similar to skateboard tricks and the most effective way would be to segment them. At the core there are two types of tricks, Ollie-based tricks and Nollie-based tricks. If the goal was to master as many skateboard tricks as possible, the most effective way would be to focus on Ollie-based tricks and consequently (as a result), all your Ollie-based tricks would be targeted and one could see what specific tricks complement others, e.g. learning a Kickflip complements your Varial Kickflip. In the same way with each of the player types falling within a quadrant of the graph, one can see the by-product of the mechanic, system or dungeon they are adding to the game and the type of players it ultimately affects, allowing designers leeway on how they wish to build a game.
