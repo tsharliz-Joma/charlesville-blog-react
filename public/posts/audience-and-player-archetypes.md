@@ -11,7 +11,7 @@ quiz:
       - correct: false
         text: N/A
 sections:
-  - imageAlign: none
+  - imageAlign: right
     text: >
       ## Types of Players
 
@@ -81,7 +81,7 @@ sections:
 
       > #### 27% Socialiser
     heading: "Bartle's Taxonamony "
-    image: ""
+    image: /images/uploads/Bartle's-Tax-Chart.png
   - imageAlign: none
     heading: References
     text: >-
