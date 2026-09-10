@@ -26,10 +26,15 @@ quiz:
 sections:
   - imageAlign: none
     heading: Agile Mindset
-    text: |-
+    text: >-
       ## The Agile Manifesto
 
+
       #### Values
+
+
+      "We are uncovering better ways of developing software by helping others do it." 
+
 
       #### Principles
 ---
