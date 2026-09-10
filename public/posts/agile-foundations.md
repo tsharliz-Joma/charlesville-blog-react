@@ -27,7 +27,9 @@ sections:
   - imageAlign: none
     heading: Agile Mindset
     text: |-
-      The Agile Values 
+      ## The Agile Manifesto
 
-      The Agile Principles
+      #### Values
+
+      #### Principles
 ---
