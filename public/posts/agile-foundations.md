@@ -54,8 +54,6 @@ sections:
       "That is, while there is value in the items on the right, we value the items on the left more." (Beck et al., 2001)
 
 
-
-
       #### Principles
   - imageAlign: none
     heading: References
