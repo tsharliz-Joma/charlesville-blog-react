@@ -30,11 +30,38 @@ sections:
       ## The Agile Manifesto
 
 
+      The Agile Mindset is built on 4 values and 12 principles.
+
+
       #### Values
 
 
-      "We are uncovering better ways of developing software by helping others do it." 
+      "We are uncovering better ways of developing software by helping others do it. Through this work we have come to value" (Beck et al., 2001)
+
+
+      1. Individuals and interactions > processes and tools
+
+
+      2. Working software > comprehensive documentation
+
+
+      3. Customer collaboration > contract negotiation
+
+
+      4. Responding to change > following a plan
+
+
+      "That is, while there is value in the items on the right, we value the items on the left more." (Beck et al., 2001)
+
+
 
 
       #### Principles
+  - imageAlign: none
+    heading: References
+    text: Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W.,
+      Fowler, M., Grenning, J., Highsmith, J., Hunt, A., Jeffries, R., Kern, J.,
+      Marick, B., Martin, R. C., Mellor, S., Schwaber, K., Sutherland, J., &
+      Thomas, D. (2001). *Manifesto for agile software development*. Agile
+      Alliance. <https://agilemanifesto.org/>
 ---
